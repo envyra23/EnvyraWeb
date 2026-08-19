@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -410,6 +410,118 @@
             opacity: 0.5;
         }
 
+        /* ANNOUNCEMENT / NEWS CAROUSEL SECTION */
+        .announce-carousel {
+            max-width: 720px;
+            width: 100%;
+            overflow: hidden;
+            opacity: 0;
+            filter: blur(5px);
+            transform: translate3d(0, 20px, 0) scale(0.985);
+            transition: opacity 700ms var(--ease-elite), transform 760ms var(--ease-elite), filter 700ms var(--ease-elite);
+            will-change: transform, opacity, filter;
+        }
+
+        .announce-carousel.active {
+            opacity: 1;
+            filter: blur(0);
+            transform: translate3d(0, 0, 0) scale(1);
+        }
+
+        .announce-track {
+            display: flex;
+            width: 100%;
+            transition: transform 720ms var(--ease-elite);
+        }
+
+        .announce-slide {
+            flex: 0 0 100%;
+            min-width: 100%;
+        }
+
+        .announce-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-top: clamp(2rem, 5vw, 2.75rem);
+        }
+
+        .announce-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: currentColor;
+            opacity: 0.25;
+            border: none;
+            padding: 0;
+            cursor: none !important;
+            transition: opacity 320ms var(--ease-premium), transform 320ms var(--ease-premium);
+        }
+
+        .announce-dot.active {
+            opacity: 1;
+            transform: scale(1.35);
+        }
+
+        .announce-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            padding: 0.45rem 1.1rem;
+            border: 1px solid rgba(128, 128, 128, 0.3);
+            border-radius: 50px;
+            opacity: 0.65;
+            margin-bottom: 1.75rem;
+        }
+
+        .announce-title {
+            font-size: clamp(2.1rem, 7vw, 4.5rem);
+            font-weight: 500;
+            letter-spacing: -0.04em;
+            line-height: 1.08;
+            margin-bottom: 1.5rem;
+        }
+
+        .announce-title .accent {
+            background: linear-gradient(90deg, #ffffff, #8c8c8c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        [data-theme="light"] .announce-title .accent {
+            background: linear-gradient(90deg, #000000, #6b6b6b);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .announce-desc {
+            font-size: clamp(0.95rem, 2vw, 1.15rem);
+            line-height: 1.7;
+            font-weight: 400;
+            opacity: 0.6;
+        }
+
+        .announce-cta {
+            display: inline-block;
+            margin-top: clamp(1.75rem, 4vw, 2.5rem);
+            padding: 14px 32px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid currentColor;
+            border-radius: 50px;
+            transition: background-color 360ms var(--ease-premium), color 360ms var(--ease-premium);
+        }
+
+        [data-theme="dark"] .announce-cta:hover { background: #ffffff; color: #000000; }
+        [data-theme="light"] .announce-cta:hover { background: #000000; color: #ffffff; }
+
         .cta-button {
             margin-top: clamp(2rem, 5vw, 4rem);
             padding: clamp(14px, 2vw, 18px) clamp(30px, 4vw, 45px);
@@ -712,6 +824,10 @@
 
             .testimonial-text { font-size: clamp(1.2rem, 6vw, 1.9rem); }
 
+            .announce-title { font-size: clamp(2rem, 9vw, 3.2rem); }
+
+            .announce-desc { font-size: 0.95rem; }
+
             .cta-button {
                 width: min(100%, 360px);
                 padding: 16px 22px;
@@ -739,6 +855,7 @@
             .reveal-text,
             .product-card,
             .testimonial-box,
+            .announce-carousel,
             .cta-button {
                 transition: none !important;
                 transform: none !important;
@@ -762,12 +879,12 @@
     <div id="cursor"></div>
     <div class="noise"></div>
     <div class="reach-announcement" id="reach-announcement" aria-label="Presentamos Envyra Reach">
-        <a href="https://envyra23.github.io/REACH/" class="reach-announcement-inner" target="_blank" rel="noopener">
+        <a href="https://envyra23.github.io/MotionLayersEngine-/" class="reach-announcement-inner" target="_blank" rel="noopener">
             <span class="reach-dot"></span>
             <span class="reach-pill-label">Nuevo</span>
             <span class="reach-text-group">
                 <span class="reach-presenting">presentamos</span>
-                <span class="reach-name">Envyra Reach</span>
+                <span class="reach-name">Motion Layers</span>
             </span>
             <span class="reach-arrow">→</span>
         </a>
@@ -816,6 +933,30 @@
             <h1 class="hero-title" id="h-title">Elevando ideas <br>al mundo digital.</h1>
         </section>
 
+        <section data-theme="dark">
+            <span class="tag">Novedades Envyra</span>
+            <div class="announce-carousel" data-reveal>
+                <div class="announce-track" id="announce-track">
+                    <div class="announce-slide">
+                        <span class="announce-badge">Presentamos</span>
+                        <h2 class="announce-title">MotionLayers <span class="accent">Engine.</span></h2>
+                        <p class="announce-desc">El movimiento es la capa invisible de toda gran experiencia. MotionLayers Engine™ convierte el espacio en una interfaz donde cada gesto tiene un propósito.</p>
+                        <a href="https://envyra23.github.io/MotionLayersEngine-/" target="_blank" rel="noopener" class="announce-cta">Probar ahora</a>
+                    </div>
+                    <div class="announce-slide">
+                        <span class="announce-badge">Presentamos</span>
+                        <h2 class="announce-title"><span class="accent">Envyra Reach.</span></h2>
+                        <p class="announce-desc">Impulsamos marcas a través de estrategia, creatividad y tecnología.</p>
+                        <a href="https://envyra23.github.io/REACH/" target="_blank" rel="noopener" class="announce-cta">Conocer Reach</a>
+                    </div>
+                </div>
+                <div class="announce-dots" id="announce-dots">
+                    <button class="announce-dot active" data-slide="0" aria-label="Ver MotionLayers Engine"></button>
+                    <button class="announce-dot" data-slide="1" aria-label="Ver Envyra Reach"></button>
+                </div>
+            </div>
+        </section>
+
         <section data-theme="light">
             <span class="tag">Nuestra Visión</span>
             <div class="reveal-text" data-reveal>
@@ -828,9 +969,9 @@
             <h2 class="reveal-text" data-reveal style="margin-bottom: 2rem;">Productos Core.</h2>
             <div class="product-grid">
                 
-                <a href="https://envyra36-design.github.io/Airswipe/" class="product-card" data-reveal style="text-decoration: none; color: inherit; display: block;">
+                <a href="https://envyra23.github.io/MotionLayersEngine-//" class="product-card" data-reveal style="text-decoration: none; color: inherit; display: block;">
                     <span class="tag" style="margin-bottom: 1rem; opacity: 0.6;">Beta Version</span>
-                    <h3>Airswip</h3>
+                    <h3>MotionLayers Engine</h3>
                     <p>Una nueva manera de interactuar, sin fricción, solo, una cámara y..: aire??</p>
                 </a>
 
@@ -2052,6 +2193,127 @@
             } else {
                 showBanner();
             }
+        })();
+
+        /** INERTIAL SCROLL ENGINE (desktop / fine pointer only) **/
+        (() => {
+            const finePointer = window.matchMedia('(pointer: fine)').matches;
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (!finePointer || reducedMotion) return;
+
+            const WHEEL_MULTIPLIER = 1.0;
+            const DAMPING = 0.09; // menor = más "peso"/inercia, mayor = más directo
+
+            let current = window.scrollY;
+            let target = window.scrollY;
+            let rafId = null;
+            let syncing = false;
+
+            const maxScroll = () => document.documentElement.scrollHeight - window.innerHeight;
+            const isBlocked = () =>
+                document.body.classList.contains('intro-lock') ||
+                (typeof cinematicRunning !== 'undefined' && cinematicRunning) ||
+                document.body.style.overflow === 'hidden';
+
+            function syncFromNative() {
+                if (rafId) return;
+                syncing = true;
+                current = window.scrollY;
+                target = window.scrollY;
+                syncing = false;
+            }
+
+            function loop() {
+                current += (target - current) * DAMPING;
+
+                if (Math.abs(target - current) < 0.4) {
+                    current = target;
+                    window.scrollTo({ top: current, left: 0, behavior: 'instant' });
+                    rafId = null;
+                    return;
+                }
+
+                window.scrollTo({ top: current, left: 0, behavior: 'instant' });
+                rafId = requestAnimationFrame(loop);
+            }
+
+            window.addEventListener('wheel', (e) => {
+                if (isBlocked()) return;
+                e.preventDefault();
+
+                target += e.deltaY * WHEEL_MULTIPLIER;
+                target = Math.max(0, Math.min(target, maxScroll()));
+
+                if (!rafId) {
+                    current = window.scrollY;
+                    rafId = requestAnimationFrame(loop);
+                }
+            }, { passive: false });
+
+            window.addEventListener('resize', () => {
+                target = Math.max(0, Math.min(target, maxScroll()));
+            });
+
+            // Si algo más mueve el scroll (anclas, teclado, hash links), resincroniza
+            window.addEventListener('keydown', (e) => {
+                if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(e.key)) {
+                    setTimeout(syncFromNative, 50);
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                const anchor = e.target.closest('a[href^="#"]');
+                if (anchor) setTimeout(syncFromNative, 400);
+            });
+        })();
+
+        /** ANNOUNCE CAROUSEL **/
+        (() => {
+            const track = document.getElementById('announce-track');
+            const dotsWrap = document.getElementById('announce-dots');
+            if (!track || !dotsWrap) return;
+
+            const slides = Array.from(track.children);
+            const dots = Array.from(dotsWrap.children);
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let index = 0;
+            let autoplayTimer = null;
+            const AUTOPLAY_MS = 6000;
+
+            function goTo(i) {
+                index = (i + slides.length) % slides.length;
+                track.style.transform = `translate3d(-${index * 100}%, 0, 0)`;
+                dots.forEach((dot, di) => dot.classList.toggle('active', di === index));
+            }
+
+            function startAutoplay() {
+                if (reducedMotion) return;
+                stopAutoplay();
+                autoplayTimer = window.setInterval(() => goTo(index + 1), AUTOPLAY_MS);
+            }
+
+            function stopAutoplay() {
+                if (autoplayTimer) {
+                    window.clearInterval(autoplayTimer);
+                    autoplayTimer = null;
+                }
+            }
+
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    goTo(i);
+                    startAutoplay();
+                });
+            });
+
+            const carousel = track.closest('.announce-carousel');
+            if (carousel) {
+                carousel.addEventListener('mouseenter', stopAutoplay);
+                carousel.addEventListener('mouseleave', startAutoplay);
+            }
+
+            goTo(0);
+            startAutoplay();
         })();
     </script>
 </body>
