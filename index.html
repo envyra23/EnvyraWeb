@@ -548,6 +548,198 @@
             transform: translate3d(0, -1px, 0) scale(1.03);
         }
 
+        /* GOLD LEVEL BANNER — inspirado en la grilla de cosmos.so, tonos dorados sobre la estética existente */
+        .gold-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            align-items: center;
+            gap: clamp(2.5rem, 6vw, 5rem);
+            max-width: 1080px;
+            width: 100%;
+            text-align: left;
+            opacity: 0;
+            filter: blur(5px);
+            transform: translate3d(0, 20px, 0) scale(0.985);
+            transition: opacity 700ms var(--ease-elite), transform 760ms var(--ease-elite), filter 700ms var(--ease-elite);
+            will-change: transform, opacity, filter;
+        }
+
+        .gold-grid.active {
+            opacity: 1;
+            filter: blur(0);
+            transform: translate3d(0, 0, 0) scale(1);
+        }
+
+        .gold-copy { display: flex; flex-direction: column; align-items: flex-start; }
+
+        .gold-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 800;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #e3c179;
+            opacity: 0.9;
+            margin-bottom: 1.75rem;
+        }
+
+        .gold-tag::before {
+            content: "";
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f8e3ac, #b8860b);
+            box-shadow: 0 0 10px rgba(212, 175, 122, 0.65);
+            flex-shrink: 0;
+        }
+
+        .gold-title {
+            font-size: clamp(1.6rem, 3.6vw, 2.7rem);
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            line-height: 1.28;
+            margin-bottom: 2.25rem;
+        }
+
+        .gold-title .line-muted {
+            display: block;
+            opacity: 0.5;
+        }
+
+        .gold-title .line-gold {
+            display: block;
+            color: #d4af7a;
+        }
+
+        .gold-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 14px 34px;
+            font-size: 0.74rem;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #f3dca6;
+            border: 1px solid rgba(212, 175, 122, 0.5);
+            border-radius: 50px;
+            transition: background 360ms var(--ease-premium), color 360ms var(--ease-premium), border-color 360ms ease, transform 360ms var(--ease-premium), box-shadow 360ms ease;
+        }
+
+        .gold-cta:hover {
+            background: linear-gradient(100deg, #f7e2ab, #b8860b);
+            color: #000;
+            border-color: transparent;
+            transform: translate3d(0, -2px, 0);
+            box-shadow: 0 14px 40px rgba(184, 134, 11, 0.32);
+        }
+
+        .gold-cta .gold-arrow { transition: transform 300ms var(--ease-elite); }
+        .gold-cta:hover .gold-arrow { transform: translateX(3px); }
+
+        .gold-visual {
+            position: relative;
+            width: 100%;
+            max-width: 420px;
+            aspect-ratio: 4 / 5;
+            margin: 0 auto;
+            border: 1px solid rgba(212, 175, 122, 0.32);
+            border-radius: 3px;
+            overflow: hidden;
+            background: linear-gradient(160deg, rgba(212, 175, 122, 0.09), rgba(0, 0, 0, 0.4));
+        }
+
+        .gold-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(0.08) contrast(1.05) blur(0.35px);
+        }
+
+        /* Visor de cámara: marco vivo, leve desenfoque óptico y punto de enfoque */
+        .gold-viewfinder {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            pointer-events: none;
+            border: 1px solid rgba(244, 210, 139, 0.52);
+            box-shadow:
+                inset 0 0 0 10px rgba(212, 175, 122, 0.035),
+                inset 0 0 28px rgba(212, 175, 122, 0.14);
+            backdrop-filter: blur(0.25px);
+            -webkit-backdrop-filter: blur(0.25px);
+            animation: goldViewfinderFlicker 3.8s steps(1, end) infinite;
+        }
+
+        .gold-viewfinder::before,
+        .gold-viewfinder::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background: rgba(244, 210, 139, 0.82);
+            box-shadow: 0 0 8px rgba(244, 210, 139, 0.42);
+            transform: translate(-50%, -50%);
+        }
+
+        .gold-viewfinder::before {
+            width: 30px;
+            height: 1px;
+        }
+
+        .gold-viewfinder::after {
+            width: 1px;
+            height: 30px;
+        }
+
+        @keyframes goldViewfinderFlicker {
+            0%, 14%, 18%, 42%, 46%, 72%, 100% {
+                opacity: 0.78;
+                border-color: rgba(244, 210, 139, 0.52);
+            }
+            15%, 17%, 43%, 45%, 73% {
+                opacity: 0.35;
+                border-color: rgba(244, 210, 139, 0.2);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .gold-viewfinder { animation: none; }
+        }
+
+        /* marcas de esquina, guiño a la grilla de cosmos.so */
+        .gold-visual::before,
+        .gold-visual::after {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .gold-visual::before {
+            top: 10px; left: 10px;
+            border-top: 1px solid rgba(212, 175, 122, 0.7);
+            border-left: 1px solid rgba(212, 175, 122, 0.7);
+        }
+
+        .gold-visual::after {
+            bottom: 10px; right: 10px;
+            border-bottom: 1px solid rgba(212, 175, 122, 0.7);
+            border-right: 1px solid rgba(212, 175, 122, 0.7);
+        }
+
+        @media (max-width: 860px) {
+            .gold-grid { grid-template-columns: 1fr; text-align: center; }
+            .gold-copy { align-items: center; }
+            .gold-visual { order: -1; max-width: 300px; }
+        }
+
         /* CINEMÁTICA Y FORMULARIO (Mantenidos igual) */
         #cinematic-overlay {
             position: fixed;
@@ -879,7 +1071,7 @@
     <div id="cursor"></div>
     <div class="noise"></div>
     <div class="reach-announcement" id="reach-announcement" aria-label="Presentamos Envyra Reach">
-        <a href="https://envyra23.github.io/Motion-Layers-Engine-/" class="reach-announcement-inner" target="_blank" rel="noopener">
+        <a href="https://envyra23.github.io/MotionLayersEngine-/" class="reach-announcement-inner" target="_blank" rel="noopener">
             <span class="reach-dot"></span>
             <span class="reach-pill-label">Nuevo</span>
             <span class="reach-text-group">
@@ -941,7 +1133,7 @@
                         <span class="announce-badge">Presentamos</span>
                         <h2 class="announce-title">MotionLayers <span class="accent">Engine.</span></h2>
                         <p class="announce-desc">El movimiento es la capa invisible de toda gran experiencia. MotionLayers Engine™ convierte el espacio en una interfaz donde cada gesto tiene un propósito.</p>
-                        <a href="https://envyra23.github.io/Motion-Layers-Engine-/" target="_blank" rel="noopener" class="announce-cta">Probar ahora</a>
+                        <a href="https://envyra23.github.io/MotionLayersEngine-/" target="_blank" rel="noopener" class="announce-cta">Probar ahora</a>
                     </div>
                     <div class="announce-slide">
                         <span class="announce-badge">Presentamos</span>
@@ -953,6 +1145,27 @@
                 <div class="announce-dots" id="announce-dots">
                     <button class="announce-dot active" data-slide="0" aria-label="Ver MotionLayers Engine"></button>
                     <button class="announce-dot" data-slide="1" aria-label="Ver Envyra Reach"></button>
+                </div>
+            </div>
+        </section>
+
+        <section data-theme="dark">
+            <div class="gold-grid" data-reveal>
+                <div class="gold-copy">
+                    <span class="gold-tag">The Gold Level</span>
+                    <h2 class="gold-title">
+                        <span class="line-muted">El as no es el objetivo,</span>
+                        <span class="line-gold">es la posición desde la que jugamos.</span>
+                    </h2>
+                    <!-- TODO: reemplazar "#" por la URL real de The Gold Level -->
+                    <a href="https://envyra23.github.io/The-Gold-Level/" class="gold-cta" target="_blank" rel="noopener">
+                        Conocer The Gold Level <span class="gold-arrow">→</span>
+                    </a>
+                </div>
+                <div class="gold-visual">
+                    <!-- TODO: reemplazar el src por la imagen real de The Gold Level -->
+                    <img src="card.jpg" alt="The Gold Level" loading="lazy" onerror="this.style.display='none'">
+                    <span class="gold-viewfinder" aria-hidden="true"></span>
                 </div>
             </div>
         </section>
@@ -969,7 +1182,7 @@
             <h2 class="reveal-text" data-reveal style="margin-bottom: 2rem;">Productos Core.</h2>
             <div class="product-grid">
                 
-                <a href="https://envyra23.github.io/Motion-Layers-Engine-/" class="product-card" data-reveal style="text-decoration: none; color: inherit; display: block;">
+                <a href="https://envyra23.github.io/MotionLayersEngine-//" class="product-card" data-reveal style="text-decoration: none; color: inherit; display: block;">
                     <span class="tag" style="margin-bottom: 1rem; opacity: 0.6;">Beta Version</span>
                     <h3>MotionLayers Engine</h3>
                     <p>Una nueva manera de interactuar, sin fricción, solo, una cámara y..: aire??</p>
