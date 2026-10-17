@@ -1,18 +1,93 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENVYRA | Elevando ideas al mundo digital.</title>
+    <title>Envyra | Software, diseño digital y productos con IA</title>
+    <meta name="description" content="Envyra diseña y construye software, experiencias web interactivas y productos con IA. Conoce NorthUnit, el CRM con inteligencia artificial.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="author" content="Envyra">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://envyraweb.com/">
+    <link rel="alternate" hreflang="es" href="https://envyraweb.com/">
+    <link rel="alternate" hreflang="x-default" href="https://envyraweb.com/">
     <link rel="icon" type="image/png" href="logotype.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@800&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" href="logotype.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Envyra">
+    <meta property="og:locale" content="es_LA">
+    <meta property="og:title" content="Envyra | Software, diseño digital y productos con IA">
+    <meta property="og:description" content="Envyra diseña y construye software, experiencias web interactivas y productos con IA. Conoce NorthUnit, el CRM con inteligencia artificial.">
+    <meta property="og:url" content="https://envyraweb.com/">
+    <meta property="og:image" content="https://envyraweb.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Envyra: elevando ideas al mundo digital">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Envyra | Software, diseño digital y productos con IA">
+    <meta name="twitter:description" content="Envyra diseña y construye software, experiencias web interactivas y productos con IA. Conoce NorthUnit, el CRM con inteligencia artificial.">
+    <meta name="twitter:image" content="https://envyraweb.com/og-image.png">
+
+    <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://envyraweb.com/#organization",
+    "name": "Envyra",
+    "alternateName": "ENVYRA",
+    "url": "https://envyraweb.com/",
+    "logo": "https://envyraweb.com/logotype.png",
+    "description": "Envyra diseña y construye software, experiencias web interactivas y productos con inteligencia artificial.",
+    "sameAs": [
+      "https://github.com/envyra23"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://envyraweb.com/#website",
+    "url": "https://envyraweb.com/",
+    "name": "Envyra",
+    "inLanguage": "es",
+    "publisher": {
+      "@id": "https://envyraweb.com/#organization"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": "https://envyraweb.com/#northunit",
+    "name": "NorthUnit",
+    "url": "https://envyraweb.com/#northunit",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "CRM",
+    "operatingSystem": "Web",
+    "description": "CRM con inteligencia artificial que prioriza tareas, automatiza el seguimiento y mantiene el pipeline de ventas en movimiento.",
+    "publisher": {
+      "@id": "https://envyraweb.com/#organization"
+    }
+  }
+]
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <noscript><style>
+        #brand-intro { display: none !important; }
+        #x3d { height: auto !important; min-height: 100vh; }
+        .nu-r, .hero-title, .reveal-text, .product-card, .testimonial-box, .gold-grid, .cta-button { opacity: 1 !important; filter: none !important; transform: none !important; }
+        body.intro-lock { overflow: auto !important; }
+    </style></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@800&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
     
     <style>
         /* ENVYRA ENGINE v8.6 - COSMOS FLOW + FORM - ULTRA RESPONSIVE EDITION */
         :root {
             --dark: #000000;
             --light: #ffffff;
-            --accent: #444444;
+            --accent: #000000;
             --ease: cubic-bezier(0.16, 1, 0.3, 1);
             --ease-elite: cubic-bezier(0.22, 1, 0.36, 1);
             --ease-premium: cubic-bezier(0.2, 0.9, 0.15, 1);
@@ -76,6 +151,7 @@
         }
 
         .noise {
+            display: none;
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
@@ -113,12 +189,9 @@
             align-items: center;
             gap: clamp(0.75rem, 2vw, 1.25rem);
             padding: clamp(0.6rem, 1.5vw, 0.85rem) clamp(1rem, 2.5vw, 1.6rem);
-            border: 1px solid rgba(255, 255, 255, 0.13);
+            border: 1px solid #fff;
             border-radius: 999px;
-            background: rgba(8, 8, 8, 0.72);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.06);
+            background: #000;
             text-decoration: none;
             color: inherit;
             cursor: pointer;
@@ -127,10 +200,9 @@
         }
 
         .reach-announcement-inner:hover {
-            background: rgba(20, 20, 20, 0.88);
-            border-color: rgba(255, 255, 255, 0.28);
+            background: #000;
+            border-color: #fff;
             transform: translateY(-2px) scale(1.015);
-            box-shadow: 0 14px 50px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255,255,255,0.1);
         }
 
         .reach-pill-label {
@@ -139,14 +211,11 @@
             font-weight: 800;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            background: linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.7) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #fff;
             padding: 0.15em 0.55em;
-            border: 1px solid rgba(255,255,255,0.18);
+            border: 1px solid #fff;
             border-radius: 999px;
-            opacity: 0.9;
+            opacity: 1;
         }
 
         .reach-text-group {
@@ -158,7 +227,7 @@
         .reach-presenting {
             font-size: clamp(0.6rem, 1.2vw, 0.7rem);
             font-weight: 400;
-            opacity: 0.45;
+            opacity: 1;
             letter-spacing: 0.06em;
             text-transform: lowercase;
         }
@@ -173,12 +242,12 @@
 
         .reach-arrow {
             font-size: clamp(0.65rem, 1.2vw, 0.75rem);
-            opacity: 0.4;
+            opacity: 1;
             transition: opacity 240ms ease, transform 240ms var(--ease-elite);
         }
 
         .reach-announcement-inner:hover .reach-arrow {
-            opacity: 0.85;
+            opacity: 1;
             transform: translateX(3px);
         }
 
@@ -188,14 +257,14 @@
             height: 6px;
             border-radius: 50%;
             background: #fff;
-            opacity: 0.85;
+            opacity: 1;
             animation: reachPulse 2.2s ease-in-out infinite;
             flex-shrink: 0;
         }
 
         @keyframes reachPulse {
-            0%, 100% { opacity: 0.85; transform: scale(1); }
-            50% { opacity: 0.35; transform: scale(0.65); }
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 1; transform: scale(0.65); }
         }
 
         @media (max-width: 480px) {
@@ -297,7 +366,7 @@
             text-transform: uppercase;
             letter-spacing: 4px;
             margin-bottom: 2rem;
-            opacity: 0.4;
+            opacity: 1;
             font-weight: 600;
         }
 
@@ -348,7 +417,7 @@
         .product-card {
             text-align: left;
             padding: 2rem;
-            border: 1px solid rgba(128, 128, 128, 0.1);
+            border: 1px solid currentColor;
             transition: transform 560ms var(--ease-premium), opacity 520ms var(--ease-premium), border-color 360ms ease, background-color 360ms ease, filter 560ms var(--ease-premium);
             opacity: 0;
             filter: blur(4px);
@@ -364,7 +433,7 @@
 
         .product-card:hover {
             border-color: currentColor;
-            background: rgba(128, 128, 128, 0.05);
+            background: transparent;
         }
 
         .product-card h3 {
@@ -376,7 +445,7 @@
 
         .product-card p {
             font-size: 0.9rem;
-            opacity: 0.6;
+            opacity: 1;
             line-height: 1.6;
         }
 
@@ -407,120 +476,8 @@
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            opacity: 0.5;
-        }
-
-        /* ANNOUNCEMENT / NEWS CAROUSEL SECTION */
-        .announce-carousel {
-            max-width: 720px;
-            width: 100%;
-            overflow: hidden;
-            opacity: 0;
-            filter: blur(5px);
-            transform: translate3d(0, 20px, 0) scale(0.985);
-            transition: opacity 700ms var(--ease-elite), transform 760ms var(--ease-elite), filter 700ms var(--ease-elite);
-            will-change: transform, opacity, filter;
-        }
-
-        .announce-carousel.active {
             opacity: 1;
-            filter: blur(0);
-            transform: translate3d(0, 0, 0) scale(1);
         }
-
-        .announce-track {
-            display: flex;
-            width: 100%;
-            transition: transform 720ms var(--ease-elite);
-        }
-
-        .announce-slide {
-            flex: 0 0 100%;
-            min-width: 100%;
-        }
-
-        .announce-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.6rem;
-            margin-top: clamp(2rem, 5vw, 2.75rem);
-        }
-
-        .announce-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: currentColor;
-            opacity: 0.25;
-            border: none;
-            padding: 0;
-            cursor: none !important;
-            transition: opacity 320ms var(--ease-premium), transform 320ms var(--ease-premium);
-        }
-
-        .announce-dot.active {
-            opacity: 1;
-            transform: scale(1.35);
-        }
-
-        .announce-badge {
-            display: inline-block;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: 600;
-            padding: 0.45rem 1.1rem;
-            border: 1px solid rgba(128, 128, 128, 0.3);
-            border-radius: 50px;
-            opacity: 0.65;
-            margin-bottom: 1.75rem;
-        }
-
-        .announce-title {
-            font-size: clamp(2.1rem, 7vw, 4.5rem);
-            font-weight: 500;
-            letter-spacing: -0.04em;
-            line-height: 1.08;
-            margin-bottom: 1.5rem;
-        }
-
-        .announce-title .accent {
-            background: linear-gradient(90deg, #ffffff, #8c8c8c);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        [data-theme="light"] .announce-title .accent {
-            background: linear-gradient(90deg, #000000, #6b6b6b);
-            -webkit-background-clip: text;
-            background-clip: text;
-        }
-
-        .announce-desc {
-            font-size: clamp(0.95rem, 2vw, 1.15rem);
-            line-height: 1.7;
-            font-weight: 400;
-            opacity: 0.6;
-        }
-
-        .announce-cta {
-            display: inline-block;
-            margin-top: clamp(1.75rem, 4vw, 2.5rem);
-            padding: 14px 32px;
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: inherit;
-            border: 1px solid currentColor;
-            border-radius: 50px;
-            transition: background-color 360ms var(--ease-premium), color 360ms var(--ease-premium);
-        }
-
-        [data-theme="dark"] .announce-cta:hover { background: #ffffff; color: #000000; }
-        [data-theme="light"] .announce-cta:hover { background: #000000; color: #ffffff; }
 
         .cta-button {
             margin-top: clamp(2rem, 5vw, 4rem);
@@ -530,7 +487,7 @@
             letter-spacing: 0.05em;
             text-transform: uppercase;
             border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid currentColor;
             background: transparent;
             color: inherit;
             text-decoration: none;
@@ -582,7 +539,7 @@
             letter-spacing: 0.22em;
             text-transform: uppercase;
             color: #e3c179;
-            opacity: 0.9;
+            opacity: 1;
             margin-bottom: 1.75rem;
         }
 
@@ -591,7 +548,6 @@
             width: 6px; height: 6px;
             border-radius: 50%;
             background: linear-gradient(135deg, #f8e3ac, #b8860b);
-            box-shadow: 0 0 10px rgba(212, 175, 122, 0.65);
             flex-shrink: 0;
         }
 
@@ -605,7 +561,7 @@
 
         .gold-title .line-muted {
             display: block;
-            opacity: 0.5;
+            opacity: 1;
         }
 
         .gold-title .line-gold {
@@ -634,7 +590,6 @@
             color: #000;
             border-color: transparent;
             transform: translate3d(0, -2px, 0);
-            box-shadow: 0 14px 40px rgba(184, 134, 11, 0.32);
         }
 
         .gold-cta .gold-arrow { transition: transform 300ms var(--ease-elite); }
@@ -649,7 +604,7 @@
             border: 1px solid rgba(212, 175, 122, 0.32);
             border-radius: 3px;
             overflow: hidden;
-            background: linear-gradient(160deg, rgba(212, 175, 122, 0.09), rgba(0, 0, 0, 0.4));
+            background: #000;
         }
 
         .gold-visual img {
@@ -657,7 +612,6 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            filter: grayscale(0.08) contrast(1.05) blur(0.35px);
         }
 
         /* Visor de cámara: marco vivo, leve desenfoque óptico y punto de enfoque */
@@ -667,11 +621,6 @@
             z-index: 3;
             pointer-events: none;
             border: 1px solid rgba(244, 210, 139, 0.52);
-            box-shadow:
-                inset 0 0 0 10px rgba(212, 175, 122, 0.035),
-                inset 0 0 28px rgba(212, 175, 122, 0.14);
-            backdrop-filter: blur(0.25px);
-            -webkit-backdrop-filter: blur(0.25px);
             animation: goldViewfinderFlicker 3.8s steps(1, end) infinite;
         }
 
@@ -682,7 +631,6 @@
             top: 50%;
             left: 50%;
             background: rgba(244, 210, 139, 0.82);
-            box-shadow: 0 0 8px rgba(244, 210, 139, 0.42);
             transform: translate(-50%, -50%);
         }
 
@@ -745,9 +693,7 @@
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background:
-                radial-gradient(120% 120% at 50% 50%, rgba(26, 26, 26, 0.8) 0%, rgba(0, 0, 0, 1) 60%),
-                #000;
+            background: #000;
             z-index: 9999;
             display: flex;
             justify-content: center;
@@ -767,7 +713,7 @@
             inset: 0;
             pointer-events: auto;
             z-index: 1;
-            background: radial-gradient(circle at center, rgba(255,255,255,0.07) 0%, rgba(0,0,0,0.94) 62%);
+            background: transparent;
             opacity: 1;
             transform: scale(1);
             filter: blur(0);
@@ -775,6 +721,7 @@
         }
 
         #particle-stage::before {
+            display: none;
             content: "";
             position: absolute;
             inset: -22%;
@@ -805,6 +752,7 @@
         }
 
         #cinematic-overlay.woosh #particle-stage::after {
+            display: none;
             content: "";
             position: absolute;
             inset: 0;
@@ -817,7 +765,6 @@
             width: 100% !important;
             height: 100% !important;
             display: block;
-            filter: contrast(1.08) saturate(1.12);
         }
 
         @keyframes cinematicWoosh {
@@ -860,7 +807,6 @@
             transition: all 1.3s var(--ease);
             text-align: center;
             max-width: min(85vw, 740px);
-            text-shadow: 0 10px 34px rgba(0, 0, 0, 0.5);
         }
 
         .subtitle.show {
@@ -902,11 +848,10 @@
         #contact-section.active .form-group:nth-child(3) { transition-delay: 0.4s; }
 
         .form-group.cue-active { transform: translateY(-2px) scale(1.006); }
-        .form-group.cue-active label { color: #bcbcbc; }
+        .form-group.cue-active label { color: #fff; }
         .form-group.cue-active input,
         .form-group.cue-active textarea {
             border-bottom-color: rgba(255,255,255,0.92);
-            box-shadow: 0 14px 30px rgba(255,255,255,0.05);
         }
 
         label {
@@ -915,7 +860,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 0.8rem;
-            color: #666;
+            color: #fff;
             transition: color 360ms var(--ease);
         }
 
@@ -923,7 +868,7 @@
             width: 100%;
             background: transparent;
             border: none;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid #fff;
             padding: 0.8rem 0;
             color: #fff;
             font-family: var(--font-main);
@@ -934,6 +879,7 @@
         }
 
         input:focus, textarea:focus { border-bottom-color: #fff; }
+        input::placeholder, textarea::placeholder { color: #fff; opacity: 1; }
 
         .submit-btn {
             background: none;
@@ -955,7 +901,7 @@
 
         .blur-scene { filter: blur(40px); opacity: 0; pointer-events: none; transition: all 1.5s var(--ease); }
 
-        #form-status { margin-top: 1.5rem; font-size: 0.85rem; color: #888; }
+        #form-status { margin-top: 1.5rem; font-size: 0.85rem; color: #fff; }
 
         @media (max-width: 1024px) {
             :root {
@@ -1011,14 +957,10 @@
 
             .product-card p {
                 font-size: 0.98rem;
-                opacity: 0.7;
+                opacity: 1;
             }
 
             .testimonial-text { font-size: clamp(1.2rem, 6vw, 1.9rem); }
-
-            .announce-title { font-size: clamp(2rem, 9vw, 3.2rem); }
-
-            .announce-desc { font-size: 0.95rem; }
 
             .cta-button {
                 width: min(100%, 360px);
@@ -1047,7 +989,6 @@
             .reveal-text,
             .product-card,
             .testimonial-box,
-            .announce-carousel,
             .cta-button {
                 transition: none !important;
                 transform: none !important;
@@ -1063,6 +1004,295 @@
             }
         }
 
+
+        /* ===== X3D: EL TITULAR SE TRANSFORMA EN UN PANEL 3D LIGADO AL SCROLL ===== */
+        #x3d{position:relative;height:1300vh;width:100%}
+        .x3d-pin{position:absolute;top:0;left:0;width:100%;height:100vh;height:100svh;overflow:hidden;perspective:1300px;perspective-origin:50% 50%;z-index:5;pointer-events:none}
+        .x3d-pin.is-fixed{position:fixed;top:0}
+        .x3d-pin.is-end{top:auto;bottom:0}
+        .x3d-panel{position:absolute;inset:0;will-change:transform;backface-visibility:hidden}
+        .x3d-bg{position:absolute;inset:0;background:#fff;opacity:0}
+        .x3d-surf{position:absolute;inset:0;opacity:0;background:#000;overflow:hidden}
+        .x3d-sheen{display:none;position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.07) 50%,transparent 65%);background-size:250% 100%}
+        .x3d-brk{background:
+          linear-gradient(#fff,#fff) top left/12px 1px,linear-gradient(#fff,#fff) top left/1px 12px,
+          linear-gradient(#fff,#fff) top right/12px 1px,linear-gradient(#fff,#fff) top right/1px 12px,
+          linear-gradient(#fff,#fff) bottom left/12px 1px,linear-gradient(#fff,#fff) bottom left/1px 12px,
+          linear-gradient(#fff,#fff) bottom right/12px 1px,linear-gradient(#fff,#fff) bottom right/1px 12px;background-repeat:no-repeat}
+        .x3d-corners{position:absolute;inset:14px;pointer-events:none}
+        .x3d-t{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#fff;font-weight:600;font-size:clamp(36px,10vw,170px);line-height:.92;letter-spacing:-.045em;text-transform:uppercase;opacity:0;padding:0 4vw}
+        .x3d-t.head{opacity:1;font-size:inherit;font-weight:inherit;letter-spacing:normal;text-transform:none;line-height:normal}
+        .x3d-t em,.x3d-amp{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:0;text-transform:none}
+        .x3d-t em{font-size:1.05em}
+        .x3d-t .sm{display:block;font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-weight:400;font-size:clamp(.6rem,1.1vw,.8rem);letter-spacing:.06em;margin-bottom:1.4rem}
+        .x3d-fl{position:absolute;left:var(--l);top:var(--t);opacity:0;will-change:transform;pointer-events:none;color:#fff;font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase}
+        .x3d-ring{width:clamp(96px,11vw,160px);aspect-ratio:1;background:#000;border-radius:50%;border:1px solid #fff;padding:6%}
+        .x3d-ring svg{width:100%;display:block;overflow:visible}
+        .x3d-ring text{font:400 8px "JetBrains Mono",monospace;fill:#fff}
+        .x3d-card{padding:14px 16px;line-height:1.5;background-color:#000;border:1px solid #fff;white-space:nowrap}
+        .x3d-card b{font-family:Inter,sans-serif;font-weight:600;font-size:1.15em;text-transform:none;letter-spacing:-.02em}
+        .x3d-amp{font-size:clamp(90px,24vh,260px);line-height:.7}
+        .x3d-stamp{width:clamp(78px,9vw,130px);aspect-ratio:1;border:1px dashed #fff;border-radius:50%;display:grid;place-items:center;text-align:center;padding:12px;background:#000}
+        .x3d-chip{border:1px solid #fff;border-radius:99px;padding:8px 14px;background:#000;white-space:nowrap}
+        .x3d-rail{position:absolute;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 4.5vh);transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;color:#fff;mix-blend-mode:difference;font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:.62rem;letter-spacing:.05em;white-space:nowrap}
+        .x3d-rail div{display:flex;gap:clamp(8px,2vw,28px)}
+        .x3d-rail span{padding-bottom:3px;border-bottom:1px solid transparent;transition:border-color .3s}
+        .x3d-rail span.on{border-bottom-color:#fff}
+        .x3d-rail i{display:block;height:1px;width:100%;background:transparent}
+        .x3d-rail i b{display:block;height:100%;width:0;background:#fff}
+        .x3d-amp{color:#000;-webkit-text-stroke:3px #fff;paint-order:stroke fill}
+        @media (max-width:720px){.x3d-card{font-size:.62rem;padding:10px 12px}.x3d-rail{font-size:.5rem}.x3d-rail div{gap:7px}}
+
+        /* ===== X3D MANIFIESTO: solo texto, centrado ===== */
+        .x3d-mfp{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:0 var(--side-padding);text-align:center;color:#fff;transform-style:preserve-3d;will-change:transform}
+        .x3d-mfb{max-width:min(700px,84vw);transform-style:preserve-3d}
+        .x3d-mft{font-weight:400;font-size:clamp(1.15rem,2.1vw,2rem);line-height:1.2;letter-spacing:-.03em;transform-style:preserve-3d}
+        .x3d-mfp .w{display:inline-block;opacity:0;will-change:opacity,transform,filter}
+
+        /* ===== NORTHUNIT: producto en Novedades (estructura tipo vercel / apple) ===== */
+        main > section.nu-sec {
+            scroll-snap-align: none;
+            min-height: 0;
+            justify-content: flex-start;
+            padding-top: clamp(4rem, 9vh, 7rem);
+            padding-bottom: clamp(4rem, 9vh, 7rem);
+        }
+        main > section.nu-hero { min-height: 100vh; min-height: 100svh; justify-content: center; padding-top: clamp(6rem, 14vh, 9rem); }
+
+        .nu-r {
+            opacity: 0;
+            filter: blur(5px);
+            transform: translate3d(0, 22px, 0);
+            transition: opacity 700ms var(--ease-elite), transform 760ms var(--ease-elite), filter 700ms var(--ease-elite), outline-offset 300ms ease;
+        }
+        .nu-r.active { opacity: 1; filter: blur(0); transform: translate3d(0, 0, 0); }
+
+        .nu-badge {
+            display: inline-flex; align-items: center; gap: 0.7rem;
+            padding: 0.4rem 1.1rem 0.4rem 0.45rem;
+            border: 1px solid #fff; border-radius: 999px;
+            font-size: 0.74rem; letter-spacing: 0.04em;
+            margin-bottom: 2rem;
+        }
+        .nu-badge b {
+            font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 0.56rem;
+            letter-spacing: 0.18em; text-transform: uppercase;
+            background: #fff; color: #000; padding: 0.32em 0.8em; border-radius: 999px;
+        }
+        .nu-title {
+            font-size: clamp(2.5rem, 7.4vw, 5.8rem);
+            font-weight: 500; letter-spacing: -0.05em; line-height: 1.02;
+            max-width: 15ch; text-wrap: balance;
+        }
+        .nu-title em, .nu-h2 em {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-style: italic; font-weight: 400; letter-spacing: -0.02em; font-size: 1.06em;
+        }
+        .nu-sub {
+            max-width: 640px; margin-top: 1.75rem;
+            font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.6; font-weight: 400;
+        }
+        .nu-cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.9rem; margin-top: 2.25rem; }
+        .nu-btn {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            padding: 15px 30px; border-radius: 50px;
+            border: 1px solid #fff; background: transparent; color: #fff;
+            font-family: var(--font-main); font-size: 0.78rem; font-weight: 600;
+            letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none;
+            -webkit-appearance: none; appearance: none;
+            transition: background-color 300ms ease, color 300ms ease, transform 300ms var(--ease-elite);
+        }
+        .nu-btn.solid { background: #fff; color: #000; }
+        .nu-btn:hover { background: #fff; color: #000; transform: translate3d(0, -2px, 0); }
+        .nu-btn.solid:hover { background: #000; color: #fff; }
+        .nu-note {
+            margin-top: 1.25rem;
+            font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+            font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase;
+        }
+        /* imagenes de producto (el usuario coloca sus mockups) */
+        .nu-shot {
+            position: relative; width: 100%; max-width: 1120px;
+            margin-top: clamp(3rem, 7vw, 5rem);
+            aspect-ratio: 16 / 10;
+            border: 1px solid #fff; border-radius: 18px; overflow: hidden; background: #000;
+        }
+        .nu-shot img, .nu-fig img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+        .nu-ph {
+            position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 0.7rem;
+            padding: 1rem; text-align: center;
+            font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+            font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase;
+        }
+        .nu-ph b { font-weight: 400; border: 1px dashed #fff; border-radius: 99px; padding: 0.5em 1.1em; }
+        .nu-shot.has-img .nu-ph, .nu-fig.has-img .nu-ph { display: none; }
+
+        /* encabezados de seccion */
+        .nu-head { max-width: 760px; display: flex; flex-direction: column; align-items: center; }
+        .nu-head .tag { margin-bottom: 1.5rem; }
+        .nu-h2 { font-size: clamp(2rem, 5.4vw, 3.8rem); font-weight: 500; letter-spacing: -0.045em; line-height: 1.06; text-wrap: balance; }
+
+        /* bento */
+        .nu-bento { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1rem; width: 100%; max-width: 1120px; margin-top: clamp(2.5rem, 6vw, 4rem); text-align: left; }
+        .nu-card {
+            grid-column: span 2; display: flex; flex-direction: column; gap: 0.9rem; min-height: 320px;
+            padding: clamp(1.4rem, 2.4vw, 2rem); border: 1px solid #fff; border-radius: 22px; background: #000;
+            outline: 1px solid transparent; outline-offset: 0;
+        }
+        .nu-card.w4 { grid-column: span 4; }
+        .nu-card.nu-r.active:hover { transform: translate3d(0, -4px, 0); outline-color: #fff; outline-offset: 5px; }
+        .nu-idx { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 0.66rem; letter-spacing: 0.08em; }
+        .nu-card h3 { font-size: clamp(1.35rem, 2.4vw, 1.9rem); font-weight: 500; letter-spacing: -0.035em; line-height: 1.1; }
+        .nu-card p { font-size: 0.95rem; line-height: 1.6; max-width: 46ch; }
+        .nu-card p { margin-bottom: 0.5rem; }
+        .nu-fig {
+            position: relative; margin-top: auto; aspect-ratio: 4 / 3;
+            border: 1px solid #fff; border-radius: 14px; overflow: hidden; background: #000;
+        }
+        .nu-card.w4 .nu-fig { aspect-ratio: 16 / 9; }
+
+        /* cierre comercial */
+        .nu-panel { width: 100%; max-width: 1120px; border: 1px solid #fff; border-radius: 28px; padding: clamp(2rem, 6vw, 5rem) clamp(1.25rem, 4vw, 3rem); display: flex; flex-direction: column; align-items: center; }
+        .nu-panel .tag { margin-bottom: 1.5rem; }
+        .nu-aud { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; margin-top: clamp(2rem, 5vw, 3.25rem); border-top: 1px solid #fff; text-align: left; }
+        .nu-aud > div { padding: 1.5rem 1.5rem 0.25rem 0; }
+        .nu-aud > div + div { padding-left: 1.5rem; border-left: 1px solid #fff; }
+        .nu-aud strong { display: block; font-size: 1.05rem; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+        .nu-aud span { display: block; font-size: 0.88rem; line-height: 1.55; }
+        .nu-panel .nu-cta-row { margin-top: clamp(2rem, 5vw, 3rem); }
+
+        /* cierre del formulario abierto desde un producto */
+        .contact-close {
+            display: none; position: absolute; top: clamp(1rem, 3vw, 2rem); right: var(--side-padding); z-index: 2;
+            background: transparent; border: 1px solid #fff; color: #fff; border-radius: 50px; padding: 0.6rem 1.2rem;
+            font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase;
+            transition: background-color 300ms ease, color 300ms ease;
+        }
+        .contact-close:hover { background: #fff; color: #000; }
+        #contact-section.direct .contact-close { display: block; }
+        #contact-section.direct { transition-duration: 0.5s; }
+
+        @media (max-width: 900px) {
+            .nu-card { grid-column: span 3; }
+            .nu-card.w4 { grid-column: span 6; }
+        }
+        @media (max-width: 760px) {
+            .nu-bento { grid-template-columns: 1fr; }
+            .nu-card, .nu-card.w4 { grid-column: auto; min-height: 0; }
+            .nu-aud { grid-template-columns: 1fr; }
+            .nu-aud > div, .nu-aud > div + div { padding: 1.25rem 0 0.25rem 0; border-left: 0; }
+            .nu-aud > div + div { border-top: 1px solid #fff; margin-top: 1rem; }
+            .nu-btn { width: min(100%, 360px); justify-content: center; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .nu-r { transition: none !important; transform: none !important; filter: none !important; }
+        }
+
+        /* ===== NAVBAR GLOBAL (estructura tipo vercel / openai) ===== */
+        :root { --nav-bg: #000000; --nav-fg: #ffffff; --nav-h: 64px; }
+        #navbar {
+            position: fixed; top: 0; left: 0; width: 100%; height: var(--nav-h);
+            padding: 0 var(--side-padding);
+            display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; justify-content: normal; gap: 1rem;
+            z-index: 1000;
+            color: #fff; mix-blend-mode: difference;
+            background-color: transparent; border-bottom: 1px solid transparent;
+            --cta-bg: #fff; --cta-fg: #000;
+            transition: background-color 760ms var(--ease-elite), border-color 400ms ease;
+        }
+        #navbar.is-solid {
+            mix-blend-mode: normal; color: inherit;
+            background-color: var(--nav-bg); border-bottom-color: var(--nav-fg);
+            --cta-bg: var(--nav-fg); --cta-fg: var(--nav-bg);
+        }
+        #navbar .logo { color: inherit; text-decoration: none; justify-self: start; }
+        .nav-links { list-style: none; display: flex; align-items: center; gap: clamp(1.2rem, 2.6vw, 2.4rem); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.02em; }
+        .nav-links a { position: relative; display: inline-flex; align-items: center; padding: 0.45rem 0; color: inherit; text-decoration: none; }
+        .nav-links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 360ms var(--ease-premium); }
+        .nav-links a:hover::after, .nav-links a.is-active::after { transform: scaleX(1); }
+        .nav-new { margin-left: 0.5rem; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; border: 1px solid currentColor; border-radius: 99px; padding: 0.22em 0.65em; }
+        .nav-cta {
+            justify-self: end; padding: 0.55rem 1.3rem; border-radius: 50px;
+            border: 1px solid var(--cta-bg); background: var(--cta-bg); color: var(--cta-fg);
+            font-family: var(--font-main); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+            -webkit-appearance: none; appearance: none;
+            transition: background-color 300ms ease, color 300ms ease;
+        }
+        .nav-cta:hover { background: transparent; color: var(--cta-bg); }
+        .nav-toggle {
+            display: none; justify-self: end; background: transparent; color: inherit;
+            border: 1px solid currentColor; border-radius: 50px; padding: 0.5rem 1.1rem;
+            font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase;
+            -webkit-appearance: none; appearance: none;
+        }
+        .nav-panel { display: none; }
+
+        @media (max-width: 860px) {
+            #navbar { grid-template-columns: 1fr auto; }
+            .nav-links, #navbar > .nav-cta { display: none; }
+            .nav-toggle { display: block; }
+            #navbar.menu-open { mix-blend-mode: normal; color: #fff; background-color: #000; border-bottom-color: #fff; --cta-bg: #fff; --cta-fg: #000; }
+            .nav-panel {
+                display: flex; flex-direction: column; justify-content: space-between; gap: 2rem;
+                position: fixed; inset: 0; z-index: -1; overflow-y: auto;
+                padding: calc(var(--nav-h) + 1.5rem) var(--side-padding) 1.75rem;
+                background: #000; color: #fff;
+                opacity: 0; visibility: hidden;
+                transition: opacity 400ms var(--ease-elite), visibility 400ms var(--ease-elite);
+            }
+            #navbar.menu-open .nav-panel { opacity: 1; visibility: visible; }
+            .nav-panel ul { list-style: none; }
+            .nav-panel li a { display: flex; justify-content: space-between; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid #fff; color: #fff; text-decoration: none; }
+            .nav-panel li a b { font-size: clamp(1.9rem, 9vw, 3rem); font-weight: 500; letter-spacing: -0.04em; }
+            .nav-panel li a span { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 0.66rem; letter-spacing: 0.08em; }
+            #navbar .nav-panel .nav-cta { display: block; width: 100%; padding: 1rem; font-size: 0.8rem; }
+        }
+
+        /* ===== FOOTER (mapa del sitio, estructura tipo vercel / openai) ===== */
+        .site-footer { position: relative; z-index: 1; background: #000; color: #fff; border-top: 1px solid #fff; scroll-snap-align: end; text-align: left; }
+        .foot-inner { max-width: 1400px; margin: 0 auto; padding: clamp(3rem, 7vw, 5.5rem) var(--side-padding) 1.5rem; }
+        .foot-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: clamp(2rem, 4vw, 4rem); }
+        .foot-logo { display: inline-block; font-size: 1.4rem; color: inherit; text-decoration: none; }
+        .foot-brand p { max-width: 34ch; margin: 1.25rem 0 1.75rem; font-size: 0.95rem; line-height: 1.6; }
+        .foot-col h3 { margin-bottom: 1.1rem; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 0.66rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; }
+        .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+        .foot-col a, .foot-btn, .foot-bottom a { position: relative; display: inline-flex; align-items: center; color: inherit; text-decoration: none; }
+        .foot-col a, .foot-btn { font-family: var(--font-main); font-size: 0.9rem; font-weight: 500; }
+        .foot-btn { background: none; border: 0; padding: 0; text-align: left; -webkit-appearance: none; appearance: none; }
+        .foot-col a::after, .foot-btn::after, .foot-bottom a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 360ms var(--ease-premium); }
+        .foot-col a:hover::after, .foot-btn:hover::after, .foot-bottom a:hover::after { transform: scaleX(1); }
+        .foot-mark { margin-top: clamp(3rem, 8vw, 6rem); font-family: 'Manrope', sans-serif; font-weight: 800; font-size: clamp(3rem, 17.5vw, 17rem); letter-spacing: -0.04em; line-height: 0.85; text-align: center; text-transform: uppercase; white-space: nowrap; user-select: none; }
+        .foot-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-top: clamp(1.5rem, 4vw, 3rem); padding-top: 1.25rem; border-top: 1px solid #fff; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase; }
+        body.menu-open .reach-announcement.visible, body.at-footer .reach-announcement.visible { opacity: 0; pointer-events: none; }
+        @media (max-width: 900px) {
+            .foot-top { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .foot-brand { grid-column: 1 / -1; }
+        }
+        @media (max-width: 560px) {
+            .foot-top { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .foot-col:last-child { grid-column: 1 / -1; }
+        }
+
+        /* ===== NOVEDADES: lista cronologica (changelog, tipo vercel / openai) ===== */
+        .cl { width: 100%; max-width: 1120px; margin-top: clamp(2.5rem, 6vw, 4rem); text-align: left; border-bottom: 1px solid #fff; }
+        .cl-item {
+            display: grid; grid-template-columns: 170px minmax(0, 1fr) auto; gap: clamp(1rem, 3vw, 3rem); align-items: baseline;
+            padding: clamp(1.4rem, 3vw, 2.1rem) 0; border-top: 1px solid #fff;
+            color: inherit; text-decoration: none;
+            transition: opacity 700ms var(--ease-elite), transform 760ms var(--ease-elite), filter 700ms var(--ease-elite), background-color 300ms ease, color 300ms ease, padding 400ms var(--ease-elite);
+        }
+        .cl-item:hover { background: #fff; color: #000; padding-left: 1rem; padding-right: 1rem; }
+        .cl-meta { display: flex; flex-direction: column; align-items: flex-start; gap: 0.55rem; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; }
+        .cl-pill { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; border: 1px solid currentColor; border-radius: 99px; padding: 0.25em 0.75em; }
+        .cl-body h3 { margin-bottom: 0.6rem; font-size: clamp(1.3rem, 2.8vw, 2rem); font-weight: 500; letter-spacing: -0.035em; line-height: 1.1; }
+        .cl-body p { max-width: 62ch; font-size: 0.95rem; line-height: 1.6; }
+        .cl-go { display: inline-flex; align-items: center; gap: 0.5rem; white-space: nowrap; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+        .cl-go span { transition: transform 300ms var(--ease-elite); }
+        .cl-item:hover .cl-go span { transform: translateX(4px); }
+        @media (max-width: 760px) {
+            .cl-item { grid-template-columns: 1fr; gap: 0.8rem; }
+            .cl-meta { flex-direction: row; align-items: center; gap: 0.8rem; }
+        }
     </style>
 </head>
 <body id="main-body">
@@ -1087,8 +1317,27 @@
         </div>
     </div>
     
-    <nav id="navbar">
-        <div class="logo">envyra</div>
+    <nav id="navbar" aria-label="Principal">
+        <a href="#" class="logo" id="nav-logo" aria-label="Envyra, ir al inicio">envyra</a>
+        <ul class="nav-links">
+            <li><a href="#productos" data-spy="productos">Productos</a></li>
+            <li><a href="#northunit" data-spy="northunit nu-how nu-cta">NorthUnit<b class="nav-new">Nuevo</b></a></li>
+            <li><a href="#novedades" data-spy="novedades">Novedades</a></li>
+            <li><a href="#gold-level" data-spy="gold-level">Gold Level</a></li>
+            <li><a href="#empresa" data-spy="empresa">Empresa</a></li>
+        </ul>
+        <button type="button" class="nav-cta" data-contact-open>Contacto</button>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel">Menú</button>
+        <div class="nav-panel" id="nav-panel">
+            <ul>
+                <li><a href="#productos"><b>Productos</b><span>01</span></a></li>
+                <li><a href="#northunit"><b>NorthUnit</b><span>02</span></a></li>
+                <li><a href="#novedades"><b>Novedades</b><span>03</span></a></li>
+                <li><a href="#gold-level"><b>Gold Level</b><span>04</span></a></li>
+                <li><a href="#empresa"><b>Empresa</b><span>05</span></a></li>
+            </ul>
+            <button type="button" class="nav-cta" data-contact-open>Contacto</button>
+        </div>
     </nav>
 
     <div id="cinematic-overlay">
@@ -1098,8 +1347,9 @@
     </div>
 
     <section id="contact-section">
+        <button type="button" class="contact-close" id="contact-close" aria-label="Cerrar formulario">Cerrar ✕</button>
         <div class="form-container">
-            <h2 style="font-weight: 400; margin-bottom: clamp(1.5rem, 5vw, 3rem); letter-spacing: -1px; font-size: clamp(1.5rem, 5vw, 2.5rem);">Danos una señal.</h2>
+            <h2 id="contact-title" style="font-weight: 400; margin-bottom: clamp(1.5rem, 5vw, 3rem); letter-spacing: -1px; font-size: clamp(1.5rem, 5vw, 2.5rem);">Danos una señal.</h2>
             <form id="contact-form" action="https://formspree.io/f/mgopwaer" method="POST">
                 <div class="form-group">
                     <label>¿Cómo te llamas?</label>
@@ -1120,36 +1370,161 @@
     </section>
 
     <main id="app-wrapper">
-        <section data-theme="dark">
-            <span class="tag">Quality isn’t luck, it’s discipline.</span>
-            <h1 class="hero-title" id="h-title">Elevando ideas <br>al mundo digital.</h1>
+        <div id="x3d" aria-label="Elevando ideas al mundo digital">
+            <div class="x3d-pin" id="x3d-pin">
+                <i class="x3d-bg" id="x3d-bg"></i>
+                <div class="x3d-panel" id="x3d-panel">
+                    <div class="x3d-surf"><i class="x3d-sheen"></i><i class="x3d-brk x3d-corners"></i></div>
+                    <div class="x3d-t head" id="x3d-head">
+                        <div>
+                            <span class="tag">Quality isn’t luck, it’s discipline.</span>
+                            <h1 class="hero-title" id="h-title">Elevando ideas <br>al mundo digital.</h1>
+                        </div>
+                    </div>
+                    <div class="x3d-t"><div><span class="sm">[PASO 1 · IDEA]</span>Idea</div></div>
+                    <div class="x3d-t"><div><span class="sm">[PASO 2 · DISEÑO]</span>Diseño</div></div>
+                    <div class="x3d-t"><div><span class="sm">[PASO 3 · INGENIERÍA]</span>Ingeniería</div></div>
+                    <div class="x3d-t"><div><span class="sm">[PASO 4 · PRODUCTO]</span>Producto</div></div>
+                    <div class="x3d-t"><div><span class="sm">[PASO 5 · MUNDO DIGITAL]</span><em>al</em> mundo<br>digital.</div></div>
+                </div>
+                <div class="x3d-mfp" id="x3d-mfp">
+                    <div class="x3d-mfb"><p class="x3d-mft" id="x3d-mft">Creemos que la tecnología importa cuando pone a las empresas en movimiento. Diseñamos y construimos sistemas que ordenan procesos, conectan equipos y convierten cada idea en algo que funciona. Cada línea de código está pensada para movilizar: personas, datos y negocios.</p></div>
+                </div>
+                <div class="x3d-fl x3d-ring" style="--l:17%;--t:24%" data-s=".2" data-e=".34" data-o=".6" data-fx="-60" data-fy="-40" data-z="140" data-r="-90" data-dr="-12">
+                    <svg viewBox="0 0 120 120" id="x3d-ringsvg"><defs><path id="x3d-cp" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#x3d-cp" textLength="285">ENVYRA • IDEA • DISEÑO • INGENIERÍA • </textPath></text><path d="M48 72 L72 48 M54 48 H72 V66" fill="none" stroke="#fff" stroke-width="2"/></svg>
+                </div>
+                <div class="x3d-fl x3d-amp" style="--l:79%;--t:74%" data-s=".36" data-e=".5" data-o=".74" data-fx="40" data-fy="60" data-z="220" data-r="-12" data-dr="-18">&amp;</div>
+                <div class="x3d-fl x3d-card x3d-brk" style="--l:83%;--t:30%" data-s=".6" data-e=".72" data-o=".86" data-fx="60" data-fy="-50" data-z="-60" data-r="8" data-dr="10">[PRODUCTO]<br><b>MotionLayers Engine</b><br>Beta</div>
+                <div class="x3d-fl x3d-stamp" style="--l:21%;--t:74%" data-s=".66" data-e=".78" data-o=".86" data-fx="-50" data-fy="50" data-z="60" data-r="14" data-dr="12">[SIN<br>FRICCIÓN]</div>
+                <div class="x3d-fl x3d-chip" style="--l:50%;--t:86%" data-s=".02" data-e=".08" data-o=".14" data-fx="0" data-fy="40" data-z="20" data-r="0" data-dr="0">[SEGUÍ BAJANDO]</div>
+                <div class="x3d-rail" id="x3d-rail"><div><span>[IDEA]</span><span>[DISEÑO]</span><span>[INGENIERÍA]</span><span>[PRODUCTO]</span><span>[MUNDO DIGITAL]</span></div><i><b id="x3d-bar"></b></i></div>
+            </div>
+        </div>
+
+        <!-- ===== NORTHUNIT · Novedades ===== -->
+        <section class="nu-sec nu-hero" id="northunit" data-theme="dark">
+            <span class="tag nu-r" data-reveal>Novedades Envyra</span>
+            <div class="nu-badge nu-r" data-reveal><b>Nuevo</b><span>NorthUnit by Envyra</span></div>
+            <h2 class="nu-title nu-r" data-reveal>El CRM que trabaja <em>mientras tu equipo vende.</em></h2>
+            <p class="nu-sub nu-r" data-reveal>NorthUnit usa inteligencia artificial para ordenar tu pipeline, priorizar tus tareas y preparar el siguiente paso con cada cliente. Tu equipo se dedica a lo que importa: cerrar.</p>
+            <div class="nu-cta-row nu-r" data-reveal>
+                <button type="button" class="nu-btn solid" data-nu-demo>Solicitar demo <span aria-hidden="true">→</span></button>
+                <a href="#nu-how" class="nu-btn">Ver cómo funciona <span aria-hidden="true">↓</span></a>
+            </div>
+            <p class="nu-note nu-r" data-reveal>[ Acceso anticipado ]</p>
+
+            <figure class="nu-shot nu-r" data-reveal>
+                <span class="nu-ph" aria-hidden="true"><b>northunit-hero.png</b><span>Mockup principal · 1600 × 1000 px</span></span>
+                <img src="northunit-hero.png" alt="NorthUnit: pipeline de ventas y panel de siguiente mejor acción con IA" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.style.display='none'">
+            </figure>
         </section>
 
-        <section data-theme="dark">
-            <span class="tag">Novedades Envyra</span>
-            <div class="announce-carousel" data-reveal>
-                <div class="announce-track" id="announce-track">
-                    <div class="announce-slide">
-                        <span class="announce-badge">Presentamos</span>
-                        <h2 class="announce-title">MotionLayers <span class="accent">Engine.</span></h2>
-                        <p class="announce-desc">El movimiento es la capa invisible de toda gran experiencia. MotionLayers Engine™ convierte el espacio en una interfaz donde cada gesto tiene un propósito.</p>
-                        <a href="https://envyra23.github.io/Motion-Layers-Engine-/" target="_blank" rel="noopener" class="announce-cta">Probar ahora</a>
-                    </div>
-                    <div class="announce-slide">
-                        <span class="announce-badge">Presentamos</span>
-                        <h2 class="announce-title"><span class="accent">Envyra Reach.</span></h2>
-                        <p class="announce-desc">Impulsamos marcas a través de estrategia, creatividad y tecnología.</p>
-                        <a href="https://envyra23.github.io/REACH/" target="_blank" rel="noopener" class="announce-cta">Conocer Reach</a>
-                    </div>
+        <section class="nu-sec" id="nu-how" data-theme="dark">
+            <div class="nu-head">
+                <span class="tag nu-r" data-reveal>Cómo funciona</span>
+                <h2 class="nu-h2 nu-r" data-reveal>Menos tareas manuales. <em>Más tiempo para vender.</em></h2>
+                <p class="nu-sub nu-r" data-reveal>Cuatro piezas trabajando juntas en un solo lugar.</p>
+            </div>
+            <div class="nu-bento">
+                <article class="nu-card w4 nu-r" data-reveal>
+                    <span class="nu-idx">[01]</span>
+                    <h3>Prioriza tu día</h3>
+                    <p>NorthUnit analiza cada oportunidad y ordena tu lista: a quién atender primero y por qué. Empiezas el día sabiendo qué mueve la aguja.</p>
+                    <figure class="nu-fig">
+                        <span class="nu-ph" aria-hidden="true"><b>northunit-prioriza.png</b><span>Mockup · 1280 × 720 px</span></span>
+                        <img src="northunit-prioriza.png" alt="NorthUnit ordena las oportunidades del día por prioridad" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.style.display='none'">
+                    </figure>
+                </article>
+                <article class="nu-card nu-r" data-reveal>
+                    <span class="nu-idx">[02]</span>
+                    <h3>Tareas que se crean solas</h3>
+                    <p>De un correo o una llamada nacen las próximas acciones, con fecha y responsable. Nada se queda en el aire.</p>
+                    <figure class="nu-fig">
+                        <span class="nu-ph" aria-hidden="true"><b>northunit-tareas.png</b><span>Mockup · 1000 × 750 px</span></span>
+                        <img src="northunit-tareas.png" alt="NorthUnit crea tareas automáticamente a partir de un correo" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.style.display='none'">
+                    </figure>
+                </article>
+                <article class="nu-card nu-r" data-reveal>
+                    <span class="nu-idx">[03]</span>
+                    <h3>Seguimiento sin esfuerzo</h3>
+                    <p>La IA redacta el mensaje con el contexto de cada cuenta. Tú lo revisas, lo ajustas y lo envías.</p>
+                    <figure class="nu-fig">
+                        <span class="nu-ph" aria-hidden="true"><b>northunit-seguimiento.png</b><span>Mockup · 1000 × 750 px</span></span>
+                        <img src="northunit-seguimiento.png" alt="NorthUnit redacta un borrador de seguimiento con IA" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.style.display='none'">
+                    </figure>
+                </article>
+                <article class="nu-card w4 nu-r" data-reveal>
+                    <span class="nu-idx">[04]</span>
+                    <h3>Un pipeline que te avisa</h3>
+                    <p>Visualiza cada etapa y recibe una alerta cuando una oportunidad se enfría, antes de perderla.</p>
+                    <figure class="nu-fig">
+                        <span class="nu-ph" aria-hidden="true"><b>northunit-pipeline.png</b><span>Mockup · 1280 × 720 px</span></span>
+                        <img src="northunit-pipeline.png" alt="Pipeline de NorthUnit con alerta de oportunidad que se enfría" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.style.display='none'">
+                    </figure>
+                </article>
+            </div>
+        </section>
+
+        <section class="nu-sec" id="nu-cta" data-theme="dark">
+            <div class="nu-panel nu-r" data-reveal>
+                <span class="tag">Acceso anticipado</span>
+                <h2 class="nu-h2">Pon a tu equipo <em>en movimiento.</em></h2>
+                <p class="nu-sub">Cuéntanos cómo vende tu equipo y te mostramos NorthUnit funcionando con tu proceso.</p>
+                <div class="nu-aud">
+                    <div><strong>Equipos comerciales</strong><span>Ordena cuentas, tareas y próximos pasos en un solo lugar.</span></div>
+                    <div><strong>Pymes en crecimiento</strong><span>Un CRM claro para crecer sin sumar complejidad.</span></div>
+                    <div><strong>Agencias y servicios</strong><span>Da seguimiento a cada cliente sin perder el hilo.</span></div>
                 </div>
-                <div class="announce-dots" id="announce-dots">
-                    <button class="announce-dot active" data-slide="0" aria-label="Ver MotionLayers Engine"></button>
-                    <button class="announce-dot" data-slide="1" aria-label="Ver Envyra Reach"></button>
+                <div class="nu-cta-row">
+                    <button type="button" class="nu-btn solid" data-nu-demo>Solicitar demo <span aria-hidden="true">→</span></button>
                 </div>
             </div>
         </section>
 
-        <section data-theme="dark">
+        <section class="nu-sec" id="novedades" data-theme="dark">
+            <div class="nu-head">
+                <span class="tag nu-r" data-reveal>Historial</span>
+                <h2 class="nu-h2 nu-r" data-reveal>Novedades de <em>Envyra.</em></h2>
+            </div>
+            <!-- Para sumar una novedad: copiá un bloque <a class="cl-item"> y ponelo arriba (la más nueva primero).
+                 Para mostrar fecha, agregá dentro de .cl-meta: <time datetime="2026-10-17">17 OCT 2026</time> -->
+            <div class="cl">
+                <a class="cl-item nu-r" data-reveal href="#northunit">
+                    <div class="cl-meta"><span>Producto</span><b class="cl-pill">Nuevo</b></div>
+                    <div class="cl-body">
+                        <h3>NorthUnit</h3>
+                        <p>El CRM con inteligencia artificial que prioriza tus tareas, automatiza el seguimiento y mantiene tu pipeline en movimiento.</p>
+                    </div>
+                    <span class="cl-go">Ver producto <span aria-hidden="true">→</span></span>
+                </a>
+                <a class="cl-item nu-r" data-reveal href="https://envyra23.github.io/MotionLayersEngine-/" target="_blank" rel="noopener">
+                    <div class="cl-meta"><span>Producto</span></div>
+                    <div class="cl-body">
+                        <h3>MotionLayers Engine</h3>
+                        <p>El movimiento es la capa invisible de toda gran experiencia. MotionLayers Engine™ convierte el espacio en una interfaz donde cada gesto tiene un propósito.</p>
+                    </div>
+                    <span class="cl-go">Probar ahora <span aria-hidden="true">→</span></span>
+                </a>
+                <a class="cl-item nu-r" data-reveal href="https://envyra23.github.io/REACH/" target="_blank" rel="noopener">
+                    <div class="cl-meta"><span>Marca</span></div>
+                    <div class="cl-body">
+                        <h3>Envyra Reach</h3>
+                        <p>Impulsamos marcas a través de estrategia, creatividad y tecnología.</p>
+                    </div>
+                    <span class="cl-go">Conocer Reach <span aria-hidden="true">→</span></span>
+                </a>
+                <a class="cl-item nu-r" data-reveal href="#gold-level">
+                    <div class="cl-meta"><span>Movimiento</span></div>
+                    <div class="cl-body">
+                        <h3>The Gold Level</h3>
+                        <p>El as no es el objetivo, es la posición desde la que jugamos.</p>
+                    </div>
+                    <span class="cl-go">Ver más <span aria-hidden="true">→</span></span>
+                </a>
+            </div>
+        </section>
+
+        <section id="gold-level" data-theme="dark">
             <div class="gold-grid" data-reveal>
                 <div class="gold-copy">
                     <span class="gold-tag">The Gold Level</span>
@@ -1170,29 +1545,35 @@
             </div>
         </section>
 
-        <section data-theme="light">
+        <section id="empresa" data-theme="light">
             <span class="tag">Nuestra Visión</span>
             <div class="reveal-text" data-reveal>
                 Diseñamos ecosistemas digitales donde la <span style="font-weight: 600;">simplicidad</span> es la máxima sofisticación tecnológica.
             </div>
         </section>
 
-        <section data-theme="dark">
+        <section id="productos" data-theme="dark">
             <span class="tag">suite</span>
             <h2 class="reveal-text" data-reveal style="margin-bottom: 2rem;">Productos Core.</h2>
             <div class="product-grid">
                 
-                <a href="https://envyra23.github.io/Motion-Layers-Engine-/" class="product-card" data-reveal style="text-decoration: none; color: inherit; display: block;">
-                    <span class="tag" style="margin-bottom: 1rem; opacity: 0.6;">Beta Version</span>
+                <a href="https://envyra23.github.io/MotionLayersEngine-//" class="product-card" data-reveal style="text-decoration: none; color: inherit; display: block;">
+                    <span class="tag" style="margin-bottom: 1rem;">Beta Version</span>
                     <h3>MotionLayers Engine</h3>
                     <p>Una nueva manera de interactuar, sin fricción, solo, una cámara y..: aire??</p>
+                </a>
+
+                <a href="#northunit" class="product-card" data-reveal style="text-decoration: none; color: inherit; display: block;">
+                    <span class="tag" style="margin-bottom: 1rem;">Nuevo</span>
+                    <h3>NorthUnit</h3>
+                    <p>CRM con inteligencia artificial que prioriza, automatiza y da seguimiento por ti.</p>
                 </a>
 
             </div>
            
         </section>
 
-        <section data-theme="light">
+        <section id="impacto" data-theme="light">
             <span class="tag">Impacto</span>
             <div class="testimonial-box" data-reveal>
                 <p class="testimonial-text">"El uso de códigos QR facilitó mucho el acceso durante la Búsqueda del Tesoro, haciendo la experiencia más dinámica y eficiente. Además, permitió recolectar los datos de forma confiable."</p>
@@ -1206,6 +1587,49 @@
             <a href="javascript:void(0)" class="cta-button" id="btn-play">Empezar a crear</a>
         </section>
     </main>
+
+    <footer class="site-footer" id="footer">
+        <div class="foot-inner">
+            <div class="foot-top">
+                <div class="foot-brand">
+                    <a href="#" class="logo foot-logo" id="foot-logo" aria-label="Envyra, volver al inicio">envyra</a>
+                    <p>Elevando ideas al mundo digital. Diseñamos y construimos sistemas que ponen a las empresas en movimiento.</p>
+                    <button type="button" class="nu-btn solid" data-contact-open>Contacto <span aria-hidden="true">→</span></button>
+                </div>
+                <div class="foot-col">
+                    <h3>Productos</h3>
+                    <ul>
+                        <li><a href="#northunit">NorthUnit<b class="nav-new">Nuevo</b></a></li>
+                        <li><a href="https://envyra23.github.io/MotionLayersEngine-/" target="_blank" rel="noopener">MotionLayers Engine</a></li>
+                        <li><a href="https://envyra23.github.io/REACH/" target="_blank" rel="noopener">Envyra Reach</a></li>
+                        <li><a href="#productos">Todos los productos</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h3>Empresa</h3>
+                    <ul>
+                        <li><a href="#empresa">Nuestra visión</a></li>
+                        <li><a href="https://envyra23.github.io/The-Gold-Level/" target="_blank" rel="noopener">The Gold Level</a></li>
+                        <li><a href="#novedades">Novedades</a></li>
+                        <li><a href="#impacto">Impacto</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h3>Conectar</h3>
+                    <ul>
+                        <li><button type="button" class="foot-btn" data-contact-open>Contacto</button></li>
+                        <li><button type="button" class="foot-btn" data-nu-demo>Solicitar demo de NorthUnit</button></li>
+                        <li><a href="https://github.com/envyra23" target="_blank" rel="noopener">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot-mark" aria-hidden="true">ENVYRΛ</div>
+            <div class="foot-bottom">
+                <span>© <span id="foot-year">2026</span> Envyra. Todos los derechos reservados.</span>
+                <a href="#" id="foot-top">Volver arriba ↑</a>
+            </div>
+        </div>
+    </footer>
 
     <script>
         /** CURSOR ENGINE **/
@@ -1285,6 +1709,8 @@
             if (!theme) return;
             cosmosBg.style.backgroundColor = (theme === 'light') ? '#ffffff' : '#000000';
             document.body.style.color = (theme === 'light') ? '#000000' : '#ffffff';
+            document.documentElement.style.setProperty('--nav-bg', (theme === 'light') ? '#ffffff' : '#000000');
+            document.documentElement.style.setProperty('--nav-fg', (theme === 'light') ? '#000000' : '#ffffff');
             activeThemeSection = section;
         }
 
@@ -1411,7 +1837,7 @@
         let scrollVelocity = 0;
 
         const shouldUseMagnet = () => {
-            return !reduceMotionQuery.matches && (coarsePointerQuery.matches || window.innerWidth <= 1024);
+            return !window.__x3dActive && !window.__x3dMfActive && !reduceMotionQuery.matches && (coarsePointerQuery.matches || window.innerWidth <= 1024);
         };
 
         function stopMagnetAnimation() {
@@ -1823,8 +2249,7 @@
                 } else if ('outputEncoding' in this.renderer && THREE.sRGBEncoding) {
                     this.renderer.outputEncoding = THREE.sRGBEncoding;
                 }
-                this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-                this.renderer.toneMappingExposure = 1.18;
+                this.renderer.toneMapping = THREE.NoToneMapping;
                 this.container.appendChild(this.renderer.domElement);
                 this.domTarget = this.renderer.domElement;
                 this.domTarget.style.touchAction = 'none';
@@ -1834,8 +2259,6 @@
 
                 this.buildParticleCloud();
 
-                const ambient = new THREE.AmbientLight(0xffffff, 0.62);
-                this.scene.add(ambient);
                 this.ready = true;
             }
 
@@ -1929,31 +2352,6 @@
                 const secondaryPoints = new THREE.Points(sparkleGeometry, sparkleMaterial);
                 this.group.add(secondaryPoints);
 
-                const coreGlow = new THREE.Mesh(
-                    new THREE.SphereGeometry(0.32, 42, 42),
-                    new THREE.MeshBasicMaterial({
-                        color: 0xffffff,
-                        transparent: true,
-                        opacity: 0.075,
-                        blending: THREE.AdditiveBlending,
-                        depthWrite: false
-                    })
-                );
-                this.group.add(coreGlow);
-
-                const shellMesh = new THREE.Mesh(
-                    new THREE.IcosahedronGeometry(0.58, 3),
-                    new THREE.MeshBasicMaterial({
-                        color: 0xffffff,
-                        wireframe: true,
-                        transparent: true,
-                        opacity: 0.11,
-                        blending: THREE.AdditiveBlending,
-                        depthWrite: false
-                    })
-                );
-                this.group.add(shellMesh);
-
                 this.positions = positions;
                 this.basePositions = basePositions;
                 this.spawnPositions = spawnPositions;
@@ -1961,8 +2359,8 @@
                 this.energyOffsets = energyOffsets;
                 this.primaryPoints = primaryPoints;
                 this.secondaryPoints = secondaryPoints;
-                this.coreGlow = coreGlow;
-                this.shellMesh = shellMesh;
+                this.coreGlow = null;
+                this.shellMesh = null;
             }
 
             bindInteractions() {
@@ -2369,6 +2767,126 @@
             });
         });
 
+        /** FOOTER: año, volver arriba y pill de Reach **/
+        (function () {
+            const f = document.getElementById('footer');
+            if (!f) return;
+            const y = document.getElementById('foot-year');
+            if (y) y.textContent = new Date().getFullYear();
+            ['foot-logo', 'foot-top'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.addEventListener('click', e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+            });
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver(entries => {
+                    document.body.classList.toggle('at-footer', entries[0].isIntersecting);
+                }, { threshold: 0.05 }).observe(f);
+            }
+        })();
+
+        /** NAVBAR GLOBAL: estado, seccion activa y menu movil **/
+        (function () {
+            const nav = document.getElementById('navbar');
+            if (!nav) return;
+            const x3d = document.getElementById('x3d');
+            const toggle = document.getElementById('nav-toggle');
+            const logo = document.getElementById('nav-logo');
+            const spyLinks = Array.from(nav.querySelectorAll('[data-spy]'));
+            let ticking = false;
+
+            function update() {
+                ticking = false;
+                const h = nav.offsetHeight || 64;
+                const solid = x3d ? x3d.getBoundingClientRect().bottom <= h + 2 : window.scrollY > 8;
+                nav.classList.toggle('is-solid', solid);
+
+                const line = window.innerHeight * 0.45;
+                spyLinks.forEach(a => {
+                    const on = a.dataset.spy.split(' ').some(id => {
+                        const el = document.getElementById(id);
+                        if (!el) return false;
+                        const r = el.getBoundingClientRect();
+                        return r.top <= line && r.bottom > line;
+                    });
+                    a.classList.toggle('is-active', on);
+                    if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+                });
+            }
+            function request() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+            window.addEventListener('scroll', request, { passive: true });
+            window.addEventListener('resize', request);
+            update();
+
+            function setMenu(open) {
+                nav.classList.toggle('menu-open', open);
+                document.body.classList.toggle('menu-open', open);
+                toggle.setAttribute('aria-expanded', String(open));
+                toggle.textContent = open ? 'Cerrar' : 'Menú';
+                document.body.style.overflow = open ? 'hidden' : '';
+            }
+            toggle.addEventListener('click', () => setMenu(!nav.classList.contains('menu-open')));
+            nav.querySelectorAll('.nav-panel a, .nav-panel .nav-cta').forEach(el => el.addEventListener('click', () => setMenu(false)));
+            window.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('menu-open')) setMenu(false); });
+            window.addEventListener('resize', () => { if (window.innerWidth > 860 && nav.classList.contains('menu-open')) setMenu(false); });
+            logo.addEventListener('click', e => {
+                e.preventDefault();
+                setMenu(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+
+        /** FORMULARIO DE CONTACTO DIRECTO (navbar y CTA de NorthUnit) **/
+        (function () {
+            const triggers = document.querySelectorAll('[data-nu-demo], [data-contact-open]');
+            const closeBtn = document.getElementById('contact-close');
+            const title = document.getElementById('contact-title');
+            const msgField = form.querySelector('textarea[name="message"]');
+            const banner = document.getElementById('reach-announcement');
+            const defaultTitle = title ? title.textContent : '';
+            const defaultPlaceholder = msgField ? msgField.placeholder : '';
+            let closeTimer = null;
+
+            function setLead(on) {
+                form.querySelectorAll('input[data-nu-lead]').forEach(el => el.remove());
+                if (!on) return;
+                [['producto', 'NorthUnit'], ['_subject', 'Solicitud de demo · NorthUnit']].forEach(([name, value]) => {
+                    const input = document.createElement('input');
+                    input.type = 'hidden'; input.name = name; input.value = value;
+                    input.setAttribute('data-nu-lead', '');
+                    form.appendChild(input);
+                });
+            }
+
+            function openForm(lead) {
+                if (cinematicRunning) return;
+                clearTimeout(closeTimer);
+                setLead(lead);
+                if (title) title.textContent = lead ? 'Solicita tu demo de NorthUnit.' : defaultTitle;
+                if (msgField) msgField.placeholder = lead ? 'Cuéntanos cómo vende tu equipo...' : defaultPlaceholder;
+                if (banner) banner.classList.remove('visible');
+                contactSec.classList.add('direct');
+                document.body.style.overflow = 'hidden';
+                requestAnimationFrame(() => contactSec.classList.add('active'));
+            }
+
+            function closeForm() {
+                if (!contactSec.classList.contains('direct')) return;
+                contactSec.classList.remove('active');
+                document.body.style.overflow = '';
+                closeTimer = setTimeout(() => {
+                    contactSec.classList.remove('direct');
+                    setLead(false);
+                    if (title) title.textContent = defaultTitle;
+                    if (msgField) msgField.placeholder = defaultPlaceholder;
+                    if (banner) banner.classList.add('visible');
+                }, 600);
+            }
+
+            triggers.forEach(t => t.addEventListener('click', () => openForm(t.hasAttribute('data-nu-demo'))));
+            if (closeBtn) closeBtn.addEventListener('click', closeForm);
+            window.addEventListener('keydown', e => { if (e.key === 'Escape') closeForm(); });
+        })();
+
         /* REACH ANNOUNCEMENT — reveal after intro */
         (function () {
             const banner = document.getElementById('reach-announcement');
@@ -2437,7 +2955,7 @@
             }
 
             function loop() {
-                current += (target - current) * DAMPING;
+                current += (target - current) * (window.__x3dActive ? .065 : DAMPING);
 
                 if (Math.abs(target - current) < 0.4) {
                     current = target;
@@ -2479,55 +2997,90 @@
                 if (anchor) setTimeout(syncFromNative, 400);
             });
         })();
-
-        /** ANNOUNCE CAROUSEL **/
-        (() => {
-            const track = document.getElementById('announce-track');
-            const dotsWrap = document.getElementById('announce-dots');
-            if (!track || !dotsWrap) return;
-
-            const slides = Array.from(track.children);
-            const dots = Array.from(dotsWrap.children);
-            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            let index = 0;
-            let autoplayTimer = null;
-            const AUTOPLAY_MS = 6000;
-
-            function goTo(i) {
-                index = (i + slides.length) % slides.length;
-                track.style.transform = `translate3d(-${index * 100}%, 0, 0)`;
-                dots.forEach((dot, di) => dot.classList.toggle('active', di === index));
-            }
-
-            function startAutoplay() {
-                if (reducedMotion) return;
-                stopAutoplay();
-                autoplayTimer = window.setInterval(() => goTo(index + 1), AUTOPLAY_MS);
-            }
-
-            function stopAutoplay() {
-                if (autoplayTimer) {
-                    window.clearInterval(autoplayTimer);
-                    autoplayTimer = null;
-                }
-            }
-
-            dots.forEach((dot, i) => {
-                dot.addEventListener('click', () => {
-                    goTo(i);
-                    startAutoplay();
-                });
-            });
-
-            const carousel = track.closest('.announce-carousel');
-            if (carousel) {
-                carousel.addEventListener('mouseenter', stopAutoplay);
-                carousel.addEventListener('mouseleave', startAutoplay);
-            }
-
-            goTo(0);
-            startAutoplay();
-        })();
     </script>
+
+    <script>
+    /** X3D: EL TITULAR SE TRANSFORMA EN UN PANEL 3D (idea > diseño > ingeniería > producto > mundo digital) **/
+    (() => {
+        const wrap = document.getElementById('x3d'), pin = document.getElementById('x3d-pin'), panel = document.getElementById('x3d-panel');
+        if (!wrap) return;
+        const bg = document.getElementById('x3d-bg'), surf = panel.querySelector('.x3d-surf'), sheen = panel.querySelector('.x3d-sheen'), head = document.getElementById('x3d-head');
+        const words = [...panel.querySelectorAll('.x3d-t:not(.head)')], fls = [...pin.querySelectorAll('.x3d-fl')], rsvg = document.getElementById('x3d-ringsvg');
+        const rail = document.getElementById('x3d-rail'), rItems = [...rail.querySelectorAll('span')], bar = document.getElementById('x3d-bar');
+        const cl = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v)), lp = (a, b, t) => a + (b - a) * t, sm = t => t * t * (3 - 2 * t);
+        const win = (p, [a, b, c, d]) => cl((p - a) / (b - a)) * (1 - cl((p - c) / (d - c)));
+        let vw = innerWidth, vh = innerHeight, mx = 0, my = 0, MX = 0, MY = 0, last = -2;
+        addEventListener('resize', () => { vw = innerWidth; vh = innerHeight; });
+        if (matchMedia('(pointer:fine)').matches) addEventListener('pointermove', e => { mx = (e.clientX / vw - .5) * 2; my = (e.clientY / vh - .5) * 2; });
+        /* [p, escala, rotX, rotY, rotZ, superficie] : el titular arranca plano y a pantalla completa */
+        const KF = [[0,1,0,0,0,0],[.1,1,0,0,0,1],[.24,.82,14,-22,3,1],[.4,.62,-12,18,-3,1],[.56,.5,6,-10,2,1],[.72,.52,-8,12,-2,1],[.86,.82,10,-14,1,1],[.95,1,0,0,0,1],[1,1,0,0,0,1]];
+        const kf = p => { let i = 0; while (i < KF.length - 2 && p > KF[i + 1][0]) i++; const a = KF[i], b = KF[i + 1], t = sm(cl((p - a[0]) / (b[0] - a[0]))); return a.map((v, k) => lp(v, b[k], t)); };
+        /* ventanas del pipeline [sube, pleno, pleno, baja] */
+        const HEAD = [-1, 0, .1, .18];
+        const TW = [[.16,.22,.3,.36],[.34,.4,.48,.54],[.52,.58,.64,.7],[.68,.74,.78,.84],[.82,.87,1.2,1.3]];
+        /* ---- manifiesto: las palabras viajan desde el fondo hacia la cámara ---- */
+        const SPLIT = .467;
+        const RMQ = matchMedia('(prefers-reduced-motion:reduce)').matches;
+        let PS = 0, wasA = false;
+        const mfp = document.getElementById('x3d-mfp');
+        const splitW = el => { el.setAttribute('aria-label', el.textContent.trim()); el.innerHTML = el.textContent.trim().split(/\s+/).map(w => `<span class="w" aria-hidden="true">${w}</span>`).join(' '); return [...el.children]; };
+        const WA = splitW(document.getElementById('x3d-mft'));
+        let mfOn = false;
+        const warp = (words, aq, fq) => { const N = words.length; words.forEach((w, i) => {
+            const a = cl((aq * (N + 6) - i) / 6), e = 1 - Math.pow(1 - a, 3), f = cl((fq * (N + 3) - i) / 3);
+            w.style.opacity = (a * .2 + .8 * f * a).toFixed(3);
+            w.style.transform = `translate3d(0,0,${lp(-2200, 0, e).toFixed(1)}px)`;
+            w.style.filter = a < 1 ? `blur(${((1 - e) * 10).toFixed(1)}px)` : 'none';
+        }); };
+        function mf(m, MX, MY) {
+            if (m <= 0 && !mfOn) return;
+            mfOn = m > 0;
+            const x = sm(cl((m - .9) / .1));
+            warp(WA, cl((m - .04) / .3), cl((m - .24) / .46));
+            mfp.style.transform = `translate3d(${-MX * 6}px,${-MY * 4}px,${lp(0, -500, x)}px) rotateX(${-MY * 1.5}deg) rotateY(${MX * 2}deg)`;
+            mfp.style.opacity = 1 - x;
+        }
+        function frame() {
+            const r = wrap.getBoundingClientRect(), h = wrap.offsetHeight;
+            const active = r.top < vh && r.bottom > 0;
+            window.__x3dActive = active;
+            if (active) {
+                const end = r.top <= -(h - vh), fixed = !end && r.top <= 0;
+                pin.classList.toggle('is-fixed', fixed);
+                pin.classList.toggle('is-end', end);
+                const P0 = cl(-r.top / (h - vh));
+                if (!wasA) PS = P0;
+                PS = RMQ ? P0 : lp(PS, P0, .07);
+                if (Math.abs(PS - P0) < .0003) PS = P0;
+                const P = PS, p = cl(P / SPLIT), m = cl((P - SPLIT) / (1 - SPLIT));
+                MX = lp(MX, mx, .06); MY = lp(MY, my, .06);
+                const [sc, rx, ry, rz, sa] = kf(p).slice(1), cd = cl((1 - sc) * 2.2);
+                panel.style.transform = `rotateX(${rx - MY * 3 * cd}deg) rotateY(${ry + MX * 4 * cd}deg) rotateZ(${rz}deg) scale(${sc})`;
+                surf.style.opacity = sa;
+                bg.style.opacity = sm(cl((p - .1) / .1)) * (1 - sm(cl((p - .9) / .06)));
+                sheen.style.backgroundPosition = `${50 - (ry + MX * 4 * cd) * 3}% 0`;
+                const ho = 1 - cl((p - HEAD[2]) / (HEAD[3] - HEAD[2]));
+                head.style.opacity = ho; head.style.transform = `translateY(${(1 - ho) * -24}px)`;
+                let best = -1, bo = .4;
+                words.forEach((t, i) => { let o = win(p, TW[i]), k = 1; if (i === words.length - 1) { o *= 1 - sm(cl((m - .02) / .14)); const ez = cl(m / .18); k = 1 + ez * ez * ez * 11; } t.style.opacity = o; t.style.transform = `translateY(${(1 - o) * 24}px) scale(${k})`; if (o > bo) { bo = o; best = i; } });
+                if (best !== last) { rItems.forEach((s, i) => s.classList.toggle('on', i === best)); last = best; }
+                rail.style.opacity = win(p, [.12, .18, .9, .95]);
+                bar.style.width = (cl((p - .16) / .72) * 100) + '%';
+                fls.forEach(f => {
+                    const d = f.dataset, s = +d.s, e = +d.e, t = sm(cl((p - s) / (e - s))), u = sm(cl((p - +d.o) / .08)), kk = (1 - t) + u, z = +d.z;
+                    const x = (+d.fx * kk) * vw / 100 + MX * z * .3, y = (+d.fy * kk) * vh / 100 + MY * z * .3 + (p - s) * +d.dr * vh / 40;
+                    f.style.opacity = t * (1 - u);
+                    f.style.transform = `translate(-50%,-50%) translate3d(${x}px,${y}px,${z}px) rotate(${+d.r * kk}deg)`;
+                });
+                rsvg.style.transform = `rotate(${scrollY * .12}deg)`;
+                mf(m, MX, MY);
+            }
+            wasA = active;
+            requestAnimationFrame(frame);
+        }
+        frame();
+    })();
+    </script>
+
 </body>
 </html>
