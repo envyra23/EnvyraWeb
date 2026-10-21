@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/png" href="INTELLIGENCE-logo.png">
 <title>ENVYRA INTELLIGENCE | A new layer for intelligent software</title>
 <meta name="description" content="ENVYRA INTELLIGENCE: plataforma de inteligencia artificial e infraestructura de software de ENVYRA. Asistente A001, Memory Case y API de ENVYRA CLOUD.">
 <meta name="color-scheme" content="dark">
@@ -18,17 +19,62 @@ a{color:inherit;text-decoration:none}
 .tag{display:block;margin-bottom:1.4rem}
 body.smooth #s{position:fixed;top:0;left:0;width:100%;will-change:transform}
 section,footer{padding:clamp(5rem,14vh,9rem) var(--pad);border-top:1px solid var(--ln);position:relative}
+.lk h3{display:flex;align-items:center;gap:.7rem}.lk h3 .ic{width:1.1em;height:1.1em;flex:none}
+.cl-code{display:inline-block;margin-top:1.1rem;padding:.7rem 1rem;border:1px solid var(--ln);border-radius:8px;background:#000;font:500 .82rem/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#fff;white-space:pre}.cl-code code{font:inherit}.cl-code i{font-style:normal;color:var(--mut)}
+.cl-cursor{display:inline-block;width:.55em;height:1em;margin-left:.25rem;background:#fff;vertical-align:-.15em;animation:cl-bl 1s steps(1) infinite}@keyframes cl-bl{50%{opacity:0}}
+.cl-tools{display:flex;align-items:center;gap:.8rem;flex:none}.cl-msg{white-space:nowrap}
+.cl-copy{display:grid;place-items:center;width:2.4rem;height:2.4rem;border:1px solid var(--ln);border-radius:8px;color:var(--mut);cursor:pointer;transition:color .3s var(--ease),border-color .3s var(--ease)}.cl-copy:hover,.cl-copy.ok{color:#fff;border-color:var(--fg)}
+.cl-copy svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.cl-ck,.cl-copy.ok .cl-ln{display:none}.cl-copy.ok .cl-ck{display:block}
+@media(max-width:560px){.cl-row{flex-direction:column;align-items:flex-start}}
+.dm{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start;margin-top:3rem}@media(max-width:900px){.dm{grid-template-columns:1fr}}
+.dm-win{position:relative;border:1px solid var(--ln);background:#000;display:flex;flex-direction:column}
+.dm-win::before,.dm-win::after{content:"";position:absolute;width:10px;height:10px;border:1px solid #fff;opacity:.7}.dm-win::before{top:-1px;left:-1px;border-right:0;border-bottom:0}.dm-win::after{right:-1px;bottom:-1px;border-left:0;border-top:0}
+.dm-bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.9rem 1.1rem;border-bottom:1px solid var(--ln)}.dm-id{display:flex;align-items:center;gap:.6rem;font-weight:500}.dm-id b{display:grid;place-items:center;width:1.6rem;height:1.6rem;border:1px solid var(--ln);border-radius:6px;font-weight:600}
+.dm-pill{border:1px solid var(--ln);border-radius:99px;padding:.2rem .7rem;white-space:nowrap}
+.dm-bar{flex-wrap:wrap}.dm-r{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;justify-content:flex-end}.dm-new{border:0;padding:.3rem .5rem;font-size:.62rem;cursor:pointer;transition:color .3s}.dm-new:hover{color:#fff}
+.dm-card{border-bottom:1px solid var(--ln)}
+.dm-ch{display:flex;align-items:center;gap:.85rem;width:100%;padding:.85rem 1.1rem;border:0;text-align:left;cursor:pointer;transition:background .3s var(--ease)}.dm-ch:hover{background:#0b0b0b}
+.dm-ch svg{flex:none;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.dm-ch .dm-fi{width:22px;height:22px;color:var(--mut)}.dm-card.on .dm-fi{color:#fff}
+.dm-ch span{flex:1;min-width:0}.dm-ch b{display:block;font-weight:500;font-size:.92rem}.dm-ch small{display:block;color:var(--mut);font:500 .74rem ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dm-ch .dm-cv{width:10px;height:10px;stroke-width:1.8;color:var(--mut);transition:transform .3s var(--ease)}.dm-card.on .dm-cv{transform:rotate(180deg)}
+.dm-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s var(--ease)}.dm-card.on .dm-body{grid-template-rows:1fr}.dm-body>div{overflow:hidden;min-height:0;visibility:hidden;transition:visibility .35s}.dm-card.on .dm-body>div{visibility:visible}.dm-mem{border-top:1px solid var(--ln)}
+.dm-code{border:1px solid var(--ln);border-radius:8px;overflow:hidden;font:500 .8rem/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.dm-fn{display:flex;justify-content:space-between;padding:.5rem .9rem;border-bottom:1px solid var(--ln);font-size:.64rem}
+.dm-mem .dm-ln{display:flex;align-items:center;gap:.6rem;margin:0;padding:.25rem .9rem 0}.dm-ln i{font-style:normal;color:var(--mut);flex:none}
+.dm-code input,.dm-code textarea{font:inherit;font-size:.8rem;color:#fff;border:0;border-radius:0;background:none;padding:0}
+.dm-code input{flex:1;min-width:0}.dm-code textarea{display:block;width:100%;line-height:1.7;min-height:11rem;padding:.2rem .9rem .8rem 1.9rem}.dm-code textarea:focus,.dm-code input:focus{outline:0}
+.dm-pane{flex:1;display:flex;flex-direction:column;min-height:0}.dm-pane[hidden]{display:none}
+.dm-msgs{height:21rem;overflow-y:auto;padding:1.2rem;display:flex;flex-direction:column;gap:1rem}
+.dm-welcome{margin:auto;text-align:center;max-width:24rem}.dm-welcome b{display:block;font-weight:500;font-size:1.15rem;letter-spacing:-.02em}.dm-welcome p{color:var(--mut);font-size:.85rem;margin:.5rem 0 1rem}
+.dm-sug{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}.dm-sug button{border:1px solid var(--ln);border-radius:99px;padding:.4rem .9rem;font-size:.76rem;color:var(--mut);cursor:pointer;transition:color .3s,border-color .3s}.dm-sug button:hover{color:#fff;border-color:#fff}
+.dm-m{display:grid;grid-template-columns:2.8rem 1fr;gap:.6rem;font-size:.88rem}.dm-m .mono{padding-top:.25rem}.dm-m p{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}.dm-m.a p{color:#fff}.dm-m.u p{color:var(--mut)}
+.dm-comp{display:flex;align-items:center;gap:.8rem;padding:.7rem 1rem;border-top:1px solid var(--ln)}.dm-comp input{flex:1;min-width:0}
+.dm-win input,.dm-win textarea{width:100%;background:none;border:0;border-bottom:1px solid var(--ln);color:#fff;font:inherit;font-size:.88rem;padding:.6rem 0;border-radius:0;resize:vertical;transition:border-color .3s}.dm-win input:focus,.dm-win textarea:focus{outline:0;border-color:#fff}
+.dm-mem{padding:1.1rem}.dm-mem label{display:block;margin:1rem 0 .2rem}.dm-mem label:first-child{margin-top:0}.dm-mem textarea{line-height:1.7;min-height:11rem}
+.dm-st{margin-top:.9rem;text-transform:none;letter-spacing:0}
+.dm-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem 1rem;padding:.7rem 1.1rem;border-top:1px solid var(--ln);font-size:.64rem}
+.dm-win .btn{padding:.5rem 1rem;font-size:.8rem}
+.dm-spec h3{font-size:1.2rem;font-weight:500;letter-spacing:-.02em;margin:.6rem 0 1.2rem}.dm-spec dl{margin:0;border-top:1px solid var(--ln)}.dm-spec dl div{display:grid;grid-template-columns:8.5rem 1fr;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--ln);font-size:.84rem}.dm-spec dt{color:var(--mut)}.dm-spec dd{margin:0;font:500 .78rem ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow-wrap:anywhere}
+.dm-note{margin-top:1.2rem;text-transform:none;letter-spacing:0;line-height:1.7}
+@media(max-width:520px){.dm-spec dl div{grid-template-columns:1fr;gap:.2rem}}
 button{font:inherit;color:inherit;background:none}
 nav{position:fixed;inset:0 0 auto;z-index:50;background:#000;border-bottom:1px solid var(--ln);padding:env(safe-area-inset-top,0px) var(--np) 0}
 .nw{display:flex;align-items:center;justify-content:space-between;height:3.6rem;gap:1.5rem;max-width:76rem;margin:0 auto}
-nav .nl{font-weight:600;letter-spacing:-.02em}nav .lk{display:flex;gap:1.8rem;font-size:.88rem;color:var(--mut);margin-right:auto;margin-left:2rem}nav .lk a:hover,nav .lk a[aria-current]{color:#fff}nav .ac{display:flex;gap:.6rem}
+nav .nl{font-weight:600;letter-spacing:-.02em}nav .nlk{display:flex;gap:1.8rem;font-size:.88rem;color:var(--mut);margin-right:auto;margin-left:2rem}nav .nlk a:hover,nav .nlk a[aria-current]{color:#fff}nav .ac{display:flex;gap:.6rem}
 .nb{display:inline-flex;align-items:center;border:1px solid var(--ln);padding:.55rem 1.1rem;border-radius:99px;font-size:.85rem;font-weight:500;cursor:pointer;transition:background .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease)}.nb:hover{border-color:var(--fg)}.nb.s{background:var(--fg);color:#000;border-color:var(--fg)}.nb.s:hover{background:transparent;color:var(--fg)}
-@media(max-width:760px){nav .lk a,nav .ac .g{display:none}nav .lk{margin-left:.5rem}}
+@media(max-width:760px){nav .nlk a,nav .ac .g{display:none}nav .nlk{margin-left:.5rem}}
 .pm{display:inline-flex;align-items:center;gap:.4rem;border:0;padding:0;background:none;color:inherit;font:inherit;cursor:pointer}.pm:hover,.pm[aria-expanded=true],.pm.cur{color:#fff}.pm svg{width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:1.6;transition:transform .3s var(--ease)}.pm[aria-expanded=true] svg{transform:rotate(180deg)}
 .mm{position:absolute;top:100%;left:0;right:0;background:#000;border-bottom:1px solid var(--ln);padding:0 var(--np);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s;max-height:calc(100svh - 3.6rem);overflow-y:auto}.mm.on{opacity:1;visibility:visible;transform:none}
 .mw{max-width:76rem;margin:0 auto}.mg{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding:2rem 0 1.4rem}.mg h4{margin-bottom:.8rem;font-weight:500}
 .mi{display:flex;gap:.9rem;padding:.8rem;margin:0 -.8rem;border-radius:10px;transition:background .3s var(--ease)}.mi:hover,.mi[aria-current]{background:#0b0b0b}.mi .ic{width:22px;height:22px;margin-top:.15rem;flex:none}
 .mi b{display:block;font-weight:500;font-size:.95rem;color:#fff}.mi em{font-style:normal;font-weight:500;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);border:1px solid var(--ln);border-radius:99px;padding:.1rem .5rem;margin-left:.4rem;vertical-align:.1em}.mi small{display:block;color:var(--mut);font-size:.82rem;line-height:1.4}
+.fr{display:flex;align-items:flex-start}.fr .mi{flex:1}
+.fr .mi{margin:0 0 0 .3rem}
+.ft{flex:none;display:grid;place-items:center;width:1.7rem;height:1.7rem;margin-top:.7rem;padding:0;border:0;border-radius:6px;background:none;color:var(--mut);cursor:pointer;transition:color .3s var(--ease),background .3s var(--ease)}.ft:hover,.fd.on .ft{color:#fff}.ft:hover{background:#0b0b0b}
+.ft svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.ft .fo,.fd.on .ft .fc{display:none}.fd.on .ft .fo{display:block}
+.fk{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s var(--ease)}.fd.on .fk{grid-template-rows:1fr}
+.fk>div{overflow:hidden;min-height:0;visibility:hidden;margin-left:.85rem;padding-left:.8rem;border-left:1px solid var(--ln);transition:visibility .35s}.fd.on .fk>div{visibility:visible}
+.fk a{display:block;padding:.45rem .7rem;border-radius:8px;transition:background .3s var(--ease)}.fk a:hover{background:#0b0b0b}.fk a b{display:block;font-weight:500;font-size:.88rem;color:#fff}.fk a small{display:block;color:var(--mut);font-size:.78rem;line-height:1.4}
 .mf{display:flex;justify-content:space-between;gap:1rem;border-top:1px solid var(--ln);padding:1rem 0;font-size:.85rem;color:var(--mut)}.mf a{color:#fff}
 @media(max-width:760px){.mg{grid-template-columns:1fr;gap:1rem;padding:1.2rem 0 .8rem}.mf{flex-direction:column}}
 #ct{position:fixed;inset:0;z-index:80;background:#000;display:grid;place-items:center;padding:var(--pad);overflow-y:auto;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
@@ -42,7 +88,7 @@ nav .nl{font-weight:600;letter-spacing:-.02em}nav .lk{display:flex;gap:1.8rem;fo
 #cv{position:absolute;inset:0;width:100%;height:100%;opacity:.9}
 .hero>*:not(#cv){position:relative}.hero{text-align:center;justify-items:center}.hero .l{padding:0!important}.hero .row{justify-content:center}.hero .tag{margin-bottom:1rem}
 h1,h2{font-weight:500;letter-spacing:-.04em;line-height:.92;text-transform:uppercase}
-h1{font-size:clamp(2rem,6.2vw,5.2rem)}
+h1{font-size:clamp(1.6rem,3.8vw,3.1rem)}
 h2{font-size:clamp(1.9rem,4.8vw,4.2rem)}.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:start}@media(max-width:820px){.two{grid-template-columns:1fr}}.txt p{color:var(--mut);margin-bottom:1.1rem;max-width:36rem}.txt p.hi{color:#fff}.hero p{max-width:32rem;color:var(--mut);font-size:.92rem;margin:0 auto .7rem}.hero p.hi{color:#fff}.hero .row{margin-top:1.2rem}
 .l{display:block}.l:nth-child(2){padding-left:clamp(1rem,12vw,12rem);color:var(--mut)}.l:nth-child(3){padding-left:clamp(2rem,4vw,4rem)}
 em{font-style:normal;font-weight:inherit;color:var(--mut)}
@@ -77,18 +123,46 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem}
 [data-r]::after{content:"";position:absolute;inset:0;background:#000;transform-origin:top;transition:transform 1.1s var(--ease);z-index:2;pointer-events:none}
 [data-r].on::after{transform:scaleY(0)}
 [data-r]>*{transform:translateY(24px);transition:transform 1.1s var(--ease)}[data-r].on>*{transform:none}
-#pg{position:fixed;top:0;left:0;height:2px;background:#fff;width:0;z-index:60}
 #ring{position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border:1px solid #fff;border-radius:50%;pointer-events:none;z-index:90;mix-blend-mode:difference;transition:width .4s var(--ease),height .4s var(--ease),margin .4s var(--ease);display:none}
 #ring.h{width:64px;height:64px;margin:-32px 0 0 -32px}
 @media(hover:hover) and (pointer:fine){#ring{display:block}body,a,button,input,textarea{cursor:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}[data-r]::after{display:none}[data-r]>*{transform:none}}
-.lk{margin-top:1.5rem!important;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;max-width:none;margin-top:1px;padding:2rem;transition:background .6s var(--ease)}.lk:hover{background:#0b0b0b}.lk h3{font-size:clamp(1.3rem,3vw,2rem);font-weight:500;letter-spacing:-.03em}.lk p{color:var(--mut);font-size:.95rem;margin-top:.4rem;max-width:34rem}.int{margin-top:2.5rem;color:var(--mut)}.arch .x{opacity:.45}.hero{display:flex;flex-direction:column;align-items:center;padding-top:7rem;padding-bottom:2.5rem}.ht{position:relative;text-align:center}.gz{flex:1;min-height:280px;width:100%}.hb{position:relative;display:grid;grid-template-columns:repeat(4,1fr);width:100%;border-top:1px solid var(--ln)}.hc{padding:1.3rem 1.4rem 0;border-left:1px solid var(--ln);text-align:center}.hc:first-child{border-left:0}.hc p{margin:.7rem auto 0;font-size:.88rem;max-width:22rem}.hero .row{margin-top:2.2rem;position:relative}@media(max-width:980px){.hb{grid-template-columns:1fr 1fr}.hc:nth-child(odd){border-left:0}.hc{padding-bottom:1.2rem}}@media(max-width:560px){.hb{grid-template-columns:1fr}.hc{border-left:0;border-top:1px solid var(--ln)}.hc:first-child{border-top:0}}.ic{width:26px;height:26px;fill:none;stroke:#fff;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;flex:none}.ct{display:flex;justify-content:space-between;align-items:center}.ly li>.ic{margin-top:.15rem}.logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--ln);border:1px solid var(--ln);margin-top:3rem}.lg{background:#000;padding:1.6rem;display:flex;flex-direction:column;gap:1.4rem;min-height:8.5rem;justify-content:space-between}.lg .m{display:flex;align-items:center;gap:.7rem;font-weight:600;letter-spacing:-.02em;font-size:1.15rem;color:#fff}.lg.t .m{color:rgba(255,255,255,.65)}.lg .m svg{width:22px;height:22px;flex:none}.lg .m svg:not(.ic){fill:currentColor}.ht{margin-bottom:2.2rem}</style>
+.lk{margin-top:1.5rem!important;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;max-width:none;margin-top:1px;padding:2rem;transition:background .6s var(--ease)}.lk:hover{background:#0b0b0b}.lk h3{font-size:clamp(1.3rem,3vw,2rem);font-weight:500;letter-spacing:-.03em}.lk p{color:var(--mut);font-size:.95rem;margin-top:.4rem;max-width:34rem}.int{margin-top:2.5rem;color:var(--mut)}.arch .x{opacity:.45}.hero{display:flex;flex-direction:column;align-items:center;padding-top:7rem;padding-bottom:2.5rem}.ht{position:relative;text-align:center}.gz{flex:1;min-height:280px;width:100%}.hb{position:relative;display:grid;grid-template-columns:repeat(4,1fr);width:100%;border-top:1px solid var(--ln)}.hc{padding:1.3rem 1.4rem 0;border-left:1px solid var(--ln);text-align:center}.hc:first-child{border-left:0}.hc p{margin:.7rem auto 0;font-size:.88rem;max-width:22rem}.hero .row{margin-top:2.2rem;position:relative}@media(max-width:980px){.hb{grid-template-columns:1fr 1fr}.hc:nth-child(odd){border-left:0}.hc{padding-bottom:1.2rem}}@media(max-width:560px){.hb{grid-template-columns:1fr}.hc{border-left:0;border-top:1px solid var(--ln)}.hc:first-child{border-top:0}}.ic{width:26px;height:26px;fill:none;stroke:#fff;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;flex:none}.ct{display:flex;justify-content:space-between;align-items:center}.ly li>.ic{margin-top:.15rem}.logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--ln);border:1px solid var(--ln);margin-top:3rem}.lg{background:#000;padding:1.6rem;display:flex;flex-direction:column;gap:1.4rem;min-height:8.5rem;justify-content:space-between}.lg .m{display:flex;align-items:center;gap:.7rem;font-weight:600;letter-spacing:-.02em;font-size:1.15rem;color:#fff}.lg.t .m{color:rgba(255,255,255,.65)}.lg .m svg{width:22px;height:22px;flex:none}.lg .m svg:not(.ic){fill:currentColor}.ht{margin-bottom:2.2rem}
+#contacto .two{align-items:center}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.uvw{position:relative}
+.uv{position:relative;width:min(100%,29rem);margin-inline:auto;aspect-ratio:1/1;border:1px solid var(--ln);background:#000}
+.uv::before,.uv::after{content:"";position:absolute;width:10px;height:10px;border:1px solid #fff;opacity:.7;pointer-events:none;z-index:2}
+.uv::before{top:-1px;left:-1px;border-right:0;border-bottom:0}.uv::after{right:-1px;bottom:-1px;border-left:0;border-top:0}
+#uv-cv{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y;outline:0}
+#uv-cv:focus-visible{outline:1px solid var(--fg);outline-offset:-5px}
+.uh{position:absolute;z-index:1;display:flex;flex-direction:column;gap:.15rem;pointer-events:none;font:500 .62rem/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.uh b{font-weight:500;color:#fff}.uh span{transition:opacity .6s var(--ease)}.uh span.off{opacity:0}
+.uv-tl{top:.9rem;left:1rem}.uv-tr{top:.9rem;right:1rem;text-align:right}
+.uv-bar{position:absolute;left:0;right:0;bottom:0;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"dep dep" "info exp";align-items:end;gap:.8rem 1rem;padding:0 1rem .9rem;pointer-events:none}
+.uv-bar .uh{position:static}
+.uv-bl{grid-area:info;max-width:32rem}.uv-bl span{text-transform:none;letter-spacing:.02em}
+.uv-dep{grid-area:dep;justify-self:center;pointer-events:auto;padding:.55rem 1.1rem;font-size:.78rem;line-height:1.2;white-space:nowrap}.uv-dep:disabled{opacity:.55}
+@media(max-width:560px){.uv{width:min(100%,24rem)}.uv:not(.fx) .uv-bl span{display:none}.uv:not(.fx) .uv-dep{padding:.45rem .9rem;font-size:.72rem}.uv:not(.fx) .uv-bar{gap:.6rem 1rem}}
+@media(max-width:520px){.uh{font-size:.54rem}.uv-tl span{display:none}}
+
+.uv-br{grid-area:exp;pointer-events:auto;border:0;padding:.3rem 0 .3rem .6rem;color:var(--mut);white-space:nowrap;transition:color .3s var(--ease)}.uv-br:hover{color:#fff}
+.uv-title{grid-area:ttl;justify-self:center;text-align:center;pointer-events:none;display:none;font-weight:600;font-size:clamp(1.1rem,2vw,1.6rem);line-height:1;letter-spacing:-.02em;text-transform:uppercase;background:linear-gradient(180deg,#fff 35%,rgba(255,255,255,.5));-webkit-background-clip:text;background-clip:text;color:transparent;opacity:0;transform:translateY(14px);transition:opacity .9s var(--ease) .45s,transform .9s var(--ease) .45s}
+.uv.fx{position:fixed;aspect-ratio:auto;max-height:none;min-height:0;margin:0;z-index:80;transition:top .9s var(--ease),left .9s var(--ease),width .9s var(--ease),height .9s var(--ease)}
+.uv.fx .uv-title{display:block}.uv.go .uv-title{opacity:1;transform:none}.uv.fx #uv-cv{touch-action:none}.uv.fx .uh{font-size:.68rem}
+.uv.fx .uv-bar{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);grid-template-areas:"dep dep dep" "info ttl exp";padding:0 calc(1.2rem + env(safe-area-inset-right,0px)) calc(1.1rem + env(safe-area-inset-bottom,0px)) calc(1.2rem + env(safe-area-inset-left,0px))}
+.uv.fx .uv-br{justify-self:end}
+.uv.fx .uv-tl{top:calc(1rem + env(safe-area-inset-top,0px));left:calc(1.2rem + env(safe-area-inset-left,0px))}
+.uv.fx .uv-tr{top:calc(1rem + env(safe-area-inset-top,0px));right:calc(1.2rem + env(safe-area-inset-right,0px))}
+@media(max-width:700px){.uv.fx .uv-bar{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"dep dep" "info exp" "ttl ttl"}}
+@media(max-height:520px){.uv.fx .uv-bl span{display:none}}
+</style>
 </head>
 <body>
-<div id="pg"></div><div id="ring"></div>
+<div id="ring"></div>
 <nav aria-label="Principal"><div class="nw"><a class="nl" href="index.html">ENVYRΛ</a>
-<div class="lk"><button type="button" class="pm cur" aria-expanded="false" aria-controls="mm" aria-haspopup="true">Productos <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3.5l4 4 4-4"/></svg></button><a href="index.html#proceso">Proceso</a><a href="index.html#empresa">Empresa</a></div>
-<div class="ac"><button type="button" class="nb g" data-contact>Contacto</button><button type="button" class="nb s" data-demo>Solicitar demo</button></div></div><div class="mm" id="mm"><div class="mw"><div class="mg"><div><h4 class="mono">Plataforma</h4><a class="mi" href="index.html#northunit"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4 2v-8L3 5z"/></svg><span><b>NorthUnit <em>Nuevo</em></b><small>CRM con IA para equipos comerciales</small></span></a><a class="mi" href="ENVYRAINTELLIGENCE.html" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg><span><b>ENVYRA INTELLIGENCE</b><small>Infraestructura de IA: memoria, herramientas y API</small></span></a></div><div><h4 class="mono">Experiencias</h4><a class="mi" href="https://envyra23.github.io/MotionLayersEngine-/" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l10 5.5-10 5.5L2 7.5 12 2zM2 12l10 5.5L22 12M2 16.5l10 5.5 10-5.5"/></svg><span><b>MotionLayers Engine <em>Beta</em></b><small>Interacción sin fricción, solo con una cámara</small></span></a></div><div><h4 class="mono">Marca y movimiento</h4><a class="mi" href="https://envyra23.github.io/REACH/" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 12l6-6"/></svg><span><b>Envyra Reach</b><small>Estrategia, creatividad y tecnología para marcas</small></span></a><a class="mi" href="https://envyra23.github.io/The-Gold-Level/" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 9-8 9-8-9 8-9z"/></svg><span><b>The Gold Level</b><small>La posición desde la que jugamos</small></span></a></div></div><div class="mf"><span>Todo lo que construye Envyra</span><a href="index.html#lanzado">Ver todos los productos →</a></div></div></div></nav>
+<div class="nlk"><button type="button" class="pm cur" aria-expanded="false" aria-controls="mm" aria-haspopup="true">Productos <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3.5l4 4 4-4"/></svg></button><a href="index.html#proceso">Proceso</a><a href="index.html#empresa">Empresa</a></div>
+<div class="ac"><button type="button" class="nb g" data-contact>Contacto</button><button type="button" class="nb s" data-demo>Solicitar demo</button></div></div><div class="mm" id="mm"><div class="mw"><div class="mg"><div><h4 class="mono">Plataforma</h4><a class="mi" href="index.html#northunit"><span><b>NorthUnit <em>Nuevo</em></b><small>CRM con IA para equipos comerciales</small></span></a><div class="fd on"><div class="fr"><button type="button" class="ft" aria-expanded="true" aria-label="Mostrar componentes de ENVYRA INTELLIGENCE"><svg class="fc" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h7l2 2h9v11H3V6z"/></svg><svg class="fo" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19V6h7l2 2h8v3M3 19l2.5-8H22l-2.5 8H3z"/></svg></button><a class="mi" href="ENVYRAINTELLIGENCE.html" aria-current="page"><span><b>ENVYRA INTELLIGENCE</b><small>Infraestructura de IA: memoria, herramientas y API</small></span></a></div><div class="fk"><div><a href="#capas"><b>Capas</b><small>Models, Memory, Tools e Infrastructure</small></a><a href="#componentes"><b>A001</b><small>Asistente en español con memoria de caso</small></a><a href="#componentes"><b>Memory Case</b><small>Contexto e instrucciones del caso</small></a><a href="#componentes"><b>ENVYRA CLOUD</b><small>API para guardar y recuperar la memoria</small></a><a href="#demo"><b>Demo interactiva</b><small>Probá A001 simulado</small></a></div></div></div></div><div><h4 class="mono">Experiencias</h4><a class="mi" href="https://envyra23.github.io/MotionLayersEngine-/" target="_blank" rel="noopener"><span><b>MotionLayers Engine <em>Beta</em></b><small>Interacción sin fricción, solo con una cámara</small></span></a></div><div><h4 class="mono">Marca y movimiento</h4><a class="mi" href="https://envyra23.github.io/REACH/" target="_blank" rel="noopener"><span><b>Envyra Reach</b><small>Estrategia, creatividad y tecnología para marcas</small></span></a><a class="mi" href="https://envyra23.github.io/The-Gold-Level/" target="_blank" rel="noopener"><span><b>The Gold Level</b><small>La posición desde la que jugamos</small></span></a></div></div><div class="mf"><span>Todo lo que construye Envyra</span><a href="index.html#lanzado">Ver todos los productos →</a></div></div></div></nav>
 <div id="ct" role="dialog" aria-modal="true" aria-labelledby="ct-t">
 <button type="button" id="cc" class="mono">Cerrar ✕</button>
 <form id="cf" action="https://formspree.io/f/mgopwaer" method="POST">
@@ -103,7 +177,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem}
 <canvas id="cv" aria-hidden="true"></canvas>
 <div class="gz" id="gz"></div>
 <div class="ht"><span class="tag">[ ENVYRA INTELLIGENCE ]</span>
-<h1 data-r><span class="l">A new layer for</span><span class="l">intelligent software.</span></h1></div>
+<h1 data-r><span class="l">Una nueva capa para</span><span class="l">el software inteligente.</span></h1></div>
 <div class="hb">
 <div class="hc" data-r><span class="mono">[ 01 ]</span><p>La inteligencia artificial está cambiando la forma en que construimos software. Pero los modelos, por sí solos, son solo una parte de la ecuación.</p></div>
 <div class="hc" data-r><span class="mono">[ 02 ]</span><p>Para crear sistemas realmente útiles, la inteligencia necesita contexto. Necesita memoria. Necesita conectarse con datos, herramientas y procesos.</p></div>
@@ -153,7 +227,8 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem}
 <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><b>Integraciones</b><span>Datos comerciales vía Supabase y modelos de lenguaje vía OpenRouter, como complemento.</span></div></li>
 </ul></div>
 <div class="logos" data-r><div class="lg"><span class="mono">[ Asistente ]</span><span class="m"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5z"/></svg>A001</span></div><div class="lg"><span class="mono">[ API · Memoria ]</span><span class="m"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9.5 4.3 4.3 0 0 1 17.5 18H7z"/></svg>ENVYRΛ CLOUD</span></div><div class="lg t"><span class="mono">[ Integración · Datos ]</span><span class="m"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z"/></svg>Supabase</span></div><div class="lg t"><span class="mono">[ Integración · Modelos ]</span><span class="m"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.778 1.844v1.919q-.569-.026-1.138-.032-.708-.008-1.415.037c-1.93.126-4.023.728-6.149 2.237-2.911 2.066-2.731 1.95-4.14 2.75-.396.223-1.342.574-2.185.798-.841.225-1.753.333-1.751.333v4.229s.768.108 1.61.333c.842.224 1.789.575 2.185.799 1.41.798 1.228.683 4.14 2.75 2.126 1.509 4.22 2.11 6.148 2.236.88.058 1.716.041 2.555.005v1.918l7.222-4.168-7.222-4.17v2.176c-.86.038-1.611.065-2.278.021-1.364-.09-2.417-.357-3.979-1.465-2.244-1.593-2.866-2.027-3.68-2.508.889-.518 1.449-.906 3.822-2.59 1.56-1.109 2.614-1.377 3.978-1.466.667-.044 1.418-.017 2.278.02v2.176L24 6.014Z"/></svg>OpenRouter</span></div></div>
-<a class="bx lk" href="#" data-r><div><span class="mono">[ ENVYRA CLOUD ]</span><h3 style="margin-top:.6rem">Abrir ENVYRA CLOUD</h3><p>Accedé a la plataforma donde viven las memorias de A001.</p></div><span class="mono">Acceder ↗</span></a>
+<div class="bx lk cl-row" data-r><div><span class="mono">[ ENVYRA CLOUD ]</span><h3 style="margin-top:.6rem"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9.5 4.3 4.3 0 0 1 17.5 18H7z"/></svg>ENVYRA CLOUD</h3><p>La plataforma donde viven las memorias de A001.</p><pre class="cl-code"><code>Próximamente!
+<i>en lista de espera...</i><span class="cl-cursor"></span></code></pre></div><div class="cl-tools"><span class="mono cl-msg" role="status" aria-live="polite"></span><!-- TODO: reemplazá data-copy por el link real de acceso a ENVYRA CLOUD --><button type="button" class="cl-copy" data-copy="https://envyraweb.com/ENVYRACLOUD.html" aria-label="Copiar link de acceso a ENVYRA CLOUD" title="Copiar link"><svg class="cl-ln" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><svg class="cl-ck" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></div></div>
 </section>
 
 <section id="aplicaciones">
@@ -162,15 +237,62 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem}
 <div class="txt" data-r><p>Estamos explorando una nueva generación de aplicaciones: sistemas que no se limitan a mostrar información, sino que pueden ayudar a interpretarla, organizarla y convertirla en acciones.</p><p>Desde agentes especializados hasta herramientas internas para empresas, la oportunidad está en diseñar soluciones donde la inteligencia forme parte de la arquitectura desde el principio.</p><p>No como un complemento.</p><p class="hi">Como parte del sistema.</p></div></div>
 </section>
 
+<section id="demo">
+<span class="tag">[ 05 — Demo interactiva ]</span>
+<h2 data-r><span class="l">Try A001</span><span class="l">right here.</span></h2>
+<div class="txt" style="margin-top:1.6rem"><p>Una simulación de la interfaz de A001 con sus funciones básicas: conversación y Memory Case. No llama a ningún modelo ni guarda datos en servidores.</p></div>
+<div class="dm">
+<div class="dm-win" role="group" aria-label="Simulación de A001">
+<div class="dm-bar"><span class="dm-id"><b>Λ</b>A001 <span class="mono">Core 0.2</span></span><span class="dm-r"><button type="button" class="dm-new mono" id="dm-new">Nueva conversación</button><span class="dm-pill mono">● Simulación</span></span></div>
+<div class="dm-card" id="dm-card"><button type="button" class="dm-ch" id="dm-toggle" aria-expanded="false" aria-controls="dm-body"><svg class="dm-fi" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 11v4M8 8.5h.01M12.5 10h4.5M12.5 14h4.5"/></svg><span><b id="dm-tl">Desplegar Memory Case</b><small id="dm-sum">A001 — instrucciones base</small></span><svg class="dm-cv" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3.5l4 4 4-4"/></svg></button>
+<div class="dm-body" id="dm-body"><div><div class="dm-mem"><div class="dm-code">
+<div class="dm-fn mono"><span>memory-case.yml</span><span>local</span></div>
+<label class="dm-ln" for="dm-t"><i>nombre:</i><input id="dm-t" value="A001 — instrucciones base"></label>
+<label class="dm-ln" for="dm-m"><i>contexto: |</i></label>
+<textarea id="dm-m" rows="8" aria-label="Contexto e instrucciones">IDENTIDAD:
+Sos A001, un agente de ENVYRA.
+
+OBJETIVO:
+Ayudar a gestionar oportunidades comerciales.
+
+REGLAS:
+No inventes datos ni afirmes haber realizado acciones que no hiciste.</textarea>
+</div>
+<div class="row" style="margin-top:1rem"><button type="button" class="btn w" id="dm-s">Guardar</button><button type="button" class="btn" id="dm-c">Vaciar editor</button></div>
+<p class="dm-st mono" id="dm-st" role="status">Memory Case local · ENVYRA CLOUD pendiente</p></div></div></div></div>
+<div class="dm-pane" id="pn-chat">
+<div class="dm-msgs" id="dm-msgs" aria-live="polite"><div class="dm-welcome" id="dm-w"><b>¿Qué construimos hoy?</b><p>Escribí un mensaje o probá una sugerencia. A001 responde usando tu Memory Case como contexto.</p><div class="dm-sug"><button type="button" data-p="¿Qué es la Memory Case?">¿Qué es la Memory Case?</button><button type="button" data-p="Ayudame a planificar el desarrollo de A001.">Plan de desarrollo</button><button type="button" data-p="¿Qué hace ENVYRA CLOUD?">ENVYRA CLOUD</button></div></div></div>
+<form class="dm-comp" id="dm-f"><input id="dm-in" type="text" placeholder="Escribí un mensaje para A001..." autocomplete="off" aria-label="Mensaje para A001" required><button type="submit" class="btn w">Enviar ↗</button></form>
+</div>
+<div class="dm-foot mono"><span>openai/gpt-4o-mini · simulado</span><span id="dm-ctx">contexto 0/30</span><span id="dm-mc">memory 0 car.</span></div>
+</div>
+<div class="dm-spec"><span class="mono">[ Especificaciones ]</span><h3>A001 · Core 0.2</h3><dl><div><dt>Modelo</dt><dd>openai/gpt-4o-mini · por defecto</dd></div><div><dt>Enrutador</dt><dd>OpenRouter · /chat/completions</dd></div><div><dt>Temperatura</dt><dd>0.5</dd></div><div><dt>Contexto enviado</dt><dd>últimos 30 mensajes</dd></div><div><dt>Historial</dt><dd>últimos 40 · en el navegador</dd></div><div><dt>Memory Case</dt><dd>título + contenido · local y CLOUD</dd></div><div><dt>CLOUD API</dt><dd>save · get · list · delete</dd></div><div><dt>Autenticación</dt><dd>Supabase Auth · Bearer token</dd></div><div><dt>Voz</dt><dd>Web Speech API · es-AR</dd></div><div><dt>Estado</dt><dd>Prototipo 0.2</dd></div></dl>
+<p class="dm-note mono">Simulación con respuestas predefinidas, sin red ni servidores. Las especificaciones corresponden a la versión real del prototipo.</p></div>
+</div>
+</section>
+
 <section id="evolucion">
-<span class="tag">[ 05 — Evolución ]</span>
+<span class="tag">[ 06 — Evolución ]</span>
 <div class="two"><h2 data-r><span class="l">Built to</span><span class="l">evolve.</span></h2>
 <div class="txt" data-r><p>La infraestructura de inteligencia artificial no es un producto terminado. Es un campo que evoluciona con cada modelo, cada integración y cada problema que buscamos resolver.</p><p>Por eso, ENVYRA INTELLIGENCE se desarrolla de forma modular: para experimentar con nuevas capacidades, integrar tecnologías existentes y construir sobre una base que pueda crecer con el tiempo.</p><p>Sin depender de una única forma de trabajar.</p><p class="hi">Sin limitar el software a una única posibilidad.</p></div></div>
 </section>
 
 <section id="contacto">
-<span class="tag">[ 06 — Siguiente capa ]</span>
-<div class="two"><h2 data-r><span class="l">The next layer</span><span class="l">is being built.</span></h2>
+<span class="tag">[ 07 — Siguiente capa ]</span>
+<div class="two"><div class="uvw" data-r>
+<h2 class="sr">The next layer is being built.</h2>
+<div class="uv" id="uv">
+<canvas id="uv-cv" tabindex="0" role="img" aria-label="Mini universo 3D de A001: un teseracto que se despliega en núcleo, módulos y base de datos. Arrastrá para rotar."></canvas>
+<div class="uh uv-tl"><b>[ A001 · Universo ]</b><span id="uv-hint">Arrastrá para rotar · desplegá la arquitectura</span></div>
+<div class="uh uv-tr"><span id="uv-ang">YAW 000° · PIT -00°</span><span id="uv-cnt">Nodos 1 · Reg 0</span></div>
+<div class="uv-bar">
+<button type="button" class="btn w uv-dep" id="uv-dep">Desplegar arquitectura ↗</button>
+<div class="uh uv-bl"><b id="uv-n">A001 · Teseracto</b><span id="uv-i">núcleo plegado · desplegá la arquitectura para ver el universo</span></div>
+<button type="button" class="uh uv-br" id="uv-x" aria-label="Expandir universo">[ Expandir ↗ ]</button>
+<div class="uv-title" aria-hidden="true">ENVYRA INTELLIGENCE</div>
+</div>
+</div>
+</div>
 <div class="txt" data-r><p>Estamos construyendo las herramientas que conectan inteligencia, contexto y software.</p><p>Hoy, cada componente es un paso hacia sistemas más capaces. Mañana, esa misma arquitectura puede convertirse en la base de nuevas aplicaciones, productos e integraciones.</p><p class="hi">Esto es ENVYRA INTELLIGENCE.</p><p>Tecnología para construir lo que viene.</p>
 <div class="row" style="margin-top:1.5rem"><a class="btn w" href="index.html">Conocer ENVYRA ↗</a><button type="button" class="btn" data-contact>Contactar ↗</button></div></div></div>
 </section>
@@ -179,18 +301,51 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem}
 <script>
 (function(){
 var b=document.body,s=document.getElementById('s'),rm=matchMedia('(prefers-reduced-motion:reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
-var cur=0,H=0,pg=document.getElementById('pg');
+var cur=0,H=0;
 function size(){H=s.offsetHeight;if(b.classList.contains('smooth'))b.style.height=H+'px'}
 if(!rm&&fine){b.classList.add('smooth');size();addEventListener('resize',size);new ResizeObserver(size).observe(s);
  (function tick(){var y=scrollY;cur+=(y-cur)*.085;if(Math.abs(y-cur)<.05)cur=y;s.style.transform='translate3d(0,'+(-cur).toFixed(2)+'px,0)';
- var m=H-innerHeight;pg.style.width=(m>0?cur/m*100:0)+'%';requestAnimationFrame(tick)})();
-}else{addEventListener('scroll',function(){var m=document.documentElement.scrollHeight-innerHeight;pg.style.width=scrollY/m*100+'%'},{passive:true})}
+ requestAnimationFrame(tick)})();
+}
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var hh=a.getAttribute('href'),t=hh.length>1?document.querySelector(hh):null;if(!t)return;e.preventDefault();scrollTo({top:b.classList.contains('smooth')?t.offsetTop:t.getBoundingClientRect().top+scrollY,behavior:rm?'auto':'smooth'})})});
 var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.15});
 document.querySelectorAll('[data-r]').forEach(function(e){io.observe(e)});
 if(fine){var r=document.getElementById('ring'),mx=0,my=0,rx=0,ry=0;addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});
  (function f(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;r.style.transform='translate('+rx+'px,'+ry+'px)';requestAnimationFrame(f)})();
  document.querySelectorAll('a,button,.card').forEach(function(e){e.addEventListener('mouseenter',function(){r.classList.add('h')});e.addEventListener('mouseleave',function(){r.classList.remove('h')})})}
+/* Carpeta desplegable (ENVYRA INTELLIGENCE) */
+document.querySelectorAll('.fd .ft').forEach(function(t){t.addEventListener('click',function(){var f=t.closest('.fd'),o=!f.classList.contains('on');f.classList.toggle('on',o);t.setAttribute('aria-expanded',o)})});
+/* Deep links (pagina.html#seccion) */
+addEventListener('load',function(){setTimeout(function(){var t;try{t=location.hash.length>1&&document.querySelector(location.hash)}catch(e){}if(t)scrollTo({top:Math.max(0,t.getBoundingClientRect().top+(b.classList.contains('smooth')?cur:scrollY)-(t.tagName==='SECTION'?0:90)),behavior:'auto'})},80)});
+/* Demo A001 (simulación) */
+(function(){
+var g=function(i){return document.getElementById(i)},msgs=g('dm-msgs'),W0=msgs.innerHTML,n=0,busy=false;
+function stat(){var m=g('dm-m').value.trim().length,t=g('dm-t').value.trim()||'Sin título';g('dm-ctx').textContent='contexto '+Math.min(n,30)+'/30';g('dm-mc').textContent='memory '+m+' car.';g('dm-sum').textContent=m?'nombre: "'+t+'" · '+m+' car.':'contexto: vacío'}
+function add(role,text){var w=g('dm-w');if(w)w.remove();var d=document.createElement('div'),l=document.createElement('span'),p=document.createElement('p');d.className='dm-m '+role;l.className='mono';l.textContent=role==='u'?'Vos':'A001';d.appendChild(l);d.appendChild(p);msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;if(role==='u'||rm){p.textContent=text;return null}return p}
+function type(p,t,done){var i=0;(function f(){i+=2;p.textContent=t.slice(0,i);msgs.scrollTop=msgs.scrollHeight;if(i<t.length)setTimeout(f,14);else done()})()}
+function reply(q){var s=q.toLowerCase(),m=g('dm-m').value.trim(),t=g('dm-t').value.trim()||'Sin título';
+ if(/\bhola\b|buenas|\bhey\b/.test(s))return 'Hola. Soy A001, el agente de ENVYRA INTELLIGENCE. ¿En qué trabajamos hoy?';
+ if(/memory|memoria|contexto/.test(s))return m?'Tengo cargada la Memory Case «'+t+'» ('+m.length+' caracteres). La recibo como contexto en cada consulta: no es entrenamiento.':'Todavía no hay una Memory Case cargada. Abrí la tarjeta Memory Case, escribila ahí y la uso como contexto en cada consulta.';
+ if(/cloud|nube|sincroniz/.test(s))return 'ENVYRA CLOUD guarda y recupera la memoria del caso, con autenticación de usuario. Está en lista de espera: en esta demo todo queda en tu navegador.';
+ if(/plan|desarroll|roadmap/.test(s))return 'Un plan posible: 1) definir la Memory Case, 2) conectar un modelo, 3) sumar fuentes de datos, 4) sincronizar con ENVYRA CLOUD.';
+ if(/modelo|openrouter|\bapi\b/.test(s))return 'La versión real enruta las consultas por OpenRouter (por defecto, openai/gpt-4o-mini). Esta demo es una simulación: no llama a ningún modelo.';
+ return (m?'Con la Memory Case «'+t+'» como contexto':'Sin Memory Case cargada')+', respondería a «'+(q.length>80?q.slice(0,80)+'…':q)+'». Esto es una simulación: en la versión real la respuesta la genera el modelo.'}
+function send(q){q=q.trim();if(!q||busy)return;busy=true;add('u',q);n++;stat();
+ setTimeout(function(){var t=reply(q),p=add('a',t);n++;stat();if(p)type(p,t,function(){busy=false});else busy=false},rm?0:450)}
+g('dm-f').addEventListener('submit',function(e){e.preventDefault();var i=g('dm-in'),v=i.value;i.value='';send(v)});
+msgs.addEventListener('click',function(e){var t=e.target.closest('[data-p]');if(t)send(t.getAttribute('data-p'))});
+g('dm-new').addEventListener('click',function(){msgs.innerHTML=W0;n=0;busy=false;stat()});
+g('dm-s').addEventListener('click',function(){g('dm-st').textContent='Guardada en esta sesión · '+g('dm-m').value.trim().length+' caracteres · ENVYRA CLOUD pendiente';stat()});
+g('dm-c').addEventListener('click',function(){g('dm-m').value='';g('dm-st').textContent='Editor vaciado · ENVYRA CLOUD pendiente';stat()});
+g('dm-m').addEventListener('input',stat);g('dm-t').addEventListener('input',stat);
+g('dm-toggle').addEventListener('click',function(){var c=g('dm-card'),o=!c.classList.contains('on');c.classList.toggle('on',o);this.setAttribute('aria-expanded',o);g('dm-tl').textContent=o?'Ocultar Memory Case':'Desplegar Memory Case'});stat();
+})();
+/* Copiar link de ENVYRA CLOUD */
+document.querySelectorAll('[data-copy]').forEach(function(btn){var msg=btn.parentNode.querySelector('.cl-msg'),t2;
+ function done(ok){btn.classList.toggle('ok',ok);msg.textContent=ok?'Link copiado':'No se pudo copiar';clearTimeout(t2);t2=setTimeout(function(){btn.classList.remove('ok');msg.textContent=''},2000)}
+ btn.addEventListener('click',function(){var u=btn.getAttribute('data-copy');
+  if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(u).then(function(){done(true)},function(){done(false)});
+  else{var t=document.createElement('textarea');t.value=u;t.style.cssText='position:fixed;opacity:0';document.body.appendChild(t);t.select();var ok=false;try{ok=document.execCommand('copy')}catch(e){}t.remove();done(ok)}})});
 /* Menú de productos */
 var pm=document.querySelector('.pm'),mm=document.getElementById('mm'),nv=document.querySelector('nav'),mt=null;
 function mo(o){mm.classList.toggle('on',o);pm.setAttribute('aria-expanded',o)}
@@ -229,6 +384,174 @@ function draw(t){x.clearRect(0,0,W,Hh);var cx=W*.5,cy=gcy,k=Math.min(W*.9,gzh*2.
  x.strokeStyle='#fff';x.strokeRect(cx-9,cy-9,18,18);x.fillStyle='#fff';x.fillText('[ INTELLIGENCE ]',cx,cy+26);
  if(!rm)requestAnimationFrame(draw)}
 requestAnimationFrame(draw);
+})();
+</script>
+
+<script>
+/* A001 · mini universo 3D (HUD) */
+(function(){
+var cv=document.getElementById('uv-cv'),box=document.getElementById('uv');if(!cv||!box)return;
+var x=cv.getContext('2d'),rm=matchMedia('(prefers-reduced-motion:reduce)').matches,$=function(i){return document.getElementById(i)},
+eA=$('uv-ang'),eN=$('uv-n'),eI=$('uv-i'),eH=$('uv-hint'),ring=$('ring'),
+PI2=Math.PI*2,CAM=4.6,SR=1.18,N=120,IDLE=rm?0:.0022,
+W=0,H=0,CX=0,CY=0,S=1,GL=null,yaw=.7,pit=-.3,wy=IDLE,wp=0,drag=false,moved=0,lx=0,ly=0,lm=0,t=0,last=0,vis=false,raf=0,
+hov=-1,sel=0,shown=-1,angS='',mx=-999,my=-999,cY=1,sY=0,cP=1,sP=0,px=0,py=0,pz=0,pk=1,
+TX=new Float32Array(256),TY=new Float32Array(256),TZ=new Float32Array(256),CP=new Float32Array(192);
+function pr(a,b,c){var x1=a*cY+c*sY,z1=c*cY-a*sY,y1=b*cP-z1*sP;pz=b*sP+z1*cP;pk=CAM/(CAM-pz);px=CX+x1*pk*S;py=CY+y1*pk*S}
+function da(z,a,b){return a+(b-a)*Math.max(0,Math.min(1,(z+1.3)/2.6))}
+function rg(a){return 'rgba(255,255,255,'+a.toFixed(3)+')'}
+/* anillos orbitales */
+var R=[{r:.46,tx:.35,tz:.2,aF:.4,aB:.14},{r:.74,tx:-.5,tz:.35,aF:.32,aB:.1},{r:1,tx:.15,tz:-.45,aF:.26,aB:.08}];
+R.forEach(function(d){d.a=Math.cos(d.tx);d.b=Math.sin(d.tx);d.c=Math.cos(d.tz);d.d=Math.sin(d.tz)});
+function rp(i,a,k){var d=R[i],c=Math.cos(a)*d.r*(k||1),s=Math.sin(a)*d.r*(k||1),y=-s*d.b;return [c*d.c-y*d.d,c*d.d+y*d.c,s*d.a]}
+var RP=R.map(function(d,i){var A=new Float32Array(216);for(var k=0;k<72;k++)A.set(rp(i,k/72*PI2),k*3);return A});
+function mkT(i,n){var A=new Float32Array(n*6);for(var k=0;k<n;k++){var a=k/n*PI2;A.set(rp(i,a),k*6);A.set(rp(i,a,1+(k%6===0?.075:.04)),k*6+3)}return A}
+var TK=[null,mkT(1,48),mkT(2,72)];
+/* poliedros */
+function mk(v){var e=[],m=1e9,i,j,n=v.length/3;function D(i,j){var a=v[3*i]-v[3*j],b=v[3*i+1]-v[3*j+1],c=v[3*i+2]-v[3*j+2];return Math.sqrt(a*a+b*b+c*c)}
+ for(i=0;i<n;i++)for(j=i+1;j<n;j++)m=Math.min(m,D(i,j));
+ for(i=0;i<n;i++)for(j=i+1;j<n;j++)if(D(i,j)<m+.01)e.push(i,j);return{v:v,e:e}}
+var gr=(1+Math.sqrt(5))/2,LL=Math.sqrt(1+gr*gr),c5=.577;
+var M={cube:mk([-1,-1,-1,-1,-1,1,-1,1,-1,-1,1,1,1,-1,-1,1,-1,1,1,1,-1,1,1,1].map(function(q){return q*c5})),
+ oct:mk([1,0,0,-1,0,0,0,1,0,0,-1,0,0,0,1,0,0,-1]),
+ tet:mk([1,1,1,1,-1,-1,-1,1,-1,-1,-1,1].map(function(q){return q*c5})),
+ ico:mk([0,1,gr,0,1,-gr,0,-1,gr,0,-1,-gr,1,gr,0,1,-gr,0,-1,gr,0,-1,-gr,0,gr,0,1,gr,0,-1,-gr,0,1,-gr,0,-1].map(function(q){return q/LL}))};
+function sh(m,cx,cy,cz,s,a,al){var v=m.v,n=v.length/3,i,ca=Math.cos(a),sa=Math.sin(a),cb=Math.cos(a*.7),sb=Math.sin(a*.7);
+ for(i=0;i<n;i++){var vx=v[3*i]*s,vv=v[3*i+1]*s,vz=v[3*i+2]*s,x1=vx*ca+vz*sa,z1=vz*ca-vx*sa,y1=vv*cb-z1*sb,z2=vv*sb+z1*cb;pr(cx+x1,cy+y1,cz+z2);TX[i]=px;TY[i]=py}
+ x.beginPath();for(i=0;i<m.e.length;i+=2){x.moveTo(TX[m.e[i]],TY[m.e[i]]);x.lineTo(TX[m.e[i+1]],TY[m.e[i+1]])}x.strokeStyle=rg(al);x.stroke()}
+function dbs(cx,cy,cz,s,a,al){var k,j,q,h=s*.72;x.beginPath();
+ for(k=-1;k<2;k++)for(j=0;j<=14;j++){q=a+j/14*PI2;pr(cx+Math.cos(q)*s,cy+k*h,cz+Math.sin(q)*s);j?x.lineTo(px,py):x.moveTo(px,py)}
+ for(j=0;j<4;j++){q=a+j*Math.PI/2;pr(cx+Math.cos(q)*s,cy-h,cz+Math.sin(q)*s);x.moveTo(px,py);pr(cx+Math.cos(q)*s,cy+h,cz+Math.sin(q)*s);x.lineTo(px,py)}
+ x.strokeStyle=rg(al);x.stroke()}
+/* trazos con profundidad */
+function sd(A,n,aF,aB,kk){var i,k,ps;kk=kk||1;for(i=0;i<n;i++){pr(A[3*i]*kk,A[3*i+1]*kk,A[3*i+2]*kk);TX[i]=px;TY[i]=py;TZ[i]=pz}
+ for(ps=0;ps<2;ps++){x.beginPath();for(i=0;i<n;i++){k=(i+1)%n;if((TZ[i]+TZ[k]>0)===(ps===0)){x.moveTo(TX[i],TY[i]);x.lineTo(TX[k],TY[k])}}x.strokeStyle=rg(ps?aB:aF);x.stroke()}}
+function sg(A,n,aF,aB,kk){var i,ps;kk=kk||1;for(i=0;i<n;i++){pr(A[6*i]*kk,A[6*i+1]*kk,A[6*i+2]*kk);TX[2*i]=px;TY[2*i]=py;TZ[2*i]=pz;pr(A[6*i+3]*kk,A[6*i+4]*kk,A[6*i+5]*kk);TX[2*i+1]=px;TY[2*i+1]=py;TZ[2*i+1]=pz}
+ for(ps=0;ps<2;ps++){x.beginPath();for(i=0;i<n;i++)if((TZ[2*i]+TZ[2*i+1]>0)===(ps===0)){x.moveTo(TX[2*i],TY[2*i]);x.lineTo(TX[2*i+1],TY[2*i+1])}x.strokeStyle=rg(ps?aB:aF);x.stroke()}}
+function circ(y,r){for(var k=0;k<64;k++){var a=k/64*PI2;CP[3*k]=Math.cos(a)*r;CP[3*k+1]=y;CP[3*k+2]=Math.sin(a)*r}}
+/* nodos */
+var ND=[{n:'A001 · Core',lb:'A001',i:'agente central · conecta inteligencia, contexto y software'},
+{n:'Memory Case',lb:'MEMORY',i:'memoria que viaja como contexto · local y CLOUD',r:0,a0:0,sp:.3,m:'db'},
+{n:'Actions',lb:'ACTIONS',i:'acciones que el agente ejecuta sobre el software',r:0,a0:3.14,sp:.3,m:'tet'},
+{n:'CLOUD API',lb:'CLOUD',i:'save · get · list · delete',r:1,a0:1.2,sp:-.2,m:'cube'},
+{n:'Auth',lb:'AUTH',i:'Supabase Auth · Bearer token',r:1,a0:4.3,sp:-.2,m:'oct'},
+{n:'Models',lb:'MODELS',i:'OpenRouter · enrutador de modelos',r:2,a0:.6,sp:.13,m:'oct'},
+{n:'Data',lb:'DATA',i:'fuentes de datos y registros conectados',r:2,a0:2.7,sp:.13,m:'cube'},
+{n:'Tools',lb:'TOOLS',i:'herramientas e integraciones',r:2,a0:4.9,sp:.13,m:'tet'}],NP=[];
+/* base de datos: cáscara de registros */
+var SH=new Float32Array(N*3),SW=new Float32Array(N*3),SX=new Float32Array(N),SY=new Float32Array(N),SZ=new Float32Array(N),E=[],i0;
+for(i0=0;i0<N;i0++){var yy=1-2*(i0+.5)/N,rr=Math.sqrt(1-yy*yy),th=i0*2.39996;SH[3*i0]=Math.cos(th)*rr*SR;SH[3*i0+1]=yy*SR;SH[3*i0+2]=Math.sin(th)*rr*SR}
+(function(){var seen={},i,j,k,c,a,b,d,key;for(i=0;i<N;i++){c=[];for(j=0;j<N;j++)if(j!==i){a=SH[3*i]-SH[3*j];b=SH[3*i+1]-SH[3*j+1];d=SH[3*i+2]-SH[3*j+2];c.push([a*a+b*b+d*d,j])}
+ c.sort(function(p,q){return p[0]-q[0]});for(k=0;k<3;k++){j=c[k][1];key=i<j?i+'-'+j:j+'-'+i;if(!seen[key]){seen[key]=1;E.push(i,j)}}}})();
+/* paquetes de datos */
+function np(r){var k=Math.random()<.6?0:1;return{k:k,i:k?Math.floor(Math.random()*N):1+Math.floor(Math.random()*7),u:r?Math.random():0,s:.2+Math.random()*.22}}
+var PK=[];for(i0=0;i0<14;i0++)PK.push(np(true));
+function pp(p,u){if(p.k)return[SW[3*p.i]*u,SW[3*p.i+1]*u,SW[3*p.i+2]*u];var q=NP[p.i],w=1-u;return[q[0]*w,q[1]*w,q[2]*w]}
+/* HUD */
+function rim(ra){ra=ra==null?1:ra;var r=Math.min(W,AV)*.47,k,a,l,c,s;x.strokeStyle=rg(.1*ra);x.beginPath();x.arc(CX,CY,r,0,PI2);x.stroke();
+ x.beginPath();for(k=0;k<72;k++){a=k*Math.PI/36-yaw;l=k%6===0?9:(k%2?3:5);c=Math.cos(a);s=Math.sin(a);x.moveTo(CX+c*r,CY+s*r);x.lineTo(CX+c*(r-l),CY+s*(r-l))}x.strokeStyle=rg(.22*ra);x.stroke();
+ x.fillStyle=rg(.7*ra);x.beginPath();x.moveTo(CX,CY-r-1);x.lineTo(CX-3.5,CY-r-7);x.lineTo(CX+3.5,CY-r-7);x.closePath();x.fill()}
+function ret(a,b,r,al){x.strokeStyle=rg(al);x.beginPath();[[-1,-1],[1,-1],[1,1],[-1,1]].forEach(function(c){var ax=a+c[0]*r,ay=b+c[1]*r;x.moveTo(ax-c[0]*5,ay);x.lineTo(ax,ay);x.lineTo(ax,ay-c[1]*5)});x.stroke()}
+function lab(i,al){var nd=ND[i],d=nd.sx>W*.6?-1:1,v=nd.sy<H*.2?1:-1,r0=i?9:17,ax=nd.sx+d*r0,ay=nd.sy+v*r0,bx=nd.sx+d*(r0+12),by=nd.sy+v*(r0+12);
+ x.beginPath();x.moveTo(ax,ay);x.lineTo(bx,by);x.lineTo(bx+d*5,by);x.strokeStyle=rg(al*.7);x.stroke();
+ x.textAlign=d>0?'left':'right';x.lineWidth=3;x.strokeStyle='#000';x.strokeText(nd.lb,bx+d*9,by);x.lineWidth=1;x.fillStyle=rg(al);x.fillText(nd.lb,bx+d*9,by)}
+function pick(a,b,r){if(dep<.9)return -1;var k=-1,bd=r*r,i,dx,dy,d;for(i=0;i<8;i++){dx=ND[i].sx-a;dy=ND[i].sy-b;d=dx*dx+dy*dy;if(d<bd){bd=d;k=i}}return k}
+/* dibujo */
+function ez(v){v=Math.max(0,Math.min(1,v));return 1-Math.pow(1-v,3)}
+function cl(v){return Math.max(0,Math.min(1,v))}
+var dep=0,depT=0,bph=99,tt=rm?2.2:0,ot=0,env=0,PT=[],GL2=null,AV=0,bar=box.querySelector('.uv-bar'),bd=$('uv-dep'),eC=$('uv-cnt'),cntS='',hts='',dsS='',TV=[],TE=[],
+ QX=new Float32Array(16),QY=new Float32Array(16),QZ=new Float32Array(16),QW=new Float32Array(16);
+(function(){var i,b,j;for(i=0;i<16;i++)TV.push([i&1?1:-1,i&2?1:-1,i&4?1:-1,i&8?1:-1]);for(i=0;i<16;i++)for(b=0;b<4;b++){j=i^(1<<b);if(i<j)TE.push(i,j)}})();
+/* teseracto: hipercubo 4D girando y proyectado a 3D */
+function tes(sc,a,al){var i,v,c,s,x1,w1,z1,w2,x2,y2,f,e,p,q;
+ for(i=0;i<16;i++){v=TV[i];
+  c=Math.cos(a*.5);s=Math.sin(a*.5);x1=v[0]*c-v[3]*s;w1=v[0]*s+v[3]*c;
+  c=Math.cos(a*.37);s=Math.sin(a*.37);z1=v[2]*c-w1*s;w2=v[2]*s+w1*c;
+  c=Math.cos(a*.23);s=Math.sin(a*.23);x2=x1*c-v[1]*s;y2=x1*s+v[1]*c;
+  f=2.6*sc/(3.6-w2);pr(x2*f,y2*f,z1*f);QX[i]=px;QY[i]=py;QZ[i]=pz;QW[i]=w2}
+ for(i=0;i<TE.length;i+=2){p=TE[i];q=TE[i+1];x.beginPath();x.moveTo(QX[p],QY[p]);x.lineTo(QX[q],QY[q]);
+  x.strokeStyle=rg(Math.min(1,da((QZ[p]+QZ[q])/2,.35,1)*(.75+.1*(QW[p]+QW[q]))*al));x.stroke()}
+ for(i=0;i<16;i++){e=QW[i]>0?2.6:1.8;x.fillStyle=rg(Math.min(1,da(QZ[i],.4,1)*al));x.fillRect(QX[i]-e/2,QY[i]-e/2,e,e)}}
+function burst(n){for(var i=0;i<n&&PT.length<220;i++){var u=Math.random()*2-1,a=Math.random()*PI2,r=Math.sqrt(1-u*u),dx=r*Math.cos(a),dz=r*Math.sin(a),v=.5+Math.random()*1.4;PT.push({x:dx*.08,y:u*.08,z:dz*.08,vx:dx*v,vy:u*v,vz:dz*v,l:1,d:1.2+Math.random()*1.4})}}
+function draw(dt){var i,j,m,p,q,nd,al,s,on,u,sp;
+ pit=Math.max(-1.25,Math.min(1.25,pit));cY=Math.cos(yaw);sY=Math.sin(yaw);cP=Math.cos(pit);sP=Math.sin(pit);
+ if(!drag)hov=mx>-900?pick(mx,my,24):-1;
+ var kS=ez((dep-.5)/.4),lk=cl((dep-.75)/.25),fs=Math.max(9,Math.min(12,Math.round(Math.min(W,AV)/52)));
+ x.clearRect(0,0,W,H);x.lineWidth=1;x.lineJoin='round';x.font=fs+'px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace';x.textBaseline='middle';
+ x.fillStyle=GL;x.fillRect(0,0,W,H);
+ if(env>.01){x.globalAlpha=Math.min(1,env*1.1);x.fillStyle=GL2;x.fillRect(0,0,W,H);x.globalAlpha=1}
+ rim(.45+.55*cl(dep*2));
+ var c=Math.cos(-ot*.05),sn=Math.sin(-ot*.05),sy0=Math.sin(t*.45)*SR*.95;
+ if(kS>.01){
+  for(i=0;i<N;i++){var ox=SH[3*i],oz=SH[3*i+2];SW[3*i]=(ox*c+oz*sn)*kS;SW[3*i+1]=SH[3*i+1]*kS;SW[3*i+2]=(oz*c-ox*sn)*kS;pr(SW[3*i],SW[3*i+1],SW[3*i+2]);SX[i]=px;SY[i]=py;SZ[i]=pz}
+  for(m=0;m<2;m++){x.beginPath();for(i=0;i<E.length;i+=2){j=E[i];q=E[i+1];if((SZ[j]+SZ[q]>0)===(m===0)){x.moveTo(SX[j],SY[j]);x.lineTo(SX[q],SY[q])}}x.strokeStyle=rg((m?.035:.1)*kS);x.stroke()}
+  for(i=0;i<N;i++){var lit=Math.abs(SH[3*i+1]-sy0)<.09;s=lit?2.4:1.3;x.fillStyle=rg((lit?.95:da(SZ[i],.1,.55))*kS);x.fillRect(SX[i]-s/2,SY[i]-s/2,s,s)}
+  circ(sy0*kS,Math.sqrt(SR*SR-sy0*sy0)*kS);sd(CP,64,.2*kS,.07*kS)}
+ for(i=0;i<3;i++){var kr=ez((dep-.22-.08*i)/.3);if(kr>.01){sd(RP[i],72,R[i].aF*kr,R[i].aB*kr,kr);if(TK[i])sg(TK[i],i===1?48:72,R[i].aF*.9*kr,R[i].aB*kr,kr)}}
+ if(dep>.95){var pg=(t/4)%1;circ(0,(1-(1-pg)*(1-pg))*SR);sd(CP,64,(1-pg)*.3,(1-pg)*.1)}
+ for(i=0;i<3;i++){sp=(bph-.3-.35*i)/2;if(sp>0&&sp<1){circ(0,ez(sp)*SR*1.3);sd(CP,64,(1-sp)*.5,(1-sp)*.2)}}
+ for(i=1;i<8;i++){nd=ND[i];nd.v=ez((dep-.4-.03*i)/.25);NP[i]=nd.v>.01?rp(nd.r,nd.a0+nd.sp*ot,Math.max(.001,ez((dep-.22-.08*nd.r)/.3))):[0,0,0]}
+ if(lk>.01){x.setLineDash([2,5]);x.beginPath();for(i=1;i<8;i++){q=NP[i];pr(q[0],q[1],q[2]);x.moveTo(CX,CY);x.lineTo(px,py)}x.strokeStyle=rg(.16*lk);x.stroke();x.setLineDash([]);
+  for(i=0;i<PK.length;i++){p=PK[i];if(!rm){p.u+=p.s*dt;if(p.u>=1)PK[i]=p=np(false)}
+   for(m=0;m<5;m++){u=p.u-m*.03;if(u<0)break;q=pp(p,u);pr(q[0],q[1],q[2]);s=m?1.4:2.6;x.fillStyle=rg(da(pz,.2,.9)*(1-m*.19)*lk);x.fillRect(px-s/2,py-s/2,s,s)}}}
+ for(i=1;i<8;i++){nd=ND[i];if(nd.v<=.01){nd.sx=-999;nd.sy=-999;continue}
+  q=NP[i];pr(q[0],q[1],q[2]);nd.sx=px;nd.sy=py;nd.sz=pz;on=dep>.9&&(i===hov||i===sel);al=(on?1:da(pz,.4,.95))*nd.v;s=.075*(on?1.3:1)*(.4+.6*nd.v);
+  if(nd.m==='db')dbs(q[0],q[1],q[2],s,t*.6+i,al);else sh(M[nd.m],q[0],q[1],q[2],s*1.15,t*.7+i,al);
+  lab(i,(on?1:da(nd.sz,.3,.8))*nd.v*nd.v);if(on)ret(nd.sx,nd.sy,i===hov?14:17,.95)}
+ for(i=PT.length-1;i>=0;i--){p=PT[i];if(!rm){var dg=Math.pow(.45,dt);p.x+=p.vx*dt;p.y+=p.vy*dt;p.z+=p.vz*dt;p.vx*=dg;p.vy*=dg;p.vz*=dg;p.l-=dt/p.d}
+  if(p.l<=0){PT.splice(i,1);continue}pr(p.x,p.y,p.z);s=1+1.8*p.l;x.fillStyle=rg(da(pz,.3,1)*p.l);x.fillRect(px-s/2,py-s/2,s,s)}
+ nd=ND[0];nd.sx=CX;nd.sy=CY;on=dep>.9&&(hov===0||sel===0);
+ tes(.8-.65*ez(dep/.55),tt,Math.min(1,.85+.5*env));
+ var la=cl((dep-.55)/.2);if(la>.01)lab(0,(on?1:.8)*la);if(on)ret(CX,CY,20,.9);
+ var ya=Math.round((yaw*57.2958%360+360)%360)%360,pa=Math.round(pit*57.2958),a2='YAW '+('00'+ya).slice(-3)+'° · PIT '+(pa<0?'-':'+')+('0'+Math.abs(pa)).slice(-2)+'°';
+ if(a2!==angS){angS=a2;eA.textContent=a2}
+ var nn=1;for(i=1;i<8;i++)if(ND[i].v>.5)nn++;var cn='Nodos '+nn+' · Reg '+Math.round(N*kS);if(cn!==cntS){cntS=cn;eC.textContent=cn}
+ var key=dep<.02?-1:(dep<.9?0:(hov>=0?hov:sel));
+ if(key!==shown){shown=key;if(key<0){eN.textContent='A001 · Teseracto';eI.textContent='núcleo plegado · desplegá la arquitectura para ver el universo'}else{eN.textContent=ND[key].n;eI.textContent=ND[key].i}}
+ var ht=dep>.9?'Arrastrá para rotar · tocá un nodo':'Arrastrá para rotar · desplegá la arquitectura';if(ht!==hts){hts=ht;eH.textContent=ht}
+ var ds=depT?(dep>=.999?'Replegar ↺':'Desplegando…'):(dep<=.001?'Desplegar arquitectura ↗':'Replegando…');
+ if(ds!==dsS){dsS=ds;bd.textContent=ds;bd.classList.toggle('w',dep<=.001&&!depT);bd.disabled=ds.slice(-1)==='…'}}
+function frame(ts){raf=0;if(!vis)return;var dt=last?Math.min((ts-last)/1000,.05):.016,f=dt*60;last=ts;
+ if(!rm){t+=dt;bph+=dt;env=bph>7?0:(bph<.5?ez(bph/.5):Math.exp(-(bph-.5)*1.15));ot+=dt*(1+10*env);tt+=dt*(1+22*env);dep=cl(dep+(depT?dt/4.2:-dt/1.8));
+  if(!drag){yaw+=(wy+.1*env)*f;wy+=(IDLE-wy)*(1-Math.pow(.96,f));pit+=wp*f;wp*=Math.pow(.9,f);pit+=(-.3+Math.sin(t*.3)*.1-pit)*.002*f}}
+ else{dep=depT;env=0}
+ draw(dt);if(!rm)raf=requestAnimationFrame(frame);else last=0}
+function kick(){if(!raf&&vis)raf=requestAnimationFrame(frame)}
+function size(){var w=box.clientWidth,h=box.clientHeight,d=Math.min(devicePixelRatio||1,2),nar=w<560,bh=nar&&bar?bar.offsetHeight:0,tp=nar?28:0;if(!w||!h)return;W=w;H=h;cv.width=Math.round(w*d);cv.height=Math.round(h*d);x.setTransform(d,0,0,d,0,0);
+ AV=h-bh*.75-tp;CX=w/2;CY=tp+AV/2;S=Math.min(w,AV)*(nar?.3:.28);
+ GL=x.createRadialGradient(CX,CY,0,CX,CY,S*.95);GL.addColorStop(0,'rgba(255,255,255,.09)');GL.addColorStop(1,'rgba(255,255,255,0)');
+ GL2=x.createRadialGradient(CX,CY,0,CX,CY,S*1.5);GL2.addColorStop(0,'rgba(255,255,255,.42)');GL2.addColorStop(.35,'rgba(255,255,255,.12)');GL2.addColorStop(1,'rgba(255,255,255,0)');kick()}
+function hint(){eH.classList.add('off')}
+/* interacción */
+cv.addEventListener('pointerdown',function(e){var b=cv.getBoundingClientRect();mx=e.clientX-b.left;my=e.clientY-b.top;drag=true;moved=0;lx=e.clientX;ly=e.clientY;wy=wp=0;lm=performance.now();try{cv.setPointerCapture(e.pointerId)}catch(_){}kick()});
+cv.addEventListener('pointermove',function(e){var b=cv.getBoundingClientRect();mx=e.clientX-b.left;my=e.clientY-b.top;
+ if(drag){var dx=e.clientX-lx,dy=e.clientY-ly;lx=e.clientX;ly=e.clientY;moved+=Math.abs(dx)+Math.abs(dy);lm=performance.now();if(moved>5)hint();
+  yaw+=dx*.006;wy=Math.max(-.08,Math.min(.08,dx*.006));if(e.pointerType!=='touch'||open){pit+=dy*.006;wp=Math.max(-.05,Math.min(.05,dy*.006))}}kick()});
+function up(e){if(!drag)return;drag=false;if(e.type==='pointerup'&&moved<6){var k=pick(mx,my,e.pointerType==='touch'?32:26);if(k>=0)sel=k;else if(!open)expand()}
+ if(performance.now()-lm>90){wy=IDLE;wp=0}if(e.pointerType==='touch'){mx=my=-999;hov=-1}kick()}
+cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',up);
+cv.addEventListener('pointerleave',function(){if(!drag){mx=my=-999;kick()}});
+cv.addEventListener('keydown',function(e){var k=e.key;if(k==='ArrowLeft')wy=Math.max(-.08,wy-.02);else if(k==='ArrowRight')wy=Math.min(.08,wy+.02);else if(k==='ArrowUp')pit-=.08;else if(k==='ArrowDown')pit+=.08;else return;e.preventDefault();hint();if(rm)yaw+=(k==='ArrowLeft'?-.1:k==='ArrowRight'?.1:0);kick()});
+if(ring){box.addEventListener('mouseenter',function(){ring.classList.add('h')});box.addEventListener('mouseleave',function(){ring.classList.remove('h')})}
+if('ResizeObserver' in window)new ResizeObserver(size).observe(box);else addEventListener('resize',size);
+new IntersectionObserver(function(en){vis=en[0].isIntersecting;if(vis){last=0;kick()}}).observe(box);
+/* expandir a pantalla completa */
+var open=false,busy=false,ph=null,bx=$('uv-x');
+function rc(r){return 'top:'+r.top+'px;left:'+r.left+'px;width:'+r.width+'px;height:'+r.height+'px'}
+function expand(){if(open||busy)return;busy=true;open=true;var r=box.getBoundingClientRect();
+ ph=document.createElement('div');ph.style.cssText='width:'+r.width+'px;height:'+r.height+'px;margin:0 auto';box.parentNode.insertBefore(ph,box);
+ box.style.cssText=rc(r);document.body.appendChild(box);box.classList.add('fx');void box.offsetWidth;
+ document.body.style.overflow='hidden';box.classList.add('go');box.style.cssText='top:0;left:0;width:100vw;height:100dvh';
+ bx.textContent='[ Cerrar ✕ · Esc ]';bx.setAttribute('aria-label','Cerrar universo');hint();
+ setTimeout(function(){busy=false;size()},rm?0:950)}
+function collapse(){if(!open||busy)return;busy=true;open=false;var r=ph.getBoundingClientRect();
+ box.classList.remove('go');box.style.cssText=rc(r);bx.textContent='[ Expandir ↗ ]';bx.setAttribute('aria-label','Expandir universo');
+ setTimeout(function(){ph.parentNode.insertBefore(box,ph);ph.remove();box.classList.remove('fx');box.style.cssText='';document.body.style.overflow='';busy=false;size()},rm?0:950)}
+bx.addEventListener('click',function(){open?collapse():expand()});
+cv.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open?collapse():expand()}});
+addEventListener('keydown',function(e){if(e.key==='Escape')collapse()});
+bd.addEventListener('click',function(){if(dep>.001&&dep<.999)return;depT=depT?0:1;bph=0;if(rm)dep=depT;else burst(depT?90:36);kick()});
+size();
 })();
 </script>
 </body>
