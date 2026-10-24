@@ -321,7 +321,9 @@ cf.addEventListener('submit',function(e){e.preventDefault();st.textContent='Envi
   const layer = $("idLayer"), openBtn = $("idOpen"), createBtn = $("idCreate");
   if(!layer || !openBtn || !createBtn) return;
   const client = window.supabase?.createClient ? window.supabase.createClient(URL, KEY, {auth:{persistSession:true, autoRefreshToken:true, detectSessionInUrl:true}}) : null;
-  const redirect = location.origin === "null" ? undefined : location.href.split("#")[0];
+  const SITE_URL = "https://envyraweb.com";
+  const PAGE_PATH = location.origin === "null" ? "/" + location.pathname.split("/").pop() : location.pathname;
+  const redirect = SITE_URL + (PAGE_PATH === "/index.html" ? "/" : PAGE_PATH);
   const fromEmail = /type=(signup|email|magiclink)/.test(location.hash);
   const V = {
     login:  {t:"Inicia sesión en Envyra", copy:"Una sola cuenta para todo el ecosistema.", btn:"Iniciar sesión", f:["email","pass"], social:1, sw:["¿Aún no tienes cuenta?","Crear cuenta","signup"]},
