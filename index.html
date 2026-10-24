@@ -30,8 +30,12 @@
 <meta name="twitter:image" content="https://envyraweb.com/og-image.png">
 <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","@id":"https://envyraweb.com/#organization","name":"Envyra","alternateName":"ENVYRA","url":"https://envyraweb.com/","logo":"https://envyraweb.com/logotype.png","description":"Envyra diseña y construye software, experiencias web interactivas y productos con inteligencia artificial.","sameAs":["https://github.com/envyra23"]},{"@context":"https://schema.org","@type":"WebSite","@id":"https://envyraweb.com/#website","url":"https://envyraweb.com/","name":"Envyra","inLanguage":"es","publisher":{"@id":"https://envyraweb.com/#organization"}},{"@context":"https://schema.org","@type":"SoftwareApplication","@id":"https://envyraweb.com/#northunit","name":"NorthUnit","url":"https://envyraweb.com/#northunit","applicationCategory":"BusinessApplication","applicationSubCategory":"CRM","operatingSystem":"Web","description":"CRM con inteligencia artificial que prioriza tareas, automatiza el seguimiento y mantiene el pipeline de ventas en movimiento.","publisher":{"@id":"https://envyraweb.com/#organization"}}]</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<noscript><style>.r{opacity:1!important;transform:none!important}</style></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;800&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<noscript><style>.r{opacity:1!important;transform:none!important}
+
+
+</style></noscript>
 <style>
 :root{--bg:#000;--fg:#fff;--mut:rgba(255,255,255,.56);--ln:rgba(255,255,255,.14);--ease:cubic-bezier(.16,1,.3,1);--pad:clamp(1.25rem,5vw,4rem);--np:clamp(1.25rem,5vw,4rem)}
 *,*::before,*::after{box-sizing:border-box;margin:0}
@@ -45,7 +49,8 @@ nav{position:fixed;inset:0 0 auto;z-index:50;background:#000;border-bottom:1px s
 nav .w{display:flex;align-items:center;justify-content:space-between;height:3.6rem;gap:1.5rem}
 nav b{font-weight:600;letter-spacing:-.02em}nav .lk{display:flex;gap:1.8rem;font-size:.88rem;color:var(--mut);margin-right:auto;margin-left:2rem}
 nav .lk a:hover{color:#fff}nav .ac{display:flex;gap:.6rem}
-@media(max-width:760px){nav .lk a,nav .ac .g{display:none}nav .lk{margin-left:.5rem}}
+@media(max-width:760px){nav .lk a,nav .ac .g,nav .ac [data-demo]{display:none}nav .lk{margin-left:.5rem}nav .ac{gap:.35rem}nav .ac .btn{padding:.45rem .65rem;font-size:.72rem}}
+nav .ac .btn{white-space:nowrap}@media(max-width:480px){nav .ac .create-account-btn{display:none}}@media(max-width:380px){nav .w{gap:.6rem}nav .lk{margin-left:0}}
 .pm{display:inline-flex;align-items:center;gap:.4rem;border:0;padding:0;background:none;color:inherit;font:inherit;cursor:pointer}.pm:hover,.pm[aria-expanded=true],.pm.cur{color:#fff}.pm svg{width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:1.6;transition:transform .3s var(--ease)}.pm[aria-expanded=true] svg{transform:rotate(180deg)}
 .mm{position:absolute;top:100%;left:0;right:0;background:#000;border-bottom:1px solid var(--ln);padding:0 var(--np);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s;max-height:calc(100svh - 3.6rem);overflow-y:auto}.mm.on{opacity:1;visibility:visible;transform:none}
 .mw{max-width:76rem;margin:0 auto}.mg{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding:2rem 0 1.4rem}.mg h4{margin-bottom:.8rem;font-weight:500}
@@ -104,12 +109,88 @@ body.smooth #s{position:fixed;top:0;left:0;width:100%;will-change:transform}
 #ct input:focus,#ct textarea:focus{outline:0;border-color:#fff}#ct .btn{margin-top:2.2rem}#st{margin-top:1.2rem;color:var(--mut);font-size:.9rem;min-height:1.4em}
 #cc{position:absolute;top:calc(1.2rem + env(safe-area-inset-top,0px));right:var(--pad)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.r{opacity:1;transform:none}}
+/* ENVYRA ID — acceso a pantalla completa (estilo Vercel sobre el sistema de Envyra) */
+.id-layer{position:fixed;inset:0;z-index:90;background:#000;visibility:hidden;opacity:0;overflow-y:auto;overscroll-behavior:contain;transition:opacity .35s var(--ease),visibility .35s}
+.id-layer.on{visibility:visible;opacity:1}
+.id-layer [hidden]{display:none!important}
+.id-layer::before{content:"";position:fixed;inset:0;background:linear-gradient(var(--ln) 1px,transparent 1px) 0 0/80px 80px,linear-gradient(90deg,var(--ln) 1px,transparent 1px) 0 0/80px 80px;opacity:.35;-webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000,transparent 70%);mask-image:radial-gradient(ellipse at 50% 40%,#000,transparent 70%);pointer-events:none}
+.id-in{position:relative;min-height:100%;display:grid;grid-template-rows:auto 1fr;padding:calc(1rem + env(safe-area-inset-top,0px)) var(--np) calc(1rem + env(safe-area-inset-bottom,0px))}
+.id-top{display:flex;justify-content:space-between;align-items:center}.id-top b{font-weight:600;letter-spacing:-.02em}
+.id-x{width:2.2rem;height:2.2rem;display:grid;place-items:center;border-radius:6px;color:var(--mut);transition:background .3s,color .3s}.id-x:hover{background:#111;color:#fff}.id-x svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
+.id-main{display:grid;place-items:center;padding:2rem 0 5rem}
+.id-card{width:min(100%,22rem);transform:translateY(10px);transition:transform .6s var(--ease)}.id-layer.on .id-card{transform:none}
+.id-t{font-size:1.65rem;font-weight:600;letter-spacing:-.04em;line-height:1.15;text-align:center}
+.id-copy{color:var(--mut);font-size:.9rem;text-align:center;margin:.6rem 0 1.8rem}
+.id-form{margin-top:-1rem}.id-form label{display:block;margin-top:1rem}.id-form label>span:first-child{display:block;font-size:.8rem;color:var(--mut);margin-bottom:.4rem}
+.id-form input{width:100%;height:2.5rem;background:#000;border:1px solid #2e2e2e;border-radius:6px;color:#fff;font:inherit;font-size:.9rem;padding:0 .8rem;outline:0;transition:border-color .25s,box-shadow .25s}
+.id-form input:hover{border-color:#4a4a4a}.id-form input:focus{border-color:#8f8f8f;box-shadow:0 0 0 3px rgba(255,255,255,.1)}.id-form input::placeholder{color:rgba(255,255,255,.3)}
+.id-pw{position:relative;display:block}.id-pw input{padding-right:4.2rem}.id-pw button{position:absolute;right:.4rem;top:50%;transform:translateY(-50%);padding:.3rem .5rem;font-size:.75rem;color:var(--mut)}.id-pw button:hover{color:#fff}
+.id-submit,.id-ghost{display:flex;width:100%;height:2.5rem;justify-content:center;border-radius:6px;padding:0;font-size:.88rem}.id-submit{margin-top:1.3rem}
+.id-card button:disabled{opacity:.5;cursor:wait}
+.id-sep{display:flex;align-items:center;gap:.8rem;color:var(--mut);font-size:.78rem;margin:1.3rem 0}.id-sep::before,.id-sep::after{content:"";height:1px;flex:1;background:var(--ln)}
+.id-row{display:flex;justify-content:flex-end;margin-top:.9rem;font-size:.8rem;color:var(--mut)}.id-row button:hover,.id-sw button:hover{color:#fff}
+.id-sw{margin-top:1.6rem;text-align:center;font-size:.85rem;color:var(--mut)}.id-sw button{color:#fff}.id-sw button:hover{text-decoration:underline;text-underline-offset:3px}
+.id-status{min-height:1.3rem;margin-top:1rem;text-align:center;font-size:.84rem;color:var(--mut);overflow-wrap:anywhere}.id-status[data-kind=error]{color:#ff8b8b}.id-status[data-kind=success]{color:#fff}
+.id-acc{border:1px solid #2e2e2e;border-radius:6px;padding:.8rem 1rem;margin-bottom:1rem;font-size:.9rem;overflow-wrap:anywhere}.id-acc span{display:block;font-size:.75rem;color:var(--mut);margin-bottom:.2rem}.id-acc small{display:block;color:var(--mut);font-size:.75rem;margin-top:.35rem}
+.ac-sec{border-top:1px solid var(--ln);padding:1rem 0 .6rem}.ac-sec:first-child{border-top:0;padding-top:0}.ac-sec h3{margin-bottom:.4rem}
+.ac-row{display:flex;justify-content:space-between;align-items:center;gap:1rem;min-height:2.2rem;padding:.3rem 0;font-size:.9rem;text-align:left}.ac-row>span:first-child{color:var(--mut);flex:none}.ac-row b{font-weight:500;text-align:right;overflow-wrap:anywhere}.ac em{font-style:normal}
+.ac-row input:not([type=checkbox]),.ac-row select{width:min(60%,14rem);height:2.2rem;text-align:right;text-align-last:right;background:#000;border:1px solid #2e2e2e;border-radius:6px;color:#fff;font:inherit;font-size:.88rem;padding:0 .7rem;outline:0;color-scheme:dark;transition:border-color .25s,box-shadow .25s}.ac-row input:not([type=checkbox]):focus,.ac-row select:focus{border-color:#8f8f8f;box-shadow:0 0 0 3px rgba(255,255,255,.1)}
+.ac-badge{font-style:normal;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);border:1px solid var(--ln);border-radius:99px;padding:.15rem .6rem;white-space:nowrap}
+.ac-act{display:flex;justify-content:flex-end;padding:.2rem 0 .6rem}.ac-btn{height:2.2rem;border-radius:6px;padding:0 .9rem;font-size:.82rem}
+.ac-link{color:#fff;text-decoration:underline;text-underline-offset:3px;font-size:.78rem;margin-left:.4rem}
+.ac-sw{position:relative;display:flex;align-items:center;gap:.7rem;cursor:pointer}.ac-sw b{color:var(--mut);font-size:.85rem}.ac-sw input{position:absolute;right:0;top:0;width:2.4rem;height:100%;opacity:0;margin:0;cursor:pointer}
+.ac-sw i{position:relative;flex:none;width:2.4rem;height:1.4rem;border:1px solid #4a4a4a;border-radius:99px;transition:background .3s,border-color .3s}.ac-sw i::after{content:"";position:absolute;top:2px;left:2px;width:1rem;height:1rem;border-radius:50%;background:#fff;transition:transform .45s cubic-bezier(.34,1.56,.64,1),background .3s}
+.ac-sw input:checked~i{background:#fff;border-color:#fff}.ac-sw input:checked~i::after{transform:translateX(1rem);background:#000}.ac-sw input:focus-visible~i{outline:1px solid #fff;outline-offset:3px}
+.ac-actions{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:1.2rem}.ac-actions .id-submit,.ac-actions .id-ghost{margin:0}.ac-actions button:disabled{cursor:not-allowed}
+.id-layer.acc .id-card{width:min(100%,32rem)}
 </style>
 </head>
 <body>
 <nav aria-label="Principal"><div class="w"><b>ENVYRΛ</b>
 <div class="lk"><button type="button" class="pm" aria-expanded="false" aria-controls="mm" aria-haspopup="true">Productos <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3.5l4 4 4-4"/></svg></button><a href="#proceso">Proceso</a><a href="#empresa">Empresa</a></div>
-<div class="ac"><button type="button" class="btn g" data-contact>Contacto</button><button type="button" class="btn w1" data-demo>Solicitar demo</button></div></div><div class="mm" id="mm"><div class="mw"><div class="mg"><div><h4 class="mono">Plataforma</h4><a class="mi" href="#northunit"><span><b>NorthUnit <em>Nuevo</em></b><small>CRM con IA para equipos comerciales</small></span></a><div class="fd"><div class="fr"><button type="button" class="ft" aria-expanded="false" aria-label="Mostrar componentes de ENVYRA INTELLIGENCE"><svg class="fc" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h7l2 2h9v11H3V6z"/></svg><svg class="fo" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19V6h7l2 2h8v3M3 19l2.5-8H22l-2.5 8H3z"/></svg></button><a class="mi" href="ENVYRAINTELLIGENCE.html"><span><b>ENVYRA INTELLIGENCE</b><small>Infraestructura de IA: memoria, herramientas y API</small></span></a></div><div class="fk"><div><a href="ENVYRAINTELLIGENCE.html#capas"><b>Capas</b><small>Models, Memory, Tools e Infrastructure</small></a><a href="ENVYRAINTELLIGENCE.html#componentes"><b>A001</b><small>Asistente en español con memoria de caso</small></a><a href="ENVYRAINTELLIGENCE.html#componentes"><b>Memory Case</b><small>Contexto e instrucciones del caso</small></a><a href="ENVYRAINTELLIGENCE.html#componentes"><b>ENVYRA CLOUD</b><small>API para guardar y recuperar la memoria</small></a><a href="ENVYRAINTELLIGENCE.html#demo"><b>Demo interactiva</b><small>Probá A001 simulado</small></a></div></div></div></div><div><h4 class="mono">Experiencias</h4><a class="mi" href="https://envyra23.github.io/MotionLayersEngine-/" target="_blank" rel="noopener"><span><b>MotionLayers Engine <em>Beta</em></b><small>Interacción sin fricción, solo con una cámara</small></span></a></div><div><h4 class="mono">Marca y movimiento</h4><a class="mi" href="https://envyra23.github.io/REACH/" target="_blank" rel="noopener"><span><b>Envyra Reach</b><small>Estrategia, creatividad y tecnología para marcas</small></span></a><a class="mi" href="https://envyra23.github.io/The-Gold-Level/" target="_blank" rel="noopener"><span><b>The Gold Level</b><small>La posición desde la que jugamos</small></span></a></div></div><div class="mf"><span>Todo lo que construye Envyra</span><a href="#lanzado">Ver todos los productos →</a></div></div></div></nav>
+<div class="ac"><button type="button" class="btn account-btn" id="idOpen">Iniciar sesión</button><button type="button" class="btn create-account-btn" id="idCreate">Crear cuenta</button><button type="button" class="btn g" data-contact>Contacto</button><button type="button" class="btn w1" data-demo>Solicitar demo</button></div></div><div class="mm" id="mm"><div class="mw"><div class="mg"><div><h4 class="mono">Plataforma</h4><a class="mi" href="#northunit"><span><b>NorthUnit <em>Nuevo</em></b><small>CRM con IA para equipos comerciales</small></span></a><div class="fd"><div class="fr"><button type="button" class="ft" aria-expanded="false" aria-label="Mostrar componentes de ENVYRA INTELLIGENCE"><svg class="fc" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h7l2 2h9v11H3V6z"/></svg><svg class="fo" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19V6h7l2 2h8v3M3 19l2.5-8H22l-2.5 8H3z"/></svg></button><a class="mi" href="ENVYRAINTELLIGENCE.html"><span><b>ENVYRA INTELLIGENCE</b><small>Infraestructura de IA: memoria, herramientas y API</small></span></a></div><div class="fk"><div><a href="ENVYRAINTELLIGENCE.html#capas"><b>Capas</b><small>Models, Memory, Tools e Infrastructure</small></a><a href="ENVYRAINTELLIGENCE.html#componentes"><b>A001</b><small>Asistente en español con memoria de caso</small></a><a href="ENVYRAINTELLIGENCE.html#componentes"><b>Memory Case</b><small>Contexto e instrucciones del caso</small></a><a href="ENVYRAINTELLIGENCE.html#componentes"><b>ENVYRA CLOUD</b><small>API para guardar y recuperar la memoria</small></a><a href="ENVYRAINTELLIGENCE.html#demo"><b>Demo interactiva</b><small>Probá A001 simulado</small></a></div></div></div><a class="mi" href="envyra-cloud.html"><span><b>ENVYRA CLOUD <em>En desarrollo</em></b><small>Infraestructura para conectar datos y agentes</small></span></a></div><div><h4 class="mono">Experiencias</h4><a class="mi" href="https://envyra23.github.io/MotionLayersEngine-/" target="_blank" rel="noopener"><span><b>MotionLayers Engine <em>Beta</em></b><small>Interacción sin fricción, solo con una cámara</small></span></a></div><div><h4 class="mono">Marca y movimiento</h4><a class="mi" href="https://envyra23.github.io/REACH/" target="_blank" rel="noopener"><span><b>Envyra Reach</b><small>Estrategia, creatividad y tecnología para marcas</small></span></a><a class="mi" href="https://envyra23.github.io/The-Gold-Level/" target="_blank" rel="noopener"><span><b>The Gold Level</b><small>La posición desde la que jugamos</small></span></a></div></div><div class="mf"><span>Todo lo que construye Envyra</span><a href="#lanzado">Ver todos los productos →</a></div></div></div></nav>
+
+<div class="id-layer" id="idLayer" role="dialog" aria-modal="true" aria-labelledby="idTitle" aria-hidden="true">
+  <div class="id-in">
+    <div class="id-top"><b>ENVYRΛ <span style="color:var(--mut);font-weight:400">ID</span></b><button type="button" class="id-x" id="idClose" aria-label="Cerrar"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div>
+    <div class="id-main"><div class="id-card">
+      <h2 class="id-t" id="idTitle"></h2>
+      <p class="id-copy" id="idCopy"></p>
+      <form class="id-form" id="idForm">
+        <label id="idNameRow"><span>Nombre</span><input id="idName" type="text" autocomplete="name" placeholder="Tu nombre"></label>
+        <label id="idEmailRow"><span>Email</span><input id="idEmail" type="email" autocomplete="email" placeholder="tu@email.com"></label>
+        <label id="idPassRow"><span>Contraseña</span><span class="id-pw"><input id="idPassword" type="password" minlength="8" autocomplete="current-password" placeholder="Mínimo 8 caracteres"><button type="button" id="idEye" aria-label="Mostrar contraseña">Ver</button></span></label>
+        <button type="submit" class="btn w1 id-submit" id="idSubmit"></button>
+      </form>
+      <div id="idSocial"><div class="id-row" id="idForgotRow"><button type="button" id="idForgot">¿Olvidaste tu contraseña?</button></div><div class="id-sep">o</div><button type="button" class="btn id-ghost" id="idGoogle">Continuar con Google</button></div>
+      <div id="idSent" hidden><button type="button" class="btn id-ghost" id="idResend">Reenviar correo</button></div>
+      <div id="idAccount" hidden>
+        <form id="idProfileForm" class="ac">
+          <section class="ac-sec"><h3 class="mono">Cuenta</h3>
+            <label class="ac-row"><span>Nombre</span><input id="idProfileName" type="text" autocomplete="name" maxlength="100" required placeholder="Tu nombre"></label>
+            <div class="ac-row"><span>Correo</span><b id="idAccountEmail"></b></div>
+            <div class="ac-row"><span>Estado</span><b><em id="idEmailVerification"></em><button type="button" class="ac-link" id="idVerifyResend" hidden>Reenviar correo</button></b></div>
+            <div class="ac-row"><span>Miembro desde</span><b id="idMemberSince">—</b></div>
+          </section>
+          <section class="ac-sec"><h3 class="mono">Ecosistema ENVYRA</h3>
+            <div class="ac-row"><span>ENVYRA CLOUD</span><i class="ac-badge">En desarrollo</i></div>
+            <div class="ac-row"><span>Acceso anticipado</span><b id="idCloudState">—</b></div>
+            <div class="ac-act"><button type="button" class="btn ac-btn" id="idCloudReq" hidden>Solicitar acceso →</button></div>
+            <div class="ac-row"><span>ENVYRA INTELLIGENCE</span><i class="ac-badge">En desarrollo</i></div>
+            <div class="ac-row"><span>Acceso</span><b>Próximamente</b></div>
+          </section>
+          <section class="ac-sec"><h3 class="mono">Preferencias</h3>
+            <label class="ac-row"><span>Idioma</span><select id="idLanguage"><option value="es">Español</option><option value="en">English</option></select></label>
+            <label class="ac-row"><span>Novedades</span><span class="ac-sw"><b id="idMarketingText">Desactivadas</b><input id="idMarketing" type="checkbox" role="switch"><i></i></span></label>
+          </section>
+        </form>
+        <div class="ac-actions"><button type="submit" form="idProfileForm" class="btn w1 id-submit" id="idSaveProfile" disabled>Guardar cambios</button><button type="button" class="btn id-ghost" id="idSignOut">Cerrar sesión</button></div>
+      </div>
+      <p class="id-status" id="idStatus" role="status" aria-live="polite"></p>
+      <p class="id-sw" id="idSwRow"><span id="idSwText"></span> <button type="button" id="idSwitch"></button></p>
+    </div></div>
+  </div>
+</div>
 
 <div id="ct" role="dialog" aria-modal="true" aria-labelledby="ct-t">
 <button type="button" id="cc" class="mono">Cerrar ✕</button>
@@ -163,7 +244,7 @@ body.smooth #s{position:fixed;top:0;left:0;width:100%;will-change:transform}
 <div class="grid r">
 <article class="card"><span class="ct"><span class="mono">Asistente</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5z"/></svg></span><h3>A001</h3><p>Conversación en español con prompts rápidos, dictado y lectura en voz alta. Usa el contexto del caso en cada consulta.</p></article>
 <article class="card"><span class="ct"><span class="mono">Memoria</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h7l2 2h9v11H3V6z"/></svg></span><h3>Memory Case</h3><p>Nombre del caso, contexto e instrucciones. Copia local siempre disponible y sincronización con ENVYRA CLOUD.</p></article>
-<article class="card"><span class="ct"><span class="mono">API</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9.5 4.3 4.3 0 0 1 17.5 18H7z"/></svg></span><h3>ENVYRA CLOUD</h3><p>Guardar, obtener, listar y eliminar la memoria del caso, con autenticación de usuario.</p></article>
+<a class="card" href="envyra-cloud.html"><span class="ct"><span class="mono">API</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9.5 4.3 4.3 0 0 1 17.5 18H7z"/></svg></span><h3>ENVYRA CLOUD</h3><p>Guardar, obtener, listar y eliminar la memoria del caso, con autenticación de usuario.</p><span class="go">Conocer ENVYRA CLOUD →</span></a>
 </div></div></section>
 
 <section id="proceso"><div class="w">
@@ -200,7 +281,7 @@ body.smooth #s{position:fixed;top:0;left:0;width:100%;will-change:transform}
 
 <footer><div class="w">
 <div class="f1"><b>ENVYRΛ</b><p>Elevando ideas al mundo digital. Diseñamos y construimos sistemas que ponen a las empresas en movimiento.</p><button type="button" class="btn" data-contact>Contacto</button></div>
-<div><h3>Productos</h3><ul><li><a href="#northunit">NorthUnit</a></li><li><a href="#intelligence">ENVYRA INTELLIGENCE</a></li><li><a href="https://envyra23.github.io/MotionLayersEngine-/" target="_blank" rel="noopener">MotionLayers Engine</a></li><li><a href="https://envyra23.github.io/REACH/" target="_blank" rel="noopener">Envyra Reach</a></li></ul></div>
+<div><h3>Productos</h3><ul><li><a href="#northunit">NorthUnit</a></li><li><a href="#intelligence">ENVYRA INTELLIGENCE</a></li><li><a href="envyra-cloud.html">ENVYRA CLOUD</a></li><li><a href="https://envyra23.github.io/MotionLayersEngine-/" target="_blank" rel="noopener">MotionLayers Engine</a></li><li><a href="https://envyra23.github.io/REACH/" target="_blank" rel="noopener">Envyra Reach</a></li></ul></div>
 <div><h3>Empresa</h3><ul><li><a href="#empresa">Visión</a></li><li><a href="https://envyra23.github.io/The-Gold-Level/" target="_blank" rel="noopener">The Gold Level</a></li><li><a href="#proceso">Proceso</a></li></ul></div>
 <div><h3>Conectar</h3><ul><li><button type="button" data-contact>Contacto</button></li><li><button type="button" data-demo>Demo de NorthUnit</button></li><li><a href="https://github.com/envyra23" target="_blank" rel="noopener">GitHub</a></li></ul></div>
 <div class="fb mono"><span>© <span id="yr">2026</span> Envyra. Todos los derechos reservados.</span><a href="#inicio">Volver arriba ↑</a></div>
@@ -264,5 +345,267 @@ rs();addEventListener('resize',rs);addEventListener('load',rs);
 if('IntersectionObserver' in window)new IntersectionObserver(function(en){vis=en[0].isIntersecting;if(vis)go()}).observe(c);
 })();
 </script>
+
+<script>
+/* ENVYRA ID — autenticación compartida con el proyecto central de Supabase */
+(function(){
+  const URL = "https://dgoemosdyuprdkxrivsc.supabase.co";
+  const KEY = "sb_publishable_WG_aQUPxLpdoduCA6o73gg_YsXuFsZL";
+  const $ = id => document.getElementById(id);
+  const layer = $("idLayer"), openBtn = $("idOpen"), createBtn = $("idCreate");
+  if(!layer || !openBtn || !createBtn) return;
+  const client = window.supabase?.createClient ? window.supabase.createClient(URL, KEY, {auth:{persistSession:true, autoRefreshToken:true, detectSessionInUrl:true}}) : null;
+  const redirect = location.origin === "null" ? undefined : location.href.split("#")[0];
+  const fromEmail = /type=(signup|email|magiclink)/.test(location.hash);
+  const V = {
+    login:  {t:"Inicia sesión en Envyra", copy:"Una sola cuenta para todo el ecosistema.", btn:"Iniciar sesión", f:["email","pass"], social:1, sw:["¿Aún no tienes cuenta?","Crear cuenta","signup"]},
+    signup: {t:"Crea tu cuenta", copy:"Un solo acceso a los productos de Envyra.", btn:"Crear cuenta", f:["name","email","pass"], social:1, sw:["¿Ya tienes cuenta?","Iniciar sesión","login"]},
+    forgot: {t:"Recupera tu contraseña", copy:"Te enviamos un enlace para crear una nueva.", btn:"Enviar enlace", f:["email"], sw:["","Volver a iniciar sesión","login"]},
+    reset:  {t:"Nueva contraseña", copy:"Elige una de al menos 8 caracteres.", btn:"Guardar contraseña", f:["pass"]},
+    sent:   {t:"Revisa tu correo", copy:"Enviamos un enlace de confirmación. Ábrelo para activar tu cuenta.", f:[], sent:1, sw:["","Volver a iniciar sesión","login"]},
+    account:{t:"Mi cuenta", copy:"Tu ENVYRA ID y tu acceso al ecosistema.", f:[], account:1}
+  };
+  let view = "login", session = null, pending = "", prevFocus = null, profile = null, profileUserId = null;
+  const subs = []; let autoClose = false;
+
+  function status(m, k){ const s = $("idStatus"); s.textContent = m || ""; s.dataset.kind = k || ""; }
+  function friendly(e){
+    const m = (e && e.message || "").toLowerCase();
+    if(m.includes("invalid login")) return "Email o contraseña incorrectos.";
+    if(m.includes("already registered")) return "Ya existe una cuenta con ese email. Inicia sesión.";
+    if(m.includes("at least")) return "La contraseña debe tener al menos 8 caracteres.";
+    if(m.includes("rate limit") || m.includes("too many")) return "Demasiados intentos. Espera unos minutos y vuelve a probar.";
+    if(m.includes("invalid") && m.includes("email")) return "Ese email no es válido.";
+    if(m.includes("failed to fetch") || m.includes("network")) return "Sin conexión con ENVYRA ID. Revisa tu internet.";
+    if(m.includes("same password")) return "La nueva contraseña debe ser distinta a la anterior.";
+    return (e && e.message) || "No se pudo completar la operación. Intenta de nuevo.";
+  }
+  function setView(v){
+    view = v; const c = V[v], f = c.f;
+    $("idTitle").textContent = c.t;
+    $("idCopy").textContent = c.copy;
+    [["name","idNameRow","idName"],["email","idEmailRow","idEmail"],["pass","idPassRow","idPassword"]].forEach(([k,row,inp]) => {
+      $(row).hidden = !f.includes(k); $(inp).required = f.includes(k);
+    });
+    $("idForm").hidden = !c.btn;
+    $("idSubmit").textContent = c.btn || "";
+    $("idPassword").autocomplete = v === "login" ? "current-password" : "new-password";
+    $("idSocial").hidden = !c.social; $("idForgotRow").hidden = v !== "login";
+    $("idSent").hidden = !c.sent; $("idAccount").hidden = !c.account; layer.classList.toggle("acc", !!c.account);
+    $("idSwRow").hidden = !c.sw;
+    if(c.sw){ $("idSwText").textContent = c.sw[0]; $("idSwitch").textContent = c.sw[1]; $("idSwitch").dataset.go = c.sw[2]; }
+    $("idPassword").type = "password"; $("idEye").textContent = "Ver";
+    status("", "");
+  }
+  function render(s){
+    session = s || null; const u = session?.user || null;
+    setTimeout(() => subs.forEach(f => f(session)), 0);
+    openBtn.textContent = u ? "Mi cuenta" : "Iniciar sesión";
+    createBtn.style.display = u ? "none" : "";
+    $("idAccountEmail").textContent = u ? (u.email || "") : "";
+    $("idEmailVerification").textContent = u ? (u.email_confirmed_at ? "Verificado ✓" : "Pendiente") : ""; $("idVerifyResend").hidden = !u || !!u.email_confirmed_at;
+    if(u && view !== "reset") {
+      if(view !== "account") setView("account");
+      if(profileUserId !== u.id){ loadProfile(u); loadCloud(u); }
+    } else if(!u && view === "account") {
+      profile = null; profileUserId = null; cloud = null; setView("login");
+    }
+  }
+  let cloud = null;
+  const MES = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+  function setMember(data){
+    const d = new Date((data && data.created_at) || session?.user?.created_at || "");
+    $("idMemberSince").textContent = isNaN(d) ? "ENVYRA ID" : MES[d.getMonth()] + " " + d.getFullYear();
+  }
+  function syncDirty(){
+    const m = $("idMarketing").checked; $("idMarketingText").textContent = m ? "Activadas" : "Desactivadas";
+    const dirty = !!profile && ($("idProfileName").value.trim() !== (profile.full_name || "") || $("idLanguage").value !== (profile.preferred_language || "es") || m !== Boolean(profile.marketing_emails));
+    $("idSaveProfile").disabled = !dirty;
+  }
+  function paintCloud(){
+    const st = $("idCloudState"), btn = $("idCloudReq");
+    if(cloud === "load"){ st.textContent = "Comprobando…"; btn.hidden = true; }
+    else if(cloud === "error"){ st.textContent = "No se pudo comprobar"; btn.textContent = "Reintentar"; btn.hidden = false; }
+    else if(cloud){ st.textContent = cloud.status === "approved" ? "Aprobado ✓" : "Solicitado"; btn.hidden = true; }
+    else { st.textContent = "No solicitado"; btn.textContent = "Solicitar acceso →"; btn.hidden = false; }
+  }
+  async function loadCloud(user){
+    if(!client || !user) return;
+    cloud = "load"; paintCloud();
+    const {data, error} = await client.from("cloud_waitlist").select("status, created_at").eq("user_id", user.id).maybeSingle();
+    if(!session?.user || session.user.id !== user.id) return;
+    if(error){ console.error("ENVYRA ID cloud:", error); cloud = "error"; } else cloud = data || false;
+    paintCloud();
+  }
+  async function requestCloud(){
+    if(!client || !session?.user) return offline();
+    if(cloud === "error") return loadCloud(session.user);
+    const b = $("idCloudReq"); b.disabled = true; b.textContent = "Enviando…"; status("", "");
+    const {error} = await client.from("cloud_waitlist").insert({user_id:session.user.id, status:"pending"});
+    b.disabled = false;
+    if(error && !/duplicate|unique/i.test(error.message || "")){ console.error("ENVYRA ID cloud:", error); status("No se pudo registrar tu solicitud. Intenta de nuevo en unos minutos.", "error"); paintCloud(); return; }
+    await loadCloud(session.user); status("Solicitud registrada. Te avisaremos cuando haya novedades.", "success");
+  }
+  async function loadProfile(user){
+    if(!client || !user) return;
+    profileUserId = user.id;
+    status("Cargando tu perfil…", "");
+    try {
+      let {data, error} = await client.from("profiles").select("id, full_name, created_at, updated_at, avatar_url, preferred_language, marketing_emails").eq("id", user.id).maybeSingle();
+      if(error) throw error;
+      if(!data){
+        const fallbackName = (user.user_metadata?.full_name || user.user_metadata?.name || (user.email || "").split("@")[0] || "Usuario").slice(0,100);
+        const result = await client.from("profiles").upsert({id:user.id, full_name:fallbackName, preferred_language:"es", marketing_emails:false}).select("id, full_name, created_at, updated_at, avatar_url, preferred_language, marketing_emails").single();
+        if(result.error) throw result.error;
+        data = result.data;
+      }
+      if(!session?.user || session.user.id !== user.id) return;
+      profile = data;
+      $("idProfileName").value = data.full_name || user.user_metadata?.full_name || "";
+      $("idLanguage").value = data.preferred_language || "es";
+      $("idMarketing").checked = Boolean(data.marketing_emails); syncDirty();
+      setMember(data);
+      status("", "");
+    } catch(err) {
+      status("No pudimos cargar tu perfil. Revisa la conexión y los permisos de profiles en Supabase.", "error");
+      console.error("ENVYRA ID profile load:", err);
+    }
+  }
+  function focusFirst(){
+    const vis = [...layer.querySelectorAll(".id-card input")].find(i => !i.closest("[hidden]"));
+    (view === "account" ? $("idClose") : (vis || $("idClose"))).focus();
+  }
+  function show(){
+    prevFocus = document.activeElement; layer.classList.add("on"); layer.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden"; setTimeout(focusFirst, 350);
+  }
+  function hide(){
+    autoClose = false;
+    layer.classList.remove("on"); layer.setAttribute("aria-hidden","true"); document.body.style.overflow = "";
+    if(prevFocus?.focus) prevFocus.focus();
+  }
+  function offline(){ status("No se pudo cargar ENVYRA ID. Recarga la página e intenta de nuevo.", "error"); }
+
+  openBtn.addEventListener("click", () => { if(!session?.user) setView("login"); show(); });
+  createBtn.addEventListener("click", () => { setView("signup"); show(); });
+  $("idClose").addEventListener("click", hide);
+  $("idSwitch").addEventListener("click", e => setView(e.currentTarget.dataset.go));
+  $("idForgot").addEventListener("click", () => setView("forgot"));
+  $("idEye").addEventListener("click", () => { const p = $("idPassword"), on = p.type === "password"; p.type = on ? "text" : "password"; $("idEye").textContent = on ? "Ocultar" : "Ver"; });
+  document.addEventListener("keydown", e => {
+    if(!layer.classList.contains("on")) return;
+    if(e.key === "Escape") return hide();
+    if(e.key === "Tab"){
+      const f = [...layer.querySelectorAll("button,input,select,a[href]")].filter(x => !x.disabled && !x.closest("[hidden]"));
+      if(!f.length) return; const a = f[0], z = f[f.length-1];
+      if(e.shiftKey && document.activeElement === a){ e.preventDefault(); z.focus(); }
+      else if(!e.shiftKey && document.activeElement === z){ e.preventDefault(); a.focus(); }
+    }
+  });
+
+  $("idForm").addEventListener("submit", async e => {
+    e.preventDefault();
+    if(!client) return offline();
+    const email = $("idEmail").value.trim(), password = $("idPassword").value, name = $("idName").value.trim();
+    const btn = $("idSubmit"), label = btn.textContent;
+    btn.disabled = true; btn.textContent = "Un momento…"; status("Conectando con ENVYRA ID…", "");
+    try{
+      if(view === "signup"){
+        if(password.length < 8) throw {message:"at least 8"};
+        const {data, error} = await client.auth.signUp({email, password, options:{data:{full_name:name}, emailRedirectTo:redirect}});
+        if(error) throw error;
+        if(data.user && Array.isArray(data.user.identities) && data.user.identities.length === 0) throw {message:"already registered"};
+        if(data.session){ render(data.session); status("Cuenta creada. Ya estás dentro.", "success"); if(autoClose) hide(); }
+        else { pending = email; setView("sent"); status("Correo enviado a " + email + ".", "success"); }
+      } else if(view === "login"){
+        const {data, error} = await client.auth.signInWithPassword({email, password});
+        if(error){
+          if((error.message || "").toLowerCase().includes("not confirmed")){ pending = email; setView("sent"); status("Aún no confirmaste tu correo.", "error"); return; }
+          throw error;
+        }
+        render(data.session); status("Sesión iniciada.", "success"); if(autoClose) hide();
+      } else if(view === "forgot"){
+        const {error} = await client.auth.resetPasswordForEmail(email, {redirectTo:redirect});
+        if(error) throw error;
+        status("Si el email tiene cuenta, recibirás un enlace en unos minutos.", "success");
+      } else if(view === "reset"){
+        const {data, error} = await client.auth.updateUser({password});
+        if(error) throw error;
+        view = "login"; render(session || {user:data.user}); status("Contraseña actualizada.", "success");
+      }
+    }catch(err){ status(friendly(err), "error"); }
+    finally{ btn.disabled = false; if(!btn.closest("[hidden]")) btn.textContent = label; }
+  });
+
+  $("idResend").addEventListener("click", async () => {
+    if(!client) return offline();
+    const b = $("idResend"); b.disabled = true; status("Reenviando…", "");
+    const {error} = await client.auth.resend({type:"signup", email:pending, options:{emailRedirectTo:redirect}});
+    b.disabled = false; status(error ? friendly(error) : "Correo reenviado. Revisa también el spam.", error ? "error" : "success");
+  });
+  $("idGoogle").addEventListener("click", async () => {
+    if(!client) return offline();
+    status("Redirigiendo a Google…", "");
+    const {error} = await client.auth.signInWithOAuth({provider:"google", options:{redirectTo:redirect}});
+    if(error) status(friendly(error), "error");
+  });
+  $("idProfileForm").addEventListener("submit", async e => {
+    e.preventDefault();
+    if(!client || !session?.user) return offline();
+    const name = $("idProfileName").value.trim();
+    if(!name) return status("Escribe tu nombre para guardar el perfil.", "error");
+    const btn = $("idSaveProfile"), label = btn.textContent;
+    btn.disabled = true; btn.textContent = "Guardando…";
+    status("Guardando cambios…", "");
+    try {
+      const payload = {id:session.user.id, full_name:name, preferred_language:$("idLanguage").value, marketing_emails:$("idMarketing").checked, updated_at:new Date().toISOString()};
+      const {data, error} = await client.from("profiles").upsert(payload, {onConflict:"id"}).select("id, full_name, created_at, updated_at, avatar_url, preferred_language, marketing_emails").single();
+      if(error) throw error;
+      profile = data;
+      setMember(data);
+      status("Perfil actualizado.", "success");
+    } catch(err) {
+      console.error("ENVYRA ID profile save:", err);
+      status("No se pudieron guardar los cambios. Revisa las políticas RLS de profiles en Supabase.", "error");
+    } finally { btn.textContent = label; syncDirty(); }
+  });
+
+  $("idSignOut").addEventListener("click", async () => {
+    if(!client) return offline();
+    const b = $("idSignOut"); b.disabled = true; status("Cerrando sesión…", "");
+    const {error} = await client.auth.signOut(); b.disabled = false;
+    if(error) return status(friendly(error), "error");
+    render(null); setView("login"); status("Sesión cerrada.", "success");
+  });
+
+  $("idProfileForm").addEventListener("input", syncDirty);
+  $("idProfileForm").addEventListener("change", syncDirty);
+  $("idCloudReq").addEventListener("click", requestCloud);
+  $("idVerifyResend").addEventListener("click", async () => {
+    if(!client || !session?.user?.email) return offline();
+    const {error} = await client.auth.resend({type:"signup", email:session.user.email, options:{emailRedirectTo:redirect}});
+    status(error ? friendly(error) : "Correo de verificación reenviado.", error ? "error" : "success");
+  });
+  window.ENVYRA_ID = {
+    client,
+    session: () => session,
+    open(v, o){ autoClose = !!(o && o.closeOnAuth); if(!session?.user) setView(v || "login"); show(); },
+    onChange(f){ subs.push(f); f(session); },
+    refreshCloud(){ if(session?.user) loadCloud(session.user); }
+  };
+  setView("login");
+  if(client){
+    client.auth.getSession().then(({data}) => {
+      render(data.session);
+      if(fromEmail && data.session){ show(); status("Correo confirmado. Ya estás dentro.", "success"); }
+    }).catch(() => render(null));
+    client.auth.onAuthStateChange((ev, s) => {
+      if(ev === "PASSWORD_RECOVERY"){ session = s; setView("reset"); show(); }
+      else setTimeout(() => render(s), 0);
+    });
+  }
+})();
+</script>
+
 </body>
 </html>
