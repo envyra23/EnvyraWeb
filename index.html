@@ -302,12 +302,292 @@ background:conic-gradient(from var(--a),transparent 0deg,rgba(245,196,81,.55) 24
 @media(max-width:860px){.pa-in{grid-template-columns:1fr;gap:1.6rem}.pa-steps,.pa-pts{display:none}.pa-side h2{font-size:clamp(1.8rem,8vw,2.4rem)}}
 @media(max-width:480px){.pa-act{flex-direction:column-reverse}.pa-act .btn{justify-content:center}.pa-act #paNext{margin-left:0}}
 @media(prefers-reduced-motion:reduce){#pa,.pa-step:not([hidden]){animation:none;transition:none}}
+
+/* ===== CUENTA · panel de cuenta (ENVYRA ID) · usa --ln, --mut, --ease, --pad, .btn, .mono del index ===== */
+#ac{position:fixed;inset:0;z-index:85;background:#000;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
+#ac.on{opacity:1;visibility:visible}
+#ac:focus{outline:0}
+#ac [hidden]{display:none!important}
+#ac h2,#ac h3,#ac p{margin:0}
+.ac-top{flex:none;display:flex;align-items:center;gap:1rem;padding:calc(.7rem + env(safe-area-inset-top,0px)) var(--pad) .7rem;border-bottom:1px solid var(--ln);background:#000}
+.ac-bc{display:flex;align-items:center;gap:.6rem;min-width:0;font-size:.92rem;white-space:nowrap}
+.ac-bc .lg{font-weight:600;letter-spacing:-.02em}.ac-bc i{font-style:normal;opacity:.35}.ac-bc b{font-weight:500;overflow:hidden;text-overflow:ellipsis}
+.ac-sp{flex:1}
+.ac-live{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--ln);border-radius:99px;padding:.22rem .8rem;font-size:.76rem;color:var(--mut);white-space:nowrap}
+.ac-live i{width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.14)}
+#ac[data-auth="0"] .ac-live i{background:transparent;border:1px solid var(--mut);box-shadow:none}
+.ac-x{display:grid;place-items:center;width:2rem;height:2rem;border:1px solid var(--ln);border-radius:8px;color:var(--mut);transition:color .3s var(--ease),border-color .3s var(--ease)}
+.ac-x:hover{color:#fff;border-color:rgba(255,255,255,.5)}.ac-x svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round}
+.ac-ext{display:inline-flex;align-items:center;gap:.45rem;padding:.4rem .9rem;font-size:.82rem}
+.ac-ext svg,.ac-a svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+.ac-shell{flex:1;min-height:0;display:grid;grid-template-columns:17rem minmax(0,1fr);max-width:76rem;width:100%;margin:0 auto}
+.ac-side{display:flex;flex-direction:column;gap:1.4rem;padding:1.8rem 1.4rem 1.8rem var(--pad);border-right:1px solid var(--ln);overflow-y:auto}
+.ac-who{display:flex;align-items:center;gap:.8rem;min-width:0}
+.ac-av{position:relative;flex:none;display:grid;place-items:center;width:2.8rem;height:2.8rem;border:1px solid rgba(255,255,255,.3);border-radius:50%;background:#0b0b0b;font-weight:600;font-size:1.05rem;overflow:hidden}
+.ac-av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ac-who div{min-width:0}.ac-who b{display:block;font-weight:500;letter-spacing:-.01em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ac-who div span{display:block;color:var(--mut);font-size:.8rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ac-tabs{display:flex;flex-direction:column;gap:.15rem}
+.ac-tab{display:flex;align-items:center;gap:.7rem;padding:.55rem .75rem;border-radius:8px;color:var(--mut);font-size:.9rem;text-align:left;transition:color .3s var(--ease),background .3s var(--ease)}
+.ac-tab svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ac-tab:hover{color:#fff}.ac-tab[aria-selected="true"]{color:#fff;background:rgba(255,255,255,.08)}
+.ac-sidefoot{margin-top:auto;border:1px solid var(--ln);border-radius:12px;padding:1rem}
+.ac-sidefoot b{display:block;font-weight:500;font-size:.9rem}.ac-sidefoot p{color:var(--mut);font-size:.8rem;margin:.25rem 0 .8rem}
+.ac-sidefoot .btn{width:100%;justify-content:center;padding:.45rem .9rem;font-size:.82rem}
+
+.ac-main{overflow-y:auto;overscroll-behavior:contain;padding:2.2rem var(--pad) 5rem 2.4rem;min-width:0}
+.ac-pane{max-width:44rem}.ac-pane.wide{max-width:52rem}
+.ac-ph{margin-bottom:1.8rem}
+.ac-ph h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:600;letter-spacing:-.04em;line-height:1.1}
+.ac-ph p{color:var(--mut);margin-top:.5rem;max-width:34rem;font-size:.95rem}
+.ac-card{border:1px solid var(--ln);border-radius:14px;background:#050505;margin-bottom:1.1rem;overflow:hidden}
+.ac-cb{padding:1.3rem 1.4rem}.ac-cb h3{font-size:1.05rem;font-weight:500;letter-spacing:-.02em}.ac-cb>p{color:var(--mut);font-size:.88rem;margin-top:.3rem}
+.ac-cb .ac-in,.ac-cb .ac-row{margin-top:1rem}
+.ac-cf{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 1.4rem;border-top:1px solid var(--ln);background:#000;color:var(--mut);font-size:.82rem}
+.ac-cf .btn{padding:.4rem 1rem;font-size:.82rem;flex:none}.ac-cf .btn:disabled{opacity:.5;cursor:default}
+.ac-in{font-family:inherit;display:block;width:100%;max-width:26rem;background:#000;border:1px solid var(--ln);border-radius:10px;color:#fff;font-size:.95rem;padding:.7rem .85rem;color-scheme:dark;transition:border-color .3s var(--ease)}
+.ac-in:focus{outline:0;border-color:#fff}.ac-in[readonly]{color:var(--mut)}
+.ac-in+.ac-in{margin-top:.6rem}
+.ac-row{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}.ac-row .ac-in{flex:1;min-width:12rem;margin:0}
+.ac-mono{font-family:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;font-size:.84rem!important;letter-spacing:0}
+.ac-chip{display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--ln);border-radius:99px;padding:.15rem .65rem;font-size:.74rem;color:var(--mut);white-space:nowrap}
+.ac-chip i{width:5px;height:5px;border-radius:50%;border:1px solid var(--mut)}.ac-chip.on{color:#fff;border-color:rgba(255,255,255,.4)}.ac-chip.on i{background:#fff;border-color:#fff}
+.ac-hero{display:flex;align-items:center;gap:1.2rem;margin-bottom:1.6rem}
+.ac-hero .ac-av{width:4.4rem;height:4.4rem;font-size:1.7rem}
+.ac-hero h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:600;letter-spacing:-.04em;line-height:1.1}
+.ac-hero p{color:var(--mut);margin-top:.2rem;font-size:.92rem;overflow-wrap:anywhere}
+.ac-hero .ac-chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.7rem}
+.ac-danger{border-color:rgba(255,138,138,.35)}.ac-danger .ac-cf{border-top-color:rgba(255,138,138,.35)}
+.ac-btn-d{border-color:rgba(255,138,138,.5)!important;color:#ff8a8a}.ac-btn-d:hover{background:#ff8a8a!important;color:#000!important}
+
+.ac-list{list-style:none;margin:0;padding:0}
+.ac-list li{display:flex;align-items:center;gap:1rem;padding:1rem 1.4rem;border-top:1px solid var(--ln)}.ac-list li:first-child{border-top:0}
+.ac-list .tx{flex:1;min-width:0}.ac-list b{display:block;font-weight:500;font-size:.95rem;letter-spacing:-.01em}.ac-list .tx span{display:block;color:var(--mut);font-size:.84rem;overflow-wrap:anywhere}
+.ac-list .btn{padding:.4rem .9rem;font-size:.8rem;flex:none}
+.ac-ico{flex:none;display:grid;place-items:center;width:2.2rem;height:2.2rem;border:1px solid var(--ln);border-radius:10px}.ac-ico svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
+.ac-a{display:inline-flex;align-items:center;gap:.4rem;color:#fff;font-size:.85rem;border-bottom:1px solid var(--ln);padding-bottom:1px;transition:border-color .3s var(--ease)}.ac-a:hover{border-color:#fff}
+
+/* Tarjeta + vínculo con Envyra ID */
+.ac-cardgrid{display:grid;grid-template-columns:minmax(0,22rem) minmax(0,1fr);gap:clamp(1.6rem,4vw,3rem);align-items:start}
+.ac-stage{perspective:900px}
+.ac-mc{text-align:left;position:relative;aspect-ratio:1.586;border-radius:18px;border:1px solid rgba(255,255,255,.2);background:linear-gradient(145deg,#111,#000 55%,#090909);overflow:hidden;padding:1.1rem 1.2rem;display:flex;flex-direction:column;justify-content:space-between;transform-style:preserve-3d;transition:transform .3s var(--ease);box-shadow:0 30px 60px rgba(0,0,0,.6);will-change:transform}
+.ac-mc::before{content:"";position:absolute;inset:0;background:linear-gradient(var(--ln) 1px,transparent 1px) 0 0/34px 34px,linear-gradient(90deg,var(--ln) 1px,transparent 1px) 0 0/34px 34px;opacity:.3;-webkit-mask-image:radial-gradient(ellipse 80% 80% at 70% 20%,#000,transparent 80%);mask-image:radial-gradient(ellipse 80% 80% at 70% 20%,#000,transparent 80%)}
+.ac-mc>*{position:relative}.ac-mc>.glare{position:absolute;inset:0;background:radial-gradient(circle at var(--gx,30%) var(--gy,0%),rgba(255,255,255,.16),transparent 55%);pointer-events:none}
+.ac-mc .top{display:flex;justify-content:space-between;align-items:center;font-size:.95rem}.ac-mc .top b{font-weight:600;letter-spacing:-.02em}
+.ac-mc .chip{width:2.4rem;height:1.8rem;border:1px solid rgba(255,255,255,.35);border-radius:6px;background:linear-gradient(90deg,transparent 48%,rgba(255,255,255,.2) 48% 52%,transparent 52%),linear-gradient(transparent 48%,rgba(255,255,255,.2) 48% 52%,transparent 52%)}
+.ac-mc .no{font-weight:500;font-size:clamp(.9rem,4.2vw,1.15rem);letter-spacing:.14em;white-space:nowrap}
+.ac-mc .bot{display:flex;justify-content:space-between;gap:1rem}.ac-mc .bot div{display:grid;gap:.15rem;min-width:0}.ac-mc .bot div:last-child{text-align:right}.ac-mc .bot b{font-weight:500;font-size:.92rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ac-mc.dealt{animation:acdeal 1.1s var(--ease) backwards}
+@keyframes acdeal{from{opacity:0;transform:translateY(36px) rotate(-4deg) scale(.93)}to{opacity:1;transform:none}}
+.ac-acts{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}.ac-acts .btn{padding:.5rem 1.1rem;font-size:.84rem}
+.ac-facts{display:grid;grid-template-columns:1.45fr 1fr 1fr;margin-top:1.4rem;border:1px solid var(--ln);border-radius:12px;overflow:hidden}
+.ac-facts div{padding:.8rem .9rem;border-left:1px solid var(--ln);min-width:0}.ac-facts div:first-child{border-left:0}
+.ac-facts .mono{display:block;font-size:.58rem}.ac-facts b{display:block;margin-top:.2rem;font-weight:500;font-size:.86rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ac-chain h3{font-size:1.15rem;font-weight:500;letter-spacing:-.025em}.ac-chain>p{color:var(--mut);font-size:.9rem;margin-top:.4rem;max-width:26rem}
+.ac-links{position:relative;list-style:none;margin:1.8rem 0 0;padding:0}
+.ac-links li{position:relative;padding:0 0 1.7rem 2.2rem}.ac-links li:last-child{padding-bottom:0}
+.ac-links li::before{content:"";position:absolute;left:0;top:.2rem;width:.9rem;height:.9rem;border-radius:50%;border:1px solid var(--ln);background:#000;z-index:1;transition:background .5s var(--ease),border-color .5s var(--ease)}
+.ac-links li:not(:last-child)::after{content:"";position:absolute;left:.45rem;top:1.2rem;bottom:-.2rem;width:1px;background:linear-gradient(#fff,#fff) 0 0/100% 0 no-repeat,var(--ln);transition:background-size 1.4s var(--ease) .25s}
+.ac-pane.in .ac-links li.lit::after{background-size:100% 100%}
+.ac-pane.in .ac-links li.on::before{background:#fff;border-color:#fff}
+.ac-pane.in .ac-links li:nth-child(2)::before{transition-delay:1.1s}
+.ac-links b{display:block;font-weight:500}.ac-links p{color:var(--mut);font-size:.88rem;margin:.15rem 0 .5rem}.ac-links li:last-child p{margin-bottom:0}
+
+.ac-out{flex:1;display:grid;place-items:center;padding:2rem var(--pad);overflow-y:auto}
+.ac-out>div{max-width:24rem;text-align:center}
+#ac .ac-out h2{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:600;letter-spacing:-.04em;line-height:1.1;margin:2rem 0 .7rem}.ac-out p{color:var(--mut)}
+.ac-out .ac-mc{opacity:.92}.ac-out .row{justify-content:center;margin-top:1.6rem}
+
+.ac-toast{position:absolute;left:50%;bottom:1.6rem;transform:translate(-50%,12px);max-width:min(26rem,calc(100% - 2rem));padding:.65rem 1.1rem;border:1px solid rgba(255,255,255,.3);border-radius:10px;background:#000;font-size:.86rem;text-align:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s var(--ease),transform .4s var(--ease),visibility .3s}
+.ac-toast.on{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.ac-toast.err{border-color:rgba(255,138,138,.6);color:#ff8a8a}.ac-toast.ok::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:#9be7b0;margin-right:.55rem;vertical-align:.1em}
+
+/* Acceso rápido */
+.ac-chipbtn{position:fixed;left:var(--pad);bottom:1.1rem;z-index:45;display:inline-flex;align-items:center;gap:.6rem;padding:.3rem .9rem .3rem .3rem;border:1px solid var(--ln);border-radius:99px;background:rgba(0,0,0,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-size:.82rem;font-weight:500;transition:border-color .4s var(--ease)}
+.ac-chipbtn:hover{border-color:rgba(255,255,255,.5)}.ac-chipbtn .ac-av{width:1.8rem;height:1.8rem;font-size:.8rem}
+.ac-chipbtn[hidden],.pt-ac[hidden]{display:none}
+body.ac-open .ac-chipbtn{display:none}
+
+@media(max-width:820px){
+ .ac-shell{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}
+ .ac-side{flex-direction:row;align-items:center;gap:.8rem;padding:.7rem var(--pad);border-right:0;border-bottom:1px solid var(--ln);overflow-x:auto;overflow-y:hidden}
+ .ac-who,.ac-sidefoot{display:none}
+ .ac-tabs{flex-direction:row;gap:.3rem}.ac-tab{white-space:nowrap;padding:.5rem .85rem}
+ .ac-main{padding:1.6rem var(--pad) 5rem}
+ .ac-cardgrid{grid-template-columns:1fr}.ac-stage{max-width:24rem}
+ .ac-live span{display:none}.ac-live{padding:.3rem .55rem}
+}
+@media(max-width:700px){.ac-chipbtn{padding:.25rem}.ac-chipbtn span{display:none}.ac-ext span{display:none}.ac-ext{padding:.4rem .6rem}}
+@media(max-width:520px){.ac-facts{grid-template-columns:1fr}.ac-facts div{border-left:0;border-top:1px solid var(--ln)}.ac-facts div:first-child{border-top:0}.ac-cf{flex-direction:column;align-items:flex-start}.ac-list li{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){#ac,.ac-toast,.ac-mc{transition:none}.ac-mc.dealt{animation:none}.ac-links li::after,.ac-links li::before{transition:none!important}.ac-links li.lit::after{background-size:100% 100%}.ac-links li.on::before{background:#fff;border-color:#fff}}
+#ac[data-auth="0"] .ac-side,#ac[data-auth="0"] .ac-main{display:none}
+#ac[data-auth="1"] .ac-out{display:none}
+#ac[data-auth="0"] .ac-shell{grid-template-columns:1fr;grid-template-rows:1fr}
+.ac-out{min-height:0}
+
+/* ===== CUENTA · ajustes para celular ===== */
+@media(max-width:820px){
+ .ac-top{gap:.6rem}
+ .ac-x,.ac-ext{min-width:2.5rem;min-height:2.5rem;justify-content:center}
+ .ac-side{scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none}.ac-side::-webkit-scrollbar{display:none}
+ .ac-tab{min-height:2.75rem;scroll-snap-align:center}
+ .ac-main{padding:1.4rem var(--pad) calc(5.5rem + env(safe-area-inset-bottom,0px));-webkit-overflow-scrolling:touch}
+ .ac-ph{margin-bottom:1.4rem}
+ .ac-in{max-width:none;font-size:16px;padding:.8rem .9rem}
+ .ac-cb{padding:1.1rem 1.1rem}.ac-cf{padding:.9rem 1.1rem;flex-direction:column;align-items:stretch;gap:.8rem}
+ .ac-cf .btn{width:100%;min-height:2.75rem;justify-content:center;text-align:center}
+ .ac-cf .ac-row{width:100%}.ac-cf .ac-row .btn{flex:1}
+ .ac-row .ac-in{min-width:0;flex:1 1 100%}.ac-row>.btn{flex:1;min-height:2.75rem}
+ .ac-hero{gap:1rem}.ac-hero .ac-av{width:3.6rem;height:3.6rem;font-size:1.4rem}
+ .ac-list li{flex-wrap:wrap;gap:.7rem 1rem;padding:1rem 1.1rem}
+ .ac-list .tx{flex:1 1 calc(100% - 3.5rem)}
+ .ac-list li>.ac-chip{margin-left:3.2rem}
+ .ac-list li>.btn{margin-left:auto}
+ .ac-list .btn{min-height:2.5rem;padding:.5rem 1.1rem}
+ .ac-acts .btn{flex:1;min-height:2.75rem;justify-content:center}
+ .ac-sp{display:none}.ac-bc{flex:1}
+ .ac-toast{bottom:calc(1.2rem + env(safe-area-inset-bottom,0px))}
+ .ac-out .row{flex-direction:column}.ac-out .row .btn{width:100%;justify-content:center;min-height:2.9rem}
+ .ac-chipbtn{bottom:calc(1.1rem + env(safe-area-inset-bottom,0px))}
+}
+@media(max-width:380px){.ac-hero{flex-direction:column;align-items:flex-start}.ac-bc .lg{display:none}.ac-bc i{display:none}}
 </style>
 <link rel="stylesheet" href="envyra-shell.css">
 <script src="envyra-shell.js"></script>
 </head>
 <body>
 <envyra-nav></envyra-nav>
+
+<!-- ===== CUENTA · panel de cuenta (ENVYRA ID). Opciones para abrirlo: botón .ac-chipbtn, cualquier [data-account], #cuenta, window.ENVYRA_ACCOUNT.open() ===== -->
+<button type="button" class="ac-chipbtn" id="acChip" data-account hidden aria-label="Abrir mi cuenta"><span class="ac-av" id="acChipAv" aria-hidden="true"></span><span id="acChipName">Mi cuenta</span></button>
+
+<div id="ac" role="dialog" aria-modal="true" aria-labelledby="ac-t" aria-hidden="true" data-auth="0" tabindex="-1">
+<div class="ac-top">
+ <div class="ac-bc"><span class="lg">ENVYRΛ</span><i>/</i><b id="ac-t">Cuenta</b></div>
+ <span class="ac-sp"></span>
+ <span class="ac-live"><i></i><span id="acLiveTx">Sin sesión</span></span>
+ <a class="btn ac-ext" href="envyra-id.html" data-idlink target="_blank" rel="noopener"><span>Abrir Envyra ID</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+ <button type="button" class="ac-x" id="acX" aria-label="Cerrar panel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+</div>
+
+<div class="ac-shell">
+ <div class="ac-side">
+  <div class="ac-who"><span class="ac-av" id="acSideAv" aria-hidden="true"></span><div><b id="acSideName">Invitado</b><span id="acSideMail"></span></div></div>
+  <div class="ac-tabs" role="tablist" aria-orientation="vertical" aria-label="Secciones de la cuenta">
+   <button type="button" class="ac-tab" role="tab" id="act-general" aria-controls="acp-general" data-tab="general"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>General</button>
+   <button type="button" class="ac-tab" role="tab" id="act-tarjeta" aria-controls="acp-tarjeta" data-tab="tarjeta"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 10h18M7 15h4"/></svg>Tarjeta Envyra ID</button>
+   <button type="button" class="ac-tab" role="tab" id="act-seguridad" aria-controls="acp-seguridad" data-tab="seguridad"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Seguridad</button>
+   <button type="button" class="ac-tab" role="tab" id="act-ecosistema" aria-controls="acp-ecosistema" data-tab="ecosistema"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>Ecosistema</button>
+  </div>
+  <div class="ac-sidefoot"><b>Tu cuenta es un Envyra ID</b><p>Se administra en un solo lugar y funciona en todos los sitios de Envyra.</p><a class="btn" href="envyra-id.html" data-idlink target="_blank" rel="noopener">Ir a Envyra ID</a></div>
+ </div>
+
+ <div class="ac-main" id="acMain">
+
+  <!-- General -->
+  <div class="ac-pane" id="acp-general" role="tabpanel" aria-labelledby="act-general" hidden>
+   <div class="ac-hero"><span class="ac-av" id="acHeroAv" aria-hidden="true"></span><div>
+    <h2 id="acHeroName">Invitado</h2><p id="acHeroMail"></p>
+    <div class="ac-chips"><span class="ac-chip" id="acVer"><i></i><span>Envyra ID</span></span><span class="ac-chip" id="acSinceChip"><span>Miembro desde —</span></span></div></div></div>
+
+   <form class="ac-card" id="acNameForm" novalidate>
+    <div class="ac-cb"><h3>Nombre</h3><p>Así apareces en tu tarjeta y en tu terminal de partnerships.</p>
+     <input class="ac-in" id="acName" type="text" maxlength="60" autocomplete="name" aria-label="Nombre"></div>
+    <div class="ac-cf"><span>Entre 2 y 60 caracteres.</span><button type="submit" class="btn w1" id="acNameBtn">Guardar cambios</button></div>
+   </form>
+
+   <form class="ac-card" id="acMailForm" novalidate>
+    <div class="ac-cb"><h3>Correo electrónico</h3><p>Es el correo con el que inicias sesión. Si lo cambias, te pedimos confirmarlo.</p>
+     <input class="ac-in" id="acMail" type="email" autocomplete="email" aria-label="Correo electrónico"></div>
+    <div class="ac-cf"><span id="acMailHint">Te enviaremos un enlace al nuevo correo.</span><button type="submit" class="btn w1" id="acMailBtn">Guardar cambios</button></div>
+   </form>
+
+   <div class="ac-card">
+    <div class="ac-cb"><h3>ID de usuario</h3><p>Es único y no cambia. Compártelo solo si necesitas soporte.</p>
+     <div class="ac-row"><input class="ac-in ac-mono" id="acUid" type="text" readonly aria-label="ID de usuario"><button type="button" class="btn" id="acCopyUid">Copiar</button></div></div>
+   </div>
+
+   <div class="ac-card ac-danger">
+    <div class="ac-cb"><h3>Eliminar cuenta</h3><p>Borra tu Envyra ID y los datos asociados en todos los productos. Esta acción no se puede deshacer.</p></div>
+    <div class="ac-cf"><span>Lo procesamos por correo para confirmar que eres tú.</span><a class="btn ac-btn-d" id="acDel" href="mailto:envyra23@gmail.com?subject=Eliminar%20mi%20Envyra%20ID">Solicitar eliminación</a></div>
+   </div>
+  </div>
+
+  <!-- Tarjeta -->
+  <div class="ac-pane wide" id="acp-tarjeta" role="tabpanel" aria-labelledby="act-tarjeta" hidden>
+   <div class="ac-ph"><h2>Tarjeta Envyra ID</h2><p>La misma tarjeta que recibiste al crear tu cuenta en Envyra ID. Un solo número en todo el ecosistema.</p></div>
+   <div class="ac-cardgrid">
+    <div>
+     <div class="ac-stage" id="acStage"><div class="ac-mc dealt" id="acMc">
+      <div class="glare"></div>
+      <div class="top"><b>ENVYRΛ</b><span class="mono">ID · Membership</span></div>
+      <div class="chip"></div>
+      <div class="no" id="acMcNo">ENV  0000  0000</div>
+      <div class="bot"><div><span class="mono">Miembro</span><b id="acMcName">Tu nombre</b></div><div><span class="mono">Desde</span><b id="acMcSince">2026</b></div></div>
+     </div></div>
+     <div class="ac-acts"><button type="button" class="btn w1" id="acDl">Descargar tarjeta</button><button type="button" class="btn" id="acCopyNo">Copiar número</button></div>
+     <div class="ac-facts"><div><span class="mono">Número</span><b id="acFactNo">—</b></div><div><span class="mono">Miembro desde</span><b id="acFactSince">—</b></div><div><span class="mono">Estado</span><b id="acFactState">—</b></div></div>
+    </div>
+    <div class="ac-chain">
+     <h3>Una cuenta, dos sitios</h3>
+     <p>Envyra y Envyra ID comparten la misma sesión. Lo que cambias en uno se ve en el otro.</p>
+     <ol class="ac-links">
+      <li class="on lit"><b>envyraweb.com</b><p>El sitio principal. Aquí tu sesión está activa ahora.</p></li>
+      <li class="on"><b>Envyra ID</b><p>Donde creaste tu cuenta y donde se emite tu tarjeta.</p><a class="ac-a" href="envyra-id.html" data-idlink target="_blank" rel="noopener"><span>Abrir Envyra ID</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li>
+      <li><b>CLOUD e INTELLIGENCE</b><p>Entrarás con este mismo ID cuando estén disponibles.</p></li>
+     </ol>
+    </div>
+   </div>
+  </div>
+
+  <!-- Seguridad -->
+  <div class="ac-pane" id="acp-seguridad" role="tabpanel" aria-labelledby="act-seguridad" hidden>
+   <div class="ac-ph"><h2>Seguridad</h2><p>Contraseña, métodos de acceso y sesiones abiertas de tu Envyra ID.</p></div>
+
+   <form class="ac-card" id="acPwForm" novalidate>
+    <div class="ac-cb"><h3>Contraseña</h3><p>Usa al menos 8 caracteres. Si entraste con Google, aquí puedes crear una contraseña.</p>
+     <input class="ac-in" id="acPw1" type="password" autocomplete="new-password" placeholder="Nueva contraseña" aria-label="Nueva contraseña">
+     <input class="ac-in" id="acPw2" type="password" autocomplete="new-password" placeholder="Repite la nueva contraseña" aria-label="Repite la nueva contraseña"></div>
+    <div class="ac-cf"><span>Cambiarla no cierra tus otras sesiones.</span><button type="submit" class="btn w1" id="acPwBtn">Actualizar contraseña</button></div>
+   </form>
+
+   <div class="ac-card">
+    <div class="ac-cb"><h3>Métodos de acceso</h3><p>Formas con las que puedes iniciar sesión en tu Envyra ID.</p></div>
+    <ul class="ac-list" id="acIdent"></ul>
+    <div class="ac-cf" id="acVerRow" hidden><span>Tu correo aún no está confirmado.</span><button type="button" class="btn" id="acResend">Reenviar confirmación</button></div>
+   </div>
+
+   <div class="ac-card">
+    <div class="ac-cb"><h3>Sesiones</h3><p>Dispositivos con tu cuenta abierta.</p></div>
+    <ul class="ac-list"><li><span class="ac-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><div class="tx"><b id="acDev">Este dispositivo</b><span id="acDevMeta"></span></div><span class="ac-chip on"><i></i>Actual</span></li></ul>
+    <div class="ac-cf"><span>Si no reconoces un acceso, ciérralos todos y cambia tu contraseña.</span><span class="ac-row" style="gap:.5rem"><button type="button" class="btn" id="acOut">Cerrar sesión</button><button type="button" class="btn" id="acOutAll">Cerrar en todos</button></span></div>
+   </div>
+  </div>
+
+  <!-- Ecosistema -->
+  <div class="ac-pane" id="acp-ecosistema" role="tabpanel" aria-labelledby="act-ecosistema" hidden>
+   <div class="ac-ph"><h2>Ecosistema</h2><p>Los productos y servicios de Envyra a los que accedes con tu Envyra ID.</p></div>
+   <div class="ac-card"><ul class="ac-list">
+    <li><span class="ac-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="4.5"/><circle cx="15" cy="12" r="4.5"/></svg></span><div class="tx"><b>Envyra ID</b><span>Tu perfil, tu tarjeta y tu acceso único.</span></div><span class="ac-chip on"><i></i>Disponible hoy</span><a class="btn" href="envyra-id.html" data-idlink target="_blank" rel="noopener">Abrir</a></li>
+    <li><span class="ac-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></span><div class="tx"><b>NorthUnit</b><span>CRM con inteligencia artificial.</span></div><a class="btn" href="#northunit" data-acgo>Ver</a></li>
+    <li><span class="ac-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9.5 4.3 4.3 0 0 1 17.5 18H7z"/></svg></span><div class="tx"><b>ENVYRA CLOUD</b><span>La capa de memoria y API.</span></div><span class="ac-chip"><i></i>Acceso anticipado</span><a class="btn" href="envyra-cloud.html">Ver</a></li>
+    <li><span class="ac-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18"/></svg></span><div class="tx"><b>ENVYRA INTELLIGENCE</b><span>Agentes e inteligencia aplicada a tu empresa.</span></div><span class="ac-chip"><i></i>Próximamente</span><a class="btn" href="ENVYRAINTELLIGENCE.html">Ver</a></li>
+    <li><span class="ac-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span><div class="tx"><b>Partnerships</b><span>Trabaja con Envyra como empresa. Tus datos se precargan.</span></div><button type="button" class="btn" id="acPt">Solicitar</button></li>
+   </ul></div>
+  </div>
+ </div>
+
+ <!-- Sin sesión -->
+ <div class="ac-out" style="grid-column:1/-1"><div>
+  <div class="ac-stage"><div class="ac-mc" aria-hidden="true"><div class="top"><b>ENVYRΛ</b><span class="mono">ID · Membership</span></div><div class="chip"></div><div class="no">ENV  0000  0000</div><div class="bot"><div><span class="mono">Miembro</span><b>Tu nombre</b></div><div><span class="mono">Desde</span><b>2026</b></div></div></div></div>
+  <h2>Inicia sesión con tu Envyra ID</h2>
+  <p>Tu cuenta, tu tarjeta y tu seguridad en un solo panel. Es la misma cuenta que usas en Envyra ID.</p>
+  <div class="row"><button type="button" class="btn w1 lg" id="acLogin">Iniciar sesión</button><button type="button" class="btn lg" id="acSignup">Crear mi Envyra ID</button></div>
+ </div></div>
+</div>
+<div class="ac-toast" id="acToast" role="status" aria-live="polite"></div>
+</div>
 
 <div id="pa" role="dialog" aria-modal="true" aria-labelledby="pa-t" aria-hidden="true">
 <button type="button" id="paX" class="mono">Cerrar ✕</button>
@@ -528,7 +808,7 @@ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en
  <li><span class="mono">04</span><b>Desplegar</b><p>Producción, medición y soporte. Operamos contigo para que siga funcionando.</p><span class="pt-cmd">envyra deploy</span></li>
 </ol>
 
-<div class="row pt-act r"><button type="button" class="btn w1 lg" data-pt>Solicitar partnership</button><button type="button" class="btn lg pt-gu" id="ptLogin">Iniciar sesión</button></div>
+<div class="row pt-act r"><button type="button" class="btn w1 lg" data-pt>Solicitar partnership</button><button type="button" class="btn lg pt-gu" id="ptLogin">Iniciar sesión</button><button type="button" class="btn lg pt-ac" data-account hidden>Mi cuenta</button></div>
 
 </div></section>
 
@@ -705,6 +985,282 @@ function close(){if(d.close)d.close();else d.removeAttribute('open')}
 b.addEventListener('click',function(){if(d.showModal)d.showModal();else d.setAttribute('open','');var s=d.querySelector('.dl-body');if(s)s.scrollTop=0});
 d.addEventListener('click',function(e){if(e.target===d||e.target.closest('[data-close]'))close()});
 d.addEventListener('close',function(){b.focus()})})})();
+</script>
+
+<script>
+/* CUENTA — panel de cuenta. Usa la sesión y el cliente de ENVYRA ID (window.ENVYRA_ID), los mismos que el resto del sitio. */
+(function(){
+  var ID_URL = window.ENVYRA_ID_URL || 'envyra-id.html';
+  var $ = function(id){ return document.getElementById(id); };
+  var ac = $('ac'); if(!ac) return;
+  var rm = matchMedia('(prefers-reduced-motion:reduce)').matches, fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var TABS = ['general','tarjeta','seguridad','ecosistema'], MES = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  var user = null, profileName = null, profileFor = null, tab = 'general', from = null, toastT = 0, bound = false;
+
+  [].forEach.call(document.querySelectorAll('[data-idlink]'), function(a){ a.setAttribute('href', ID_URL); });
+
+  function client(){ return (window.ENVYRA_ID && window.ENVYRA_ID.client) || null; }
+  function meta(u){ return (u && u.user_metadata) || {}; }
+  function nameOf(u){
+    if(!u) return 'Invitado';
+    var m = meta(u);
+    return String(profileFor === u.id && profileName || m.full_name || m.name || String(u.email || '').split('@')[0] || 'Miembro').trim() || 'Miembro';
+  }
+  function cardOf(u){
+    var id = String(u.id || '').replace(/-/g, '').toUpperCase(); while(id.length < 8) id += '0';
+    var d = new Date(u.created_at || Date.now()); if(isNaN(d)) d = new Date();
+    return { name: nameOf(u), no: 'ENV  ' + id.slice(0, 4) + '  ' + id.slice(4, 8), since: MES[d.getMonth()] + ' ' + d.getFullYear() };
+  }
+  function toast(t, k){
+    var el = $('acToast'); el.textContent = t; el.className = 'ac-toast on' + (k ? ' ' + k : '');
+    clearTimeout(toastT); toastT = setTimeout(function(){ el.classList.remove('on'); }, k === 'err' ? 5200 : 3200);
+  }
+  function errTxt(e){
+    var m = String(e && e.message || '').toLowerCase();
+    if(m.indexOf('same') > -1 && m.indexOf('password') > -1) return 'La nueva contraseña debe ser distinta a la actual.';
+    if(m.indexOf('weak') > -1 || m.indexOf('least') > -1) return 'La contraseña es demasiado débil. Usa letras, números y símbolos.';
+    if(m.indexOf('reauth') > -1 || m.indexOf('recent') > -1) return 'Vuelve a iniciar sesión para hacer este cambio.';
+    if(m.indexOf('already') > -1 || m.indexOf('registered') > -1) return 'Ese correo ya tiene un Envyra ID.';
+    if(m.indexOf('rate') > -1 || m.indexOf('too many') > -1) return 'Demasiados intentos. Espera unos minutos.';
+    if(m.indexOf('fetch') > -1 || m.indexOf('network') > -1) return 'Sin conexión con Envyra ID. Revisa tu internet.';
+    return 'No se pudo completar. Intenta de nuevo.';
+  }
+  function avatar(el, u){
+    el.textContent = ''; if(!u) return;
+    var m = meta(u), src = m.avatar_url || m.picture;
+    el.appendChild(document.createTextNode(nameOf(u).charAt(0).toUpperCase() || '·'));
+    if(src){ var i = new Image(); i.alt = ''; i.referrerPolicy = 'no-referrer'; i.onload = function(){ el.appendChild(i); }; i.src = src; }
+  }
+  function device(){
+    var ua = navigator.userAgent || '', b = /Edg\//.test(ua) ? 'Edge' : /OPR\//.test(ua) ? 'Opera' : /Firefox\//.test(ua) ? 'Firefox' : /Chrome\//.test(ua) ? 'Chrome' : /Safari\//.test(ua) ? 'Safari' : 'Navegador';
+    var o = /Android/.test(ua) ? 'Android' : /iPhone|iPad|iPod/.test(ua) ? 'iOS' : /Windows/.test(ua) ? 'Windows' : /Mac OS X/.test(ua) ? 'macOS' : /Linux/.test(ua) ? 'Linux' : '';
+    return b + (o ? ' en ' + o : '');
+  }
+  function fmt(iso){
+    var d = new Date(iso); if(isNaN(d)) return '';
+    return d.getDate() + ' ' + MES[d.getMonth()] + ' ' + d.getFullYear() + ', ' + ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2);
+  }
+
+  /* ---------- Pintado ---------- */
+  function render(){
+    var on = !!user; ac.setAttribute('data-auth', on ? '1' : '0');
+    $('acLiveTx').textContent = on ? 'Envyra ID conectado' : 'Sin sesión';
+    var chip = $('acChip'), pta = document.querySelector('.pt-ac');
+    chip.hidden = !on; if(pta) pta.hidden = !on;
+    if(!on) return;
+    var nm = nameOf(user), first = nm.split(/\s+/)[0], c = cardOf(user), verified = !!user.email_confirmed_at;
+    ['acChipAv','acSideAv','acHeroAv'].forEach(function(id){ avatar($(id), user); });
+    $('acChipName').textContent = first; $('acChip').setAttribute('aria-label', 'Abrir mi cuenta, ' + nm);
+    $('acSideName').textContent = nm; $('acSideMail').textContent = user.email || '';
+    $('acHeroName').textContent = nm; $('acHeroMail').textContent = user.email || '';
+    var v = $('acVer'); v.className = 'ac-chip' + (verified ? ' on' : ''); v.lastChild.textContent = verified ? 'Envyra ID verificado' : 'Correo sin confirmar';
+    $('acSinceChip').firstChild.textContent = 'Miembro desde ' + c.since;
+    var f = $('acName'); if(document.activeElement !== f) f.value = nm;
+    var m = $('acMail'); if(document.activeElement !== m) m.value = user.email || '';
+    $('acMailHint').textContent = user.new_email ? 'Pendiente de confirmar: ' + user.new_email : 'Te enviaremos un enlace al nuevo correo.';
+    $('acUid').value = user.id || '';
+    $('acMcName').textContent = c.name; $('acMcNo').textContent = c.no; $('acMcSince').textContent = c.since;
+    $('acFactNo').textContent = c.no.replace(/\s+/g, ' '); $('acFactSince').textContent = c.since; $('acFactState').textContent = verified ? 'Verificado' : 'Sin confirmar';
+    $('acDel').href = 'mailto:envyra23@gmail.com?subject=' + encodeURIComponent('Eliminar mi Envyra ID') + '&body=' + encodeURIComponent('Quiero eliminar mi Envyra ID.\nCorreo: ' + (user.email || '') + '\nID: ' + (user.id || ''));
+    // Métodos de acceso
+    var ul = $('acIdent'); ul.textContent = '';
+    var ids = (user.identities && user.identities.length) ? user.identities : [{ provider: 'email' }];
+    ids.forEach(function(i){
+      var g = i.provider === 'google', li = document.createElement('li');
+      li.innerHTML = '<span class="ac-ico">' + (g ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12h-8M20 12a8 8 0 1 1-2.3-5.6"/></svg>' : '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>') + '</span><div class="tx"><b></b><span></span></div><span class="ac-chip on"><i></i>Vinculado</span>';
+      li.querySelector('b').textContent = g ? 'Google' : 'Correo y contraseña';
+      li.querySelector('.tx span').textContent = (i.identity_data && i.identity_data.email) || user.email || '';
+      ul.appendChild(li);
+    });
+    $('acVerRow').hidden = verified;
+    $('acDev').textContent = device();
+    $('acDevMeta').textContent = user.last_sign_in_at ? 'Último acceso: ' + fmt(user.last_sign_in_at) : '';
+    // Nombre del perfil (misma tabla que usa la terminal de partnerships)
+    var cl = client();
+    if(cl && profileFor !== user.id){
+      var id = user.id; profileFor = id; profileName = null;
+      cl.from('profiles').select('full_name').eq('id', id).maybeSingle().then(function(r){
+        if(r && r.data && r.data.full_name && user && user.id === id){ profileName = r.data.full_name; render(); }
+      }, function(){});
+    }
+  }
+  function refresh(){
+    var cl = client(); if(!cl) return;
+    cl.auth.getSession().then(function(r){ user = (r && r.data && r.data.session && r.data.session.user) || null; render(); }, function(){});
+  }
+  function bind(){
+    if(bound || !window.ENVYRA_ID) return; bound = true;
+    if(window.ENVYRA_ID && window.ENVYRA_ID.onChange) window.ENVYRA_ID.onChange(function(s){ user = (s && s.user) || null; if(!user){ profileFor = null; profileName = null; } render(); });
+    refresh();
+  }
+  render(); bind();
+  addEventListener('load', function(){ bind(); render(); });
+
+  /* ---------- Pestañas ---------- */
+  var tabEls = [].slice.call(ac.querySelectorAll('.ac-tab'));
+  function setTab(t, focus){
+    if(TABS.indexOf(t) < 0) t = 'general'; tab = t;
+    tabEls.forEach(function(b){ var on = b.getAttribute('data-tab') === t; b.setAttribute('aria-selected', on ? 'true' : 'false'); b.tabIndex = on ? 0 : -1; if(on && focus) b.focus(); });
+    TABS.forEach(function(k){ var p = $('acp-' + k); p.hidden = k !== t; p.classList.remove('in'); });
+    var p = $('acp-' + t); void p.offsetWidth; requestAnimationFrame(function(){ p.classList.add('in'); });
+    tabEls.forEach(function(x){ if(x.getAttribute('aria-selected')==='true' && x.scrollIntoView) try{ x.scrollIntoView({inline:'center',block:'nearest'}); }catch(e){} });
+    $('ac-t').textContent = { general: 'Cuenta', tarjeta: 'Tarjeta Envyra ID', seguridad: 'Seguridad', ecosistema: 'Ecosistema' }[t];
+    $('acMain').scrollTop = 0;
+    if(t === 'tarjeta' && !rm){ var mc = $('acMc'); mc.classList.remove('dealt'); void mc.offsetWidth; mc.classList.add('dealt'); }
+    if(ac.classList.contains('on')) try{ history.replaceState(null, '', location.pathname + location.search + (t === 'general' ? '#cuenta' : '#cuenta-' + t)); }catch(e){}
+  }
+  tabEls.forEach(function(b, i){
+    b.addEventListener('click', function(){ setTab(b.getAttribute('data-tab')); });
+    b.addEventListener('keydown', function(e){
+      var k = e.key, n = -1;
+      if(k === 'ArrowDown' || k === 'ArrowRight') n = (i + 1) % tabEls.length; else if(k === 'ArrowUp' || k === 'ArrowLeft') n = (i - 1 + tabEls.length) % tabEls.length; else if(k === 'Home') n = 0; else if(k === 'End') n = tabEls.length - 1;
+      if(n > -1){ e.preventDefault(); setTab(tabEls[n].getAttribute('data-tab'), true); }
+    });
+  });
+
+  /* ---------- Abrir y cerrar ---------- */
+  function open(t, btn){
+    from = btn || document.activeElement; if(window.mo) window.mo(false);
+    refresh(); setTab(t || 'general');
+    ac.classList.add('on'); ac.setAttribute('aria-hidden', 'false'); document.body.classList.add('ac-open'); document.body.style.overflow = 'hidden';
+    try{ history.replaceState(null, '', location.pathname + location.search + (tab === 'general' ? '#cuenta' : '#cuenta-' + tab)); }catch(e){}
+    setTimeout(function(){ ac.focus(); }, 60);
+  }
+  function close(restore){
+    if(!ac.classList.contains('on')) return;
+    ac.classList.remove('on'); ac.setAttribute('aria-hidden', 'true'); document.body.classList.remove('ac-open'); document.body.style.overflow = '';
+    if(/^#cuenta/.test(location.hash)) try{ history.replaceState(null, '', location.pathname + location.search); }catch(e){}
+    if(restore !== false && from && from.focus) from.focus();
+  }
+  window.ENVYRA_ACCOUNT = { open: function(t){ open(t); }, close: close };
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('[data-account]'); if(!b) return;
+    e.preventDefault(); open(b.getAttribute('data-account') || 'general', b);
+  });
+  function fromHash(){ var m = /^#cuenta(?:-(general|tarjeta|seguridad|ecosistema))?$/.exec(location.hash); if(m) open(m[1] || 'general'); }
+  addEventListener('hashchange', fromHash); addEventListener('load', function(){ setTimeout(fromHash, 120); });
+  $('acX').addEventListener('click', function(){ close(); });
+  addEventListener('keydown', function(e){
+    if(!ac.classList.contains('on')) return;
+    if(e.key === 'Escape'){ close(); return; }
+    if(e.key === 'Tab'){
+      var f = [].filter.call(ac.querySelectorAll('button,a[href],input:not([type=hidden]),[tabindex="0"]'), function(x){ return x.offsetParent !== null && !x.disabled && x.tabIndex > -1; });
+      if(!f.length) return; var a = f[0], z = f[f.length - 1];
+      if(e.shiftKey && document.activeElement === a){ e.preventDefault(); z.focus(); } else if(!e.shiftKey && document.activeElement === z){ e.preventDefault(); a.focus(); }
+    }
+  });
+
+  /* ---------- Sin sesión / navegación interna ---------- */
+  $('acLogin').addEventListener('click', function(){ close(false); if(window.ENVYRA_ID) window.ENVYRA_ID.open('login'); });
+  $('acSignup').addEventListener('click', function(){ close(false); if(window.ENVYRA_ID) window.ENVYRA_ID.open('signup'); });
+  $('acPt').addEventListener('click', function(){ close(false); var b = document.querySelector('.pt-act [data-pt]'); if(b) setTimeout(function(){ b.click(); }, 60); });
+  [].forEach.call(ac.querySelectorAll('[data-acgo]'), function(a){ a.addEventListener('click', function(){ close(false); }); });
+  [].forEach.call(ac.querySelectorAll('a[href^="envyra-cloud"],a[href^="ENVYRAINTELLIGENCE"]'), function(a){ a.addEventListener('click', function(){ close(false); }); });
+
+  /* ---------- Acciones de cuenta ---------- */
+  function busy(btn, on, txt){ btn.disabled = on; if(txt) btn.textContent = on ? txt[0] : txt[1]; }
+  function need(){ var c = client(); if(!c || !user){ toast('Inicia sesión para hacer este cambio.', 'err'); return null; } return c; }
+
+  $('acNameForm').addEventListener('submit', async function(e){
+    e.preventDefault(); var c = need(); if(!c) return; var btn = $('acNameBtn'), v = $('acName').value.trim().replace(/\s+/g, ' ');
+    if(v.length < 2){ toast('Escribe un nombre de al menos 2 caracteres.', 'err'); return; }
+    if(v === nameOf(user)){ toast('Ese ya es tu nombre.'); return; }
+    busy(btn, true, ['Guardando…', 'Guardar cambios']);
+    try{
+      var r = await c.auth.updateUser({ data: { full_name: v } }); if(r.error) throw r.error;
+      user = (r.data && r.data.user) || user; profileFor = user.id; profileName = v;
+      try{ await c.from('profiles').update({ full_name: v }).eq('id', user.id); }catch(x){}
+      render(); toast('Nombre guardado.', 'ok');
+    }catch(err){ toast(errTxt(err), 'err'); }
+    busy(btn, false, ['Guardando…', 'Guardar cambios']);
+  });
+
+  $('acMailForm').addEventListener('submit', async function(e){
+    e.preventDefault(); var c = need(); if(!c) return; var btn = $('acMailBtn'), v = $('acMail').value.trim();
+    if(!/^\S+@\S+\.\S+$/.test(v)){ toast('Ingresa un correo válido.', 'err'); return; }
+    if(v.toLowerCase() === String(user.email || '').toLowerCase()){ toast('Ese ya es tu correo.'); return; }
+    busy(btn, true, ['Guardando…', 'Guardar cambios']);
+    try{
+      var r = await c.auth.updateUser({ email: v }); if(r.error) throw r.error;
+      user = (r.data && r.data.user) || user; render(); toast('Te enviamos un enlace a ' + v + '. Tu correo cambia cuando lo confirmes.', 'ok');
+    }catch(err){ toast(errTxt(err), 'err'); }
+    busy(btn, false, ['Guardando…', 'Guardar cambios']);
+  });
+
+  $('acPwForm').addEventListener('submit', async function(e){
+    e.preventDefault(); var c = need(); if(!c) return; var btn = $('acPwBtn'), a = $('acPw1').value, b = $('acPw2').value;
+    if(a.length < 8){ toast('La contraseña debe tener al menos 8 caracteres.', 'err'); return; }
+    if(a !== b){ toast('Las contraseñas no coinciden.', 'err'); return; }
+    busy(btn, true, ['Actualizando…', 'Actualizar contraseña']);
+    try{
+      var r = await c.auth.updateUser({ password: a }); if(r.error) throw r.error;
+      $('acPw1').value = ''; $('acPw2').value = ''; toast('Contraseña actualizada.', 'ok');
+    }catch(err){ toast(errTxt(err), 'err'); }
+    busy(btn, false, ['Actualizando…', 'Actualizar contraseña']);
+  });
+
+  $('acResend').addEventListener('click', async function(){
+    var c = need(); if(!c) return; var btn = $('acResend'); busy(btn, true);
+    try{ var r = await c.auth.resend({ type: 'signup', email: user.email }); if(r.error) throw r.error; toast('Te enviamos un nuevo correo de confirmación.', 'ok'); }
+    catch(err){ toast(errTxt(err), 'err'); }
+    busy(btn, false);
+  });
+
+  async function signOut(scope, btn){
+    var c = client(); if(!c) return; busy(btn, true);
+    try{ var r = await c.auth.signOut(scope ? { scope: scope } : undefined); if(r && r.error) throw r.error; user = null; render(); close(false); }
+    catch(err){ toast(errTxt(err), 'err'); }
+    busy(btn, false);
+  }
+  $('acOut').addEventListener('click', function(){ signOut(null, $('acOut')); });
+  $('acOutAll').addEventListener('click', function(){ signOut('global', $('acOutAll')); });
+
+  function copy(txt, ok){
+    function fb(){ var t = document.createElement('textarea'); t.value = txt; t.setAttribute('readonly', ''); t.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(t); t.select(); var s = false; try{ s = document.execCommand('copy'); }catch(x){} t.remove(); s ? toast(ok, 'ok') : toast('No se pudo copiar. Selecciona el texto y cópialo.', 'err'); }
+    if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(function(){ toast(ok, 'ok'); }, fb); else fb();
+  }
+  $('acCopyUid').addEventListener('click', function(){ if(user) copy(user.id, 'ID de usuario copiado.'); });
+  $('acCopyNo').addEventListener('click', function(){ if(user) copy(cardOf(user).no.replace(/\s+/g, ' '), 'Número copiado.'); });
+
+  /* ---------- Tarjeta: inclinación y descarga (idéntica a la de Envyra ID) ---------- */
+  (function(){
+    var el = $('acMc'), st = $('acStage'); if(!el || rm || !fine) return;
+    st.addEventListener('pointermove', function(e){ var r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height; el.style.transform = 'rotateY(' + ((x - .5) * 16).toFixed(1) + 'deg) rotateX(' + ((.5 - y) * 12).toFixed(1) + 'deg)'; el.style.setProperty('--gx', (x * 100) + '%'); el.style.setProperty('--gy', (y * 100) + '%'); });
+    st.addEventListener('pointerleave', function(){ el.style.transform = ''; el.style.setProperty('--gx', '30%'); el.style.setProperty('--gy', '0%'); });
+  })();
+  async function drawCard(){
+    var c = cardOf(user), W = 1600, H = 1009, cv = document.createElement('canvas'); cv.width = W; cv.height = H; var x = cv.getContext('2d');
+    try{ await document.fonts.load('600 60px Inter'); await document.fonts.load('500 40px Inter'); await document.fonts.load('400 26px Inter'); }catch(e){}
+    var F = 'Inter, system-ui, sans-serif', R = 70;
+    function rr(a, b, w, h, r){ x.beginPath(); x.moveTo(a + r, b); x.arcTo(a + w, b, a + w, b + h, r); x.arcTo(a + w, b + h, a, b + h, r); x.arcTo(a, b + h, a, b, r); x.arcTo(a, b, a + w, b, r); x.closePath(); }
+    function sp(v){ if('letterSpacing' in x) x.letterSpacing = v + 'px'; }
+    x.save(); rr(0, 0, W, H, R); x.clip();
+    var g = x.createLinearGradient(0, 0, W, H); g.addColorStop(0, '#131313'); g.addColorStop(.55, '#000'); g.addColorStop(1, '#0a0a0a'); x.fillStyle = g; x.fillRect(0, 0, W, H);
+    x.strokeStyle = 'rgba(255,255,255,.05)'; x.lineWidth = 2;
+    for(var i = 0; i <= W; i += 80){ x.beginPath(); x.moveTo(i, 0); x.lineTo(i, H); x.stroke(); }
+    for(var j = 0; j <= H; j += 80){ x.beginPath(); x.moveTo(0, j); x.lineTo(W, j); x.stroke(); }
+    var gl = x.createRadialGradient(W * .3, 0, 0, W * .3, 0, W * .8); gl.addColorStop(0, 'rgba(255,255,255,.14)'); gl.addColorStop(1, 'rgba(255,255,255,0)'); x.fillStyle = gl; x.fillRect(0, 0, W, H);
+    x.textBaseline = 'alphabetic'; x.textAlign = 'left';
+    x.fillStyle = '#fff'; x.font = '600 62px ' + F; sp(-2); x.fillText('ENVYRΛ', 100, 170);
+    x.fillStyle = 'rgba(255,255,255,.56)'; x.font = '500 26px ' + F; sp(4); x.textAlign = 'right'; x.fillText('ID · MEMBERSHIP', W - 100, 168); x.textAlign = 'left';
+    x.strokeStyle = 'rgba(255,255,255,.4)'; x.lineWidth = 3; rr(100, 330, 150, 112, 16); x.stroke();
+    x.beginPath(); x.moveTo(175, 330); x.lineTo(175, 442); x.moveTo(100, 386); x.lineTo(250, 386); x.strokeStyle = 'rgba(255,255,255,.25)'; x.stroke();
+    x.fillStyle = '#fff'; x.font = '500 72px ' + F; sp(10); x.fillText(c.no, 100, 640);
+    x.fillStyle = 'rgba(255,255,255,.56)'; x.font = '500 24px ' + F; sp(4); x.fillText('MIEMBRO', 100, 800); x.textAlign = 'right'; x.fillText('DESDE', W - 100, 800); x.textAlign = 'left';
+    sp(0); var fs = 56; x.font = '500 ' + fs + 'px ' + F; while(x.measureText(c.name).width > 900 && fs > 28){ fs -= 2; x.font = '500 ' + fs + 'px ' + F; }
+    x.fillStyle = '#fff'; x.fillText(c.name, 100, 880); x.textAlign = 'right'; x.font = '500 56px ' + F; x.fillText(c.since, W - 100, 880);
+    x.restore(); x.strokeStyle = 'rgba(255,255,255,.22)'; x.lineWidth = 4; rr(2, 2, W - 4, H - 4, R); x.stroke();
+    return cv;
+  }
+  $('acDl').addEventListener('click', async function(){
+    if(!user) return; var b = $('acDl'); busy(b, true);
+    try{
+      var cv = await drawCard();
+      cv.toBlob(function(blob){ if(!blob){ toast('No se pudo generar la tarjeta. Intenta de nuevo.', 'err'); return; } var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'envyra-id-tarjeta.png'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){ URL.revokeObjectURL(a.href); }, 4000); toast('Tarjeta descargada.', 'ok'); }, 'image/png');
+    }catch(err){ toast('No se pudo generar la tarjeta. Intenta de nuevo.', 'err'); }
+    busy(b, false);
+  });
+})();
 </script>
 </body>
 </html>
