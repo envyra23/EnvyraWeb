@@ -15,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&display=swap" rel="stylesheet">
 <style>
 :root{--ease:cubic-bezier(.2,.8,.2,1);--font:Geist,Inter,system-ui,-apple-system,sans-serif;--bg:#000;--hz:#fff;--hz2:#e6e6e6;--hz0:rgba(255,255,255,0);--ga:#2e2e2e;--ga0:rgba(46,46,46,0);--gb:#6e6e6e;--gb0:rgba(110,110,110,0);--gc:#a8a8a8;--gc0:rgba(168,168,168,0);--gi:1;--card1:rgba(240,240,240,.93);--card2:rgba(222,222,222,.9);--ink:#141414;--ph:#7a7a7a;--chipc:#555;--chipbg:rgba(255,255,255,.45);--chiph:rgba(255,255,255,.9);--hi:rgba(255,255,255,.7);--btn1:#050505;--btn2:#2b2b2b;--btnink:#fff;--footc:#4a4a4a;--wave:rgba(40,40,40,.4);--blur:26px;--rad:22px;--ds:1}
 html[data-font=mono]{--font:'Geist Mono',ui-monospace,Menlo,monospace}html[data-font=serif]{--font:'Instrument Serif',Georgia,serif}
@@ -75,7 +76,7 @@ button,input,textarea{font:inherit;color:inherit}button{cursor:pointer;-webkit-t
 .foot .b{display:none}.chatting .foot{color:rgba(255,255,255,.45);font-size:10.5px}.chatting .foot .a{display:none}.chatting .foot .b{display:block}
 /* mensajes */
 .messages{display:flex;flex-direction:column;gap:26px}
-.message{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;animation:in .7s var(--inertia)}
+.message{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px}.message.new{animation:in .7s var(--inertia)}
 @keyframes in{from{opacity:0;transform:translateY(14px) scale(.985)}}
 .message-avatar{width:26px;height:26px;margin-top:2px;border-radius:50%;border:1.5px solid rgba(255,255,255,.8);display:grid;place-items:center;font-size:0}
 .message-body{min-width:0;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere;color:rgba(255,255,255,.92);font-size:14.5px}
@@ -224,9 +225,33 @@ html[data-anim=off] .orb,html[data-anim=off] .greet span,html[data-anim=off] .co
 }
 @media(max-height:560px){.welcome{padding-bottom:16px}.welcome p{display:none}.composer textarea{min-height:40px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* ── Presentación inicial A001 / by ENVYRA ── */
+.intro{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:#000;overflow:hidden;transition:opacity .9s var(--ease),visibility .9s,transform 1.1s var(--ease);cursor:pointer}
+.intro.out{opacity:0;visibility:hidden;transform:scale(1.04);pointer-events:none}
+.intro-in{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;padding:24px;text-align:center}
+.intro-logo{display:flex;align-items:center;justify-content:center;gap:clamp(14px,3vw,22px);opacity:0;filter:blur(14px);transform:translateY(14px) scale(.96);animation:iLogo 1.4s .25s var(--ease) forwards}
+.intro-ring{width:clamp(44px,9vw,68px);aspect-ratio:1;border-radius:50%;border:2.5px solid #fff;display:grid;place-items:center;box-shadow:0 0 38px rgba(255,255,255,.38),inset 0 0 18px rgba(255,255,255,.08)}
+.intro-ring::after{content:"";width:34%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#aaa 60%,#444);animation:iBreath 3.2s 1.6s ease-in-out infinite}
+.intro-name{font-size:clamp(52px,13vw,104px);font-weight:500;letter-spacing:-.05em;line-height:1;color:#fff}
+.intro-cur{display:block;align-self:flex-end;width:clamp(28px,6.5vw,54px);height:clamp(5px,1.2vw,9px);margin:0 0 clamp(8px,1.9vw,15px) clamp(6px,1.4vw,12px);background:#fff;border-radius:1px;animation:iBlink 1.05s steps(1) infinite}
+@keyframes iBlink{0%,55%{opacity:1}56%,100%{opacity:0}}
+.intro-by{position:absolute;left:0;right:0;bottom:max(34px,calc(env(safe-area-inset-bottom) + 24px));text-align:center;font-size:clamp(13px,2.8vw,16px);letter-spacing:.02em;color:rgba(255,255,255,.55);font-weight:400;opacity:0;transform:translateY(8px);animation:iBy 1.1s 1.25s var(--ease) forwards}
+.intro-by b{color:#fff;font-family:'Manrope',var(--font);font-weight:700;font-size:1.45em;letter-spacing:0;text-transform:uppercase;margin-left:.2em}
+@keyframes iLogo{to{opacity:1;filter:blur(0);transform:none}}
+@keyframes iBy{to{opacity:1;transform:none}}
+@keyframes iBreath{50%{transform:scale(1.18);opacity:.75}}
+@media (prefers-reduced-motion:reduce){.intro,.intro *{animation-duration:.01s!important;animation-delay:0s!important;transition-duration:.2s!important}}
 </style>
 </head>
 <body>
+
+<div class="intro" id="intro" role="presentation" aria-label="A001 by ENVYRA">
+ <div class="intro-in">
+  <div class="intro-logo"><span class="intro-name">A001</span><i class="intro-cur"></i></div>
+ </div>
+ <div class="intro-by">by <b>ENVYRA</b></div>
+</div>
 <div class="win">
  <div class="glow"></div><div class="lines"></div>
  <div class="waves"><svg id="wv" viewBox="0 0 2880 120" preserveAspectRatio="none" aria-hidden="true"></svg></div>
@@ -234,7 +259,7 @@ html[data-anim=off] .orb,html[data-anim=off] .greet span,html[data-anim=off] .co
   <div class="logo"><i class="ring"></i><span>A001</span></div>
   <nav class="links" aria-label="Principal">
    <button data-newchat>Chat</button><button data-history>Historial</button>
-   <a href="https://envyraweb.com" target="_blank" rel="noopener">ENVYRA</a><a href="https://envyraweb.com/id" target="_blank" rel="noopener">ENVYRA ID</a>
+   <a href="https://envyraweb.com" target="_blank" rel="noopener">ENVYRA</a><a href="https://envyraweb.com/envyra-id.html" target="_blank" rel="noopener">ENVYRA ID</a>
   </nav>
   <div class="nav-r">
    <button class="icon-btn" data-history aria-label="Historial"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
@@ -269,7 +294,7 @@ html[data-anim=off] .orb,html[data-anim=off] .greet span,html[data-anim=off] .co
    </form>
   </div>
  </div>
- <div class="foot"><span class="a">• ENVYRA Intelligence · Nemotron 3.5 Super</span><span class="b">A001 puede cometer errores. Verificá la información importante.</span></div>
+ <div class="foot"><span class="a">• ENVYRA Intelligence · Nemotron 3.5 Super . v0.1 Beta</span><span class="b">A001 puede cometer errores. Verificá la información importante.</span></div>
  <div class="shade" id="shade"></div>
  <aside class="drawer" id="sidebar">
   <div class="brandrow"><i class="ring"></i> ENVYRA <span style="color:rgba(255,255,255,.45);font-weight:400">/ A001</span><button class="x" data-close aria-label="Cerrar">×</button></div>
@@ -277,7 +302,7 @@ html[data-anim=off] .orb,html[data-anim=off] .greet span,html[data-anim=off] .co
   <div class="label">Recientes</div>
   <div class="history" id="history"></div>
   <div class="d-bottom">
-   <div class="user-card"><div class="avatar" id="avatar">—</div><div class="user-meta"><b id="userName">Sin sesión</b><span id="userEmail">Inicia sesión para continuar</span></div></div>
+   <div class="user-card"><div class="avatar" id="avatar">—</div><div class="user-meta"><b id="userName">Sin sesión</b><span id="userEmail">Iniciá sesión para continuar</span></div></div>
    <button class="side-action" id="logoutBtn" hidden>⇥　Cerrar sesión</button>
   </div>
  </aside>
@@ -322,7 +347,7 @@ html[data-anim=off] .orb,html[data-anim=off] .greet span,html[data-anim=off] .co
  <div class="auth-card">
   <button class="auth-close" id="authClose" aria-label="Cerrar">×</button>
   <div class="brandrow" style="padding:0"><i class="ring"></i> ENVYRA ID</div>
-  <h2 id="authTitle">Inicia sesión</h2><p id="authCopy">Usá tu cuenta Envyra para acceder a A001.</p>
+  <h2 id="authTitle">Iniciá sesión</h2><p id="authCopy">Usá tu cuenta Envyra para acceder a A001.</p>
   <form class="auth-form" id="authForm">
    <input id="authName" placeholder="Nombre" autocomplete="name" hidden>
    <input id="authEmail" type="email" placeholder="Correo electrónico" autocomplete="email" required>
@@ -350,31 +375,34 @@ html[data-anim=off] .orb,html[data-anim=off] .greet span,html[data-anim=off] .co
       auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}
      }) : null;
 
- let session = null, authMode = 'login', activeId = null, conversations = [], busy = false;
+ let session = null, authMode = 'login', activeId = null, conversations = [], busy = false, chatsUid = 'guest';
  const STORAGE_KEY = 'envyra_a001_chats_v1';
+ const chatsKey = () => STORAGE_KEY + ':' + chatsUid;
 
  function setAuthMessage(message, error=false){ $('authMsg').textContent=message||''; $('authMsg').style.color=error?'#ff9292':'#aaa'; }
  function showAuth(mode='login'){
   authMode=mode; $('authOverlay').classList.add('open'); setAuthMessage('');
-  const signup=mode==='signup', forgot=mode==='forgot';
-  $('authTitle').textContent=signup?'Crear Envyra ID':forgot?'Recuperar contraseña':'Inicia sesión';
-  $('authCopy').textContent=signup?'Una cuenta para todo el ecosistema ENVYRA.':'Usá tu cuenta Envyra para acceder a A001.';
+  const signup=mode==='signup', forgot=mode==='forgot', reset=mode==='reset';
+  $('authTitle').textContent=signup?'Crear Envyra ID':forgot?'Recuperar contraseña':reset?'Nueva contraseña':'Iniciá sesión';
+  $('authCopy').textContent=signup?'Una cuenta para todo el ecosistema ENVYRA.':reset?'Elegí una contraseña nueva para tu Envyra ID.':'Usá tu cuenta Envyra para acceder a A001.';
   $('authName').hidden=!signup; $('authName').required=signup;
-  $('authPassword').hidden=forgot; $('authPassword').required=!forgot;
-  $('forgotBtn').hidden=signup||forgot;
-  $('authSubmit').textContent=signup?'Crear cuenta':forgot?'Enviar enlace':'Iniciar sesión';
-  $('authSwitch').hidden=forgot;
+  $('authEmail').hidden=reset; $('authEmail').required=!reset; $('authPassword').hidden=forgot; $('authPassword').required=!forgot; $('authPassword').autocomplete=(signup||reset)?'new-password':'current-password'; $('authPassword').placeholder=reset?'Nueva contraseña':'Contraseña';
+  $('forgotBtn').hidden=signup||forgot||reset;
+  $('authSubmit').textContent=signup?'Crear cuenta':forgot?'Enviar enlace':reset?'Guardar contraseña':'Iniciar sesión';
+  $('authSwitch').hidden=forgot||reset;
   $('authSwitch').innerHTML=signup?'¿Ya tenés cuenta? <button type="button" id="switchAuth">Iniciar sesión</button>':'¿No tenés cuenta? <button type="button" id="switchAuth">Crear una</button>';
   $('switchAuth').onclick=()=>showAuth(signup?'login':'signup');
-  setTimeout(()=>$('authEmail').focus(),80);
+  setTimeout(()=>(reset?$('authPassword'):$('authEmail')).focus(),80);
  }
  function closeAuth(){ $('authOverlay').classList.remove('open'); }
  function setUser(s){
   session=s;
   const user=s?.user;
+  const uid=user?.id||'guest';
+  if(uid!==chatsUid){chatsUid=uid;loadChats();activeId=conversations.length?conversations[0].id:null;renderMessages();}
   const name=user?.user_metadata?.full_name||user?.user_metadata?.name||user?.email?.split('@')[0]||'Usuario';
   $('userName').textContent=user?name:'Sin sesión';
-  $('userEmail').textContent=user?.email||'Inicia sesión para continuar';
+  $('userEmail').textContent=user?.email||'Iniciá sesión para continuar';
   $('avatar').textContent=user?name.slice(0,1).toUpperCase():'—';
   $('logoutBtn').hidden=!user;
   $('accountBtn').textContent=user?'Mi Envyra ID':'Iniciar sesión';
@@ -383,16 +411,24 @@ html[data-anim=off] .orb,html[data-anim=off] .greet span,html[data-anim=off] .co
   loadRemoteTheme(s);
  }
  function loadChats(){
-  try{conversations=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');if(!Array.isArray(conversations))conversations=[];}catch{conversations=[];}
+  try{conversations=JSON.parse(localStorage.getItem(chatsKey())||'[]');if(!Array.isArray(conversations))conversations=[];}catch{conversations=[];}
+  conversations=conversations.filter(c=>c&&typeof c.id==='string'&&Array.isArray(c.messages)&&c.messages.length).sort((a,b)=>b.updated-a.updated);
   renderHistory();
  }
- function persist(){localStorage.setItem(STORAGE_KEY,JSON.stringify(conversations.slice(0,40)));renderHistory();}
- function currentChat(){return conversations.find(c=>c.id===activeId)||null;}
- function newConversation(){
-  activeId=crypto.randomUUID?crypto.randomUUID():String(Date.now());
-  conversations.unshift({id:activeId,title:'Nueva conversación',messages:[],updated:Date.now()});
-  persist(); renderMessages(); $('prompt').focus(); closeSidebar();
+ let saveWarned=false;
+ function persist(){
+  conversations.sort((a,b)=>b.updated-a.updated);if(conversations.length>40)conversations.length=40;
+  try{localStorage.setItem(chatsKey(),JSON.stringify(conversations));}
+  catch{
+   try{localStorage.setItem(chatsKey(),JSON.stringify(conversations.slice(0,10)));}
+   catch{if(!saveWarned){saveWarned=true;toast('No se pudo guardar el historial en este dispositivo.');}}
+  }
+  renderHistory();
  }
+ function currentChat(){return conversations.find(c=>c.id===activeId)||null;}
+ function newId(){return crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random().toString(36).slice(2);}
+ // La conversación se crea recién al enviar el primer mensaje (no quedan chats vacíos).
+ function newConversation(){activeId=null;renderHistory();renderMessages();$('prompt').focus();closeSidebar();}
  function renderHistory(){
   const host=$('history');host.replaceChildren();
   conversations.slice().sort((a,b)=>b.updated-a.updated).forEach(c=>{
@@ -400,61 +436,79 @@ html[data-anim=off] .orb,html[data-anim=off] .greet span,html[data-anim=off] .co
    b.onclick=()=>{activeId=c.id;renderHistory();renderMessages();closeSidebar();};host.append(b);
   });
  }
- function addMessage(role,content){
-  const chat=currentChat();if(!chat)return;
-  chat.messages.push({role,content});chat.updated=Date.now();
-  if(role==='user'&&chat.messages.filter(m=>m.role==='user').length===1)chat.title=content.slice(0,44)+(content.length>44?'…':'');
-  persist();renderMessages();
+ function toBottom(){const s=$('chatScroll');s.scrollTop=s.scrollHeight;}
+ function syncChrome(){const chat=currentChat(),has=!!(chat&&chat.messages.length);$('welcome').hidden=has;document.body.classList.toggle('chatting',has);}
+ function buildMessage(m,animate){
+  const row=document.createElement('article');row.className='message '+(m.role==='user'?'user':'assistant')+(animate?' new':'');
+  const avatar=document.createElement('div');avatar.className='message-avatar';avatar.textContent=m.role==='user'?'T':'A';
+  const body=document.createElement('div');body.className='message-body';
+  const label=document.createElement('div');label.className='message-label';label.textContent=m.role==='user'?'Vos':'A001';
+  const text=document.createElement('div');if(m.role==='user')text.textContent=m.content;else{text.className='md';text.innerHTML=md(m.content);}
+  body.append(label,text);
+  if(m.role!=='user'){const sp=document.createElement('button');sp.type='button';sp.className='speak';sp.title='Escuchar';sp.setAttribute('aria-label','Escuchar respuesta');sp.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4zM15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>';sp.onclick=()=>speakText(m.content,sp);body.append(sp);}
+  row.append(avatar,body);return row;
+ }
+ // Agrega solo el mensaje nuevo (no reconstruye ni re-anima toda la conversación).
+ function addMessage(role,content,extra,id){
+  const cid=id||activeId,chat=conversations.find(c=>c.id===cid);if(!chat)return;
+  const m=Object.assign({role,content},extra||{});
+  chat.messages.push(m);chat.updated=Date.now();
+  if(role==='user'&&chat.messages.filter(x=>x.role==='user').length===1)chat.title=content.slice(0,44)+(content.length>44?'…':'');
+  persist();
+  if(cid===activeId){syncChrome();$('messages').append(buildMessage(m,true));toBottom();}
  }
  function renderMessages(){
-  const host=$('messages');host.replaceChildren();const chat=currentChat();
-  {const has=!!(chat&&chat.messages.length);$('welcome').hidden=has;document.body.classList.toggle('chatting',has);}
-  if(!chat)return;
-  chat.messages.forEach(m=>{
-   const row=document.createElement('article');row.className='message '+(m.role==='user'?'user':'assistant');
-   const avatar=document.createElement('div');avatar.className='message-avatar';avatar.textContent=m.role==='user'?'T':'A';
-   const body=document.createElement('div');body.className='message-body';
-   const label=document.createElement('div');label.className='message-label';label.textContent=m.role==='user'?'Vos':'A001';
-   const text=document.createElement('div');if(m.role==='user')text.textContent=m.content;else{text.className='md';text.innerHTML=md(m.content);}
-   body.append(label,text);
-   if(m.role!=='user'){const sp=document.createElement('button');sp.type='button';sp.className='speak';sp.title='Escuchar';sp.setAttribute('aria-label','Escuchar respuesta');sp.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4zM15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>';sp.onclick=()=>speakText(m.content,sp);body.append(sp);}
-   row.append(avatar,body);host.append(row);
-  });
-  $('chatScroll').scrollTop=$('chatScroll').scrollHeight;
+  const host=$('messages');host.replaceChildren();syncChrome();const chat=currentChat();if(!chat)return;
+  chat.messages.forEach(m=>host.append(buildMessage(m,false)));toBottom();
  }
  function showTyping(){
-  const row=document.createElement('article');row.id='typing';row.className='message assistant';
+  const row=document.createElement('article');row.id='typing';row.className='message assistant new';
   const av=document.createElement('div');av.className='message-avatar';av.textContent='A';
   const body=document.createElement('div');body.className='message-body';body.innerHTML='<div class="message-label">A001</div><span class="typing"><i></i><i></i><i></i></span>';
-  row.append(av,body);$('messages').append(row);$('chatScroll').scrollTop=$('chatScroll').scrollHeight;
+  row.append(av,body);$('messages').append(row);toBottom();
+ }
+ // Historial que se manda al servidor: últimos 20 mensajes / 12.000 caracteres, sin errores.
+ function buildHistory(id){
+  const chat=conversations.find(c=>c.id===id);if(!chat)return[];
+  const ms=chat.messages,out=[];
+  ms.forEach((m,i)=>{
+   if(m.error)return;
+   if(m.role==='user'&&ms[i+1]&&ms[i+1].error)return;
+   out.push({role:m.role,content:m.content});
+  });
+  const keep=[];let total=0;
+  for(let i=out.length-1;i>=0&&keep.length<20;i--){total+=out[i].content.length;if(total>12000&&keep.length)break;keep.unshift(out[i]);}
+  while(keep.length&&keep[0].role!=='user')keep.shift();
+  return keep;
  }
  async function sendMessage(raw){
   const content=raw.trim();if(!content||busy)return;
   if(!session){showAuth('login');return;}
-  if(!currentChat())newConversation();
+  if(!currentChat()){activeId=newId();conversations.unshift({id:activeId,title:'Nueva conversación',messages:[],updated:Date.now()});}
+  const chatId=activeId;
   $('prompt').value='';resizePrompt();$('sendBtn').disabled=true;
-  stopSpeak();addMessage('user',content);busy=true;showTyping();
+  stopSpeak();addMessage('user',content,null,chatId);busy=true;showTyping();
+  const ctl=new AbortController(),to=setTimeout(()=>ctl.abort(),60000);
   try{
    const {data,error}=await supabaseClient.auth.getSession();if(error)throw error;
    const token=data.session?.access_token;if(!token)throw new Error('Tu sesión expiró. Iniciá sesión nuevamente.');
-   const chat=currentChat();
    const response=await fetch(API_ENDPOINT,{
-    method:'POST',
+    method:'POST',signal:ctl.signal,
     headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},
-    body:JSON.stringify({ message: content })
+    body:JSON.stringify({ message: content, messages: buildHistory(chatId) })
    });
    let payload={};try{payload=await response.json();}catch{}
    if(!response.ok)throw new Error(payload.error||payload.message||('Error del servidor ('+response.status+').'));
    const answer=payload.reply??payload.response??payload.output??payload.choices?.[0]?.message?.content;
    if(typeof answer!=='string'||!answer.trim())throw new Error('La API respondió, pero no devolvió texto. Revisá el formato de respuesta del servidor.');
-   $('typing')?.remove();addMessage('assistant',answer.trim());if(voice.auto||convActive)speakText(answer.trim());
+   $('typing')?.remove();addMessage('assistant',answer.trim(),null,chatId);if(voice.auto||convActive)speakText(answer.trim());
   }catch(err){
    $('typing')?.remove();
-   const msg=err.message==='Failed to fetch'
-    ?'No se pudo conectar con clever-action. Revisá la URL, CORS y el despliegue de la función.'
-    :err.message;
-   addMessage('assistant','No pude completar la solicitud. '+msg);
-  }finally{busy=false;$('prompt').focus();}
+   let msg=err.message||'Error desconocido.';
+   if(err.name==='AbortError')msg='La respuesta tardó demasiado. Probá de nuevo.';
+   else if(/^(Failed to fetch|Load failed|NetworkError)/i.test(msg))msg='No se pudo conectar con clever-action. Revisá la URL, CORS y el despliegue de la función.';
+   addMessage('assistant','No pude completar la solicitud. '+msg,{error:true},chatId);
+  }finally{clearTimeout(to);busy=false;$('prompt').focus();}
  }
  function resizePrompt(){const t=$('prompt');t.style.height='auto';t.style.height=Math.min(t.scrollHeight,180)+'px';$('sendBtn').disabled=!session||!t.value.trim()||busy;}
  function closeSidebar(){$('sidebar').classList.remove('open');$('panel').classList.remove('open');$('shade').classList.remove('open');}
@@ -484,6 +538,10 @@ html[data-anim=off] .orb,html[data-anim=off] .greet span,html[data-anim=off] .co
     const {data,error}=await supabaseClient.auth.signUp({email,password,options:{data:{full_name:name},emailRedirectTo:location.href.split('#')[0]}});
     if(error)throw error;
     if(data.session){setUser(data.session);closeAuth();}else setAuthMessage('Revisá tu correo para confirmar tu Envyra ID.');
+   }else if(authMode==='reset'){
+    if(password.length<8)throw new Error('La contraseña debe tener al menos 8 caracteres.');
+    const {error}=await supabaseClient.auth.updateUser({password});if(error)throw error;
+    setAuthMessage('Contraseña actualizada.');setTimeout(closeAuth,900);
    }else if(authMode==='forgot'){
     const {error}=await supabaseClient.auth.resetPasswordForEmail(email,{redirectTo:location.href.split('#')[0]});
     if(error)throw error;setAuthMessage('Si el correo existe, recibirás un enlace para restablecer la contraseña.');
@@ -496,6 +554,7 @@ html[data-anim=off] .orb,html[data-anim=off] .greet span,html[data-anim=off] .co
    if(/invalid login/i.test(message))message='Correo o contraseña incorrectos.';
    if(/already|registered/i.test(message))message='Ese correo ya tiene un Envyra ID. Iniciá sesión.';
    if(/email not confirmed/i.test(message))message='Primero confirmá tu correo electrónico.';
+   if(/different from the old/i.test(message))message='La nueva contraseña debe ser distinta de la anterior.';
    setAuthMessage(message,true);
   }finally{$('authSubmit').disabled=false;}
  });
@@ -751,10 +810,11 @@ html[data-anim=off] .orb,html[data-anim=off] .greet span,html[data-anim=off] .co
   else if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();newConversation();}
   else if(e.key==='/'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){e.preventDefault();$('prompt').focus();}
  });
+ addEventListener('storage',e=>{if(e.key!==chatsKey())return;const keep=activeId;loadChats();activeId=conversations.some(c=>c.id===keep)?keep:null;if(!busy)renderMessages();});
  loadChats();
  if(supabaseClient){
   supabaseClient.auth.getSession().then(({data})=>{setUser(data.session);if(!data.session)setTimeout(()=>showAuth('login'),250);});
-  supabaseClient.auth.onAuthStateChange((_event,s)=>{setUser(s);if(s)closeAuth();});
+  supabaseClient.auth.onAuthStateChange((ev,s)=>{setUser(s);if(ev==='PASSWORD_RECOVERY'){showAuth('reset');return;}if(s&&authMode!=='reset')closeAuth();});
  }else{setAuthMessage('No se pudo cargar Supabase.');showAuth('login');}
  if(conversations.length){activeId=conversations.sort((a,b)=>b.updated-a.updated)[0].id;renderHistory();renderMessages();}
 })();
@@ -792,6 +852,16 @@ const mk=(a,k,f,y)=>{let d='';for(let x=0;x<=W;x+=16)d+=(x?'L':'M')+x+' '+(y+a*M
   c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();tx=(e.clientX-r.left)/r.width;ty=(e.clientY-r.top)/r.height;if(!raf)raf=requestAnimationFrame(tick);});
   c.addEventListener('pointerleave',()=>{tx=.5;ty=0;if(!raf)raf=requestAnimationFrame(tick);});
  }
+})();
+</script>
+<script>
+(()=>{
+ const el=document.getElementById('intro');if(!el)return;
+ let done=false;
+ const close=()=>{if(done)return;done=true;el.classList.add('out');setTimeout(()=>el.remove(),1300);};
+ const t=setTimeout(close,3600);
+ el.addEventListener('click',()=>{clearTimeout(t);close();});
+ addEventListener('keydown',e=>{if(!done){clearTimeout(t);close();}},{once:true});
 })();
 </script>
 </body>
