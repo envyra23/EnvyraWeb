@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ENVYRA CLOUD | Próximo lanzamiento — Envyra</title>
-<meta name="description" content="ENVYRA CLOUD está por lanzarse. Mira la cuenta regresiva y regístrate para el acceso anticipado.">
+<title>ENVYRA CLOUD — Envyra</title>
+<meta name="description" content="ENVYRA CLOUD: infraestructura para conectar información, memoria y agentes inteligentes. Inicia sesión con tu cuenta ENVYRA ID.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Envyra">
 <meta name="theme-color" content="#000000">
@@ -14,14 +14,14 @@
 <link rel="apple-touch-icon" href="logotype.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Envyra">
-<meta property="og:title" content="ENVYRA CLOUD — Próximo lanzamiento">
-<meta property="og:description" content="ENVYRA CLOUD está por lanzarse: una infraestructura para conectar información y agentes inteligentes. Súmate a la lista de espera.">
+<meta property="og:title" content="ENVYRA CLOUD">
+<meta property="og:description" content="ENVYRA CLOUD es una infraestructura para conectar información y agentes inteligentes.">
 <meta property="og:url" content="https://envyraweb.com/envyra-cloud.html">
 <meta property="og:image" content="https://envyraweb.com/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;800&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<noscript><style>.r{opacity:1!important;transform:none!important}</style></noscript>
+<noscript><style>.r,.grid.r>.card{opacity:1!important;transform:none!important}</style></noscript>
 <style>
 :root{--bg:#000;--fg:#fff;--mut:rgba(255,255,255,.56);--ln:rgba(255,255,255,.14);--ease:cubic-bezier(.16,1,.3,1);--pad:clamp(1.25rem,5vw,4rem);--np:clamp(1.25rem,5vw,4rem)}
 *,*::before,*::after{box-sizing:border-box;margin:0}
@@ -142,45 +142,18 @@ body.smooth #s{position:fixed;top:0;left:0;width:100%;will-change:transform}
 .chero .pill{margin-bottom:0;background:rgba(255,255,255,.04)}
 .chero h1{font-size:clamp(2.4rem,6vw,4.6rem);letter-spacing:-.045em;margin:1.6rem 0 2.2rem}
 .in{animation:up .9s var(--ease) both;animation-delay:calc(var(--d,0)*.1s)}@keyframes up{from{opacity:0;transform:translateY(16px)}}
-.gwrap{position:relative;width:100%;display:flex;justify-content:center}
-.glass{position:relative;width:min(100%,20rem);height:52px;padding:0;overflow:hidden;border-radius:28px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.055);backdrop-filter:blur(26px) saturate(1.8) brightness(1.1);-webkit-backdrop-filter:blur(26px) saturate(1.8) brightness(1.1);box-shadow:inset 0 1px 1px rgba(255,255,255,.35),inset 0 -1px 1px rgba(255,255,255,.08),inset 0 0 28px rgba(255,255,255,.05),0 24px 70px rgba(0,0,0,.5);will-change:width,height,transform;transform-origin:50% 0}
-.glass.settled{transition:height .5s var(--ease)}
-.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(255,255,255,.55),transparent 32%,transparent 68%,rgba(255,255,255,.3));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;z-index:3}
-.glass::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle 170px at var(--mx,50%) var(--my,0%),rgba(255,255,255,.16),transparent 70%);pointer-events:none;z-index:2;opacity:0;transition:opacity .4s}.glass:hover::after{opacity:1}
-.gtrig{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;width:100%;font-size:.92rem;font-weight:500}
-.gtrig span{display:flex;align-items:center;gap:.6rem;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}.gtrig:hover span{transform:scale(1.04)}.gtrig:active span{transform:scale(.95)}.gtrig svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.glass.on .gtrig{pointer-events:none}
-.gbody{position:absolute;top:0;left:0;padding:clamp(1.4rem,4vw,2rem);text-align:center;opacity:0;will-change:opacity,transform}
-.gbody h2{font-size:1.4rem;line-height:1.2;letter-spacing:-.03em}
-.gx{position:absolute;top:.9rem;right:.9rem;z-index:4;display:grid;place-items:center;width:2rem;height:2rem;border:1px solid var(--ln);border-radius:50%;color:var(--mut);transition:color .3s,border-color .3s}.gx:hover{color:#fff;border-color:#fff}.gx svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
-.gwrap::after{content:"";position:absolute;left:50%;top:0;width:20rem;max-width:100%;height:52px;transform:translateX(-50%);border-radius:28px;border:1px solid rgba(255,255,255,.55);opacity:0;pointer-events:none}
-.gwrap.pop::after{animation:burst .95s var(--ease)}@keyframes burst{from{opacity:.7;transform:translateX(-50%) scale(1)}to{opacity:0;transform:translateX(-50%) scale(1.6,3.4)}}
-.desc{color:var(--mut);font-size:.9rem;margin:.55rem auto 1.5rem;max-width:26rem}
-.gact{display:grid;gap:.7rem}.gact .btn,#joinBtn{width:100%;height:2.8rem;justify-content:center}
-.signed{display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem;font-size:.8rem;color:var(--mut)}
-.linkbtn{color:#fff;font-size:inherit;text-decoration:underline;text-underline-offset:3px}
-.privacy{margin-top:1rem;color:var(--mut);font-size:.74rem;line-height:1.5}#memberEmail{color:var(--mut);font-size:.85rem;margin-bottom:1rem;overflow-wrap:anywhere}
-.status{display:none;margin-top:1rem;font-size:.85rem;color:var(--mut);overflow-wrap:anywhere}.status.show{display:block}.status.error{color:#ff8b8b}.status.success{color:#fff}
-.status h3{font-size:1.1rem;font-weight:600;letter-spacing:-.03em;color:#fff}.status p{margin-top:.3rem}
-.state{display:inline-block;margin-top:.9rem;border:1px solid var(--ln);border-radius:99px;padding:.2rem .7rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.hero-panel[hidden],.hero-auth[hidden],.hero-panel:has(>[hidden]){display:none!important}
+.hero-auth{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;align-items:center;margin:0}.hero-auth .btn{height:3rem;padding:0 1.6rem;font-size:.95rem;white-space:nowrap}.hero-noacc{flex-direction:column;gap:1rem;max-width:26rem;color:var(--mut);font-size:.92rem;line-height:1.5}
 .soc{display:flex;gap:.5rem;justify-content:center;margin-top:1.4rem}.soc a{display:grid;place-items:center;width:2.4rem;height:2.4rem;border:1px solid var(--ln);border-radius:10px;background:rgba(255,255,255,.04);color:var(--mut);transition:color .3s,border-color .3s}.soc a:hover{color:#fff;border-color:#fff}.soc svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.soc .gh{fill:currentColor;stroke:none}
 .ghost{position:relative;height:clamp(8rem,22vw,20rem);overflow:hidden;text-align:center;border-top:1px solid var(--ln)}
 .ghost b{display:block;font-size:clamp(7rem,28vw,26rem);line-height:.95;font-weight:600;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.16);user-select:none;-webkit-mask-image:linear-gradient(#000 20%,transparent 92%);mask-image:linear-gradient(#000 20%,transparent 92%)}
 nav>.w>a{flex:none}nav>.w>a b{white-space:nowrap}
 @media(max-width:420px){nav>.w>a b span{display:none}}
-@media(prefers-reduced-motion:reduce){.orb,.in,.gwrap::after{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.orb,.in{animation:none!important}}
 
-/* ── Cuenta regresiva de lanzamiento ── */
 .chero h1{margin-bottom:1.8rem}
-.cd{display:flex;flex-direction:column;align-items:center;gap:1rem;width:100%;margin:0 0 2.2rem}
-.cd-k{display:block}
-.cd-grid{display:flex;align-items:stretch;justify-content:center;gap:.55rem}
-.cd-u{display:flex;flex-direction:column;align-items:center;gap:.35rem;min-width:4.9rem;padding:.85rem .6rem .7rem;border:1px solid var(--ln);border-radius:14px;background:rgba(255,255,255,.04)}
-.cd-u b{font-weight:200;font-size:clamp(2rem,6.4vw,3.2rem);line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
-.cd-u .mono{font-size:.6rem}
-.cd-live{max-width:30rem;font-size:1rem;color:var(--mut)}
-.cd-live b{color:#fff;font-weight:500}
-.cd.done .cd-grid{display:none}
-@media(max-width:480px){.cd-grid{width:100%;gap:.38rem}.cd-u{flex:1;min-width:0;padding:.75rem .25rem .6rem}}
+.hero-panel{display:flex;justify-content:center;margin:0}.hero-panel .btn{height:3rem;padding:0 1.6rem;font-size:.95rem;white-space:nowrap}
+[data-open-panel][hidden]{display:none!important}
 
 /* ── Secciones de producto y empresas (reutilizan .w .card .grid .mono .pill .btn) ── */
 section[id]{scroll-margin-top:3.8rem}
@@ -223,16 +196,139 @@ section[id]{scroll-margin-top:3.8rem}
 .faq summary::after{content:"+";flex:none;font-weight:200;font-size:1.6rem;line-height:1;color:var(--mut);transition:transform .4s var(--ease),color .4s}
 .faq details[open] summary::after{transform:rotate(45deg);color:#fff}
 .faq details p{max-width:46rem;padding:0 3rem 1.4rem 0;color:var(--mut);font-size:.95rem}
+#pn{--bg:#000;--sf:#0a0a0a;--ink:#fff;--mut:rgba(255,255,255,.56);--mut2:rgba(255,255,255,.36);--line:rgba(255,255,255,.12);--line2:rgba(255,255,255,.22);--hov:rgba(255,255,255,.06);--bad:#ff8b8b;--ok:#6fdc8c;--warn:#ffb44d;--ease:cubic-bezier(.16,1,.3,1);color-scheme:dark;position:fixed;inset:0;z-index:70;display:flex;flex-direction:column;background:#000;color:#fff;font:14px/1.5 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;visibility:hidden;opacity:0;overflow:hidden;transition:opacity .3s var(--ease),visibility .3s}
+#pn.on{visibility:visible;opacity:1}
+#pn *{box-sizing:border-box}
+#pn button,#pn input,#pn select,#pn textarea{font:inherit;color:inherit}
+#pn :focus-visible{outline:2px solid #fff;outline-offset:2px}
+#pn p{margin:0}#pn h1,#pn h2,#pn h3{margin:0}
+#pn .mut{color:var(--mut)}#pn .hide{display:none}
+#pn [hidden]{display:none!important}
+#pn .pn-demo{max-width:calc(74rem - 2*max(var(--np),1rem));width:calc(100% - 2*max(var(--np),1rem));margin:1rem auto 0;padding:.55rem .9rem;border:1px dashed rgba(255,180,77,.5);border-radius:8px;color:var(--warn);font-size:.84rem}
+#pn .tb input[type=search]{width:15rem;max-width:100%}
+/* barra superior */
+.pn-top{flex:none;display:flex;align-items:center;gap:.7rem;height:3.4rem;padding:env(safe-area-inset-top,0px) max(var(--np),calc((100% - 74rem)/2 + var(--np))) 0;background:#000;border-bottom:1px solid var(--line)}
+.pn-top b{display:inline-flex;align-items:center;gap:.6rem;font-weight:600;letter-spacing:-.02em;white-space:nowrap}.pn-top b span{color:var(--mut);font-weight:400}
+.lg{display:inline-grid;place-items:center;flex:none;width:1.85rem;height:1.85rem;border:1px solid var(--line2);border-radius:8px;background:#000}
+.lg svg{width:1.05rem;height:1.05rem;margin:0;vertical-align:0;stroke-width:1.5}.lg.big{width:3rem;height:3rem;border-radius:12px;margin-bottom:1rem}.lg.big svg{width:1.6rem;height:1.6rem}
+.pn-sep{color:var(--mut2);font-size:1.2rem;font-weight:300}
+.pn-org{display:flex;align-items:center;gap:.5rem;min-width:0;padding:.2rem .3rem .2rem .35rem;border-radius:8px}.pn-org:hover{background:var(--hov)}
+#pn .pn-org select{width:auto;max-width:13rem;height:auto;padding:.15rem 1.2rem .15rem 0;border:0;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none' stroke='%23999' stroke-width='1.4'%3E%3Cpath d='M1 3.5l4 4 4-4'/%3E%3C/svg%3E") right center/9px no-repeat;-webkit-appearance:none;appearance:none;font-weight:500;cursor:pointer;text-overflow:ellipsis}
+.av{display:inline-grid;place-items:center;flex:none;width:1.45rem;height:1.45rem;border-radius:6px;border:1px solid var(--line2);background:#111;font-size:.72rem;font-weight:600}.av.u{width:1.9rem;height:1.9rem;border-radius:50%;color:var(--mut)}
+.st{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;color:var(--mut);white-space:nowrap}.st::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok)}.st.off::before{background:var(--bad)}
+#pn #newOrgBtn{width:1.9rem;height:1.9rem;padding:0;font-size:1.1rem;line-height:1}
+.pn-tag{border:1px solid var(--line2);border-radius:6px;padding:.05rem .5rem;font-size:.72rem;color:var(--mut)}
+.pn-who{margin-left:auto;display:flex;align-items:center;gap:.5rem;min-width:0;font-size:.82rem;color:var(--mut)}.pn-who>span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pn-x svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
+#pn .pn-x{width:2rem;height:2rem;padding:0;border:0;background:none;color:var(--mut)}#pn .pn-x:hover:not(:disabled){background:var(--hov);color:#fff}
+/* cuerpo: barra lateral + contenido */
+.pn-body{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain}
+.pn-shell{display:grid;grid-template-columns:14.5rem minmax(0,1fr);gap:2.5rem;max-width:74rem;margin:0 auto;padding:0 max(var(--np),1rem) 4rem}
+#pn .pn-shell.hide{display:none}
+.pn-side{position:sticky;top:0;align-self:start;padding:1.5rem 0}
+#pn .tabs{display:flex;flex-direction:column;gap:2px}
+#pn .tabs button{justify-content:flex-start;gap:.65rem;width:100%;padding:.5rem .65rem;border:0;border-radius:8px;background:none;color:var(--mut);font-size:.88rem;font-weight:400;text-align:left}
+#pn .tabs button:hover:not(:disabled){background:var(--hov);color:#fff}
+#pn .tabs button[aria-selected=true]{background:rgba(255,255,255,.09);color:#fff;font-weight:500}
+.ni{width:1.05rem;height:1.05rem;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.tsep{display:block;height:1px;margin:.5rem .3rem;background:var(--line)}
+.pn-main{min-width:0;padding-top:2rem}
+.pn-ph{margin-bottom:1.5rem}.pn-ph h1{font-size:1.55rem;font-weight:600;letter-spacing:-.03em;line-height:1.2}.pn-ph p{margin-top:.3rem;color:var(--mut)}
+#pn .vw{animation:up .35s var(--ease) both}
+#pnGate{max-width:30rem;margin:12vh auto 0;padding:0 1.25rem;text-align:center;display:flex;flex-direction:column;align-items:center}#pnGate.hide{display:none}
+#pnGate h2{font-size:1.3rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.4rem}#pnGate p{margin-bottom:1.2rem}
+/* componentes */
+#pn .pc{background:var(--sf);border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.25rem;margin-bottom:16px}
+#pn .pc>h2,#pn .ph2{font-size:.95rem;font-weight:600;letter-spacing:-.01em;margin-bottom:.8rem}
+#pn .frm{max-width:34rem}
+#pn .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}#pn .row>.grow{flex:1;min-width:10rem}
+#pn input,#pn select,#pn textarea{width:100%;background:#000;border:1px solid #2c2c2c;border-radius:8px;padding:.45rem .7rem;outline:0;transition:border-color .2s,box-shadow .2s}
+#pn input:hover,#pn select:hover,#pn textarea:hover{border-color:#4a4a4a}
+#pn input:focus,#pn select:focus,#pn textarea:focus{border-color:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.12)}
+#pn input::placeholder,#pn textarea::placeholder{color:rgba(255,255,255,.3)}
+#pn input[type=checkbox]{width:auto;accent-color:#fff}#pn select option{background:#000;color:#fff}#pn textarea{min-height:84px;resize:vertical}
+#pn label{display:block;font-size:.8rem;color:var(--mut);margin:.85rem 0 .3rem}
+#pn button{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;height:2rem;padding:0 .9rem;background:#fff;color:#000;border:1px solid #fff;border-radius:8px;cursor:pointer;font-size:.82rem;font-weight:500;white-space:nowrap;transition:background .2s,border-color .2s,color .2s,transform .2s var(--ease)}
+#pn button:hover:not(:disabled){background:#e4e4e4;border-color:#e4e4e4}
+#pn button:active:not(:disabled){transform:scale(.97)}#pn button:disabled{opacity:.4;cursor:default}
+#pn button.sec{background:transparent;color:#fff;border-color:var(--line2)}#pn button.sec:hover:not(:disabled){background:var(--hov);border-color:#fff}
+#pn button.del{background:transparent;color:var(--bad);border-color:rgba(255,139,139,.3)}#pn button.del:hover:not(:disabled){background:rgba(255,139,139,.1);border-color:var(--bad)}
+#pn .tag{display:inline-flex;align-items:center;gap:.4rem;font-size:.74rem;font-weight:500;color:var(--mut);background:var(--hov);border-radius:6px;padding:.08rem .5rem;margin-right:.55rem}
+.kd{width:7px;height:7px;border-radius:50%;background:var(--c,#999)}
+#pn .msg{padding:.6rem .9rem;border:1px solid rgba(255,139,139,.3);background:rgba(255,139,139,.06);border-radius:8px;margin:.6rem 0;color:var(--bad);font-size:.88rem}
+#pn .msg.ok{border-color:rgba(111,220,140,.3);background:rgba(111,220,140,.06);color:#fff}
+#pn pre{background:#000;border:1px solid var(--line);border-radius:8px;padding:1rem;overflow:auto;white-space:pre-wrap;font:12.5px/1.6 ui-monospace,'SF Mono',Consolas,monospace;color:rgba(255,255,255,.85);max-height:26rem}
+#pn .t{display:flex;gap:10px;padding:.5rem 0;border-bottom:1px solid var(--line);font-size:.88rem}#pn .t b{width:18px}#pn .t .p{color:var(--ok)}#pn .t .f{color:var(--bad)}#pn .t span{color:var(--mut);margin-left:auto;font-size:.8rem;text-align:right}
+/* resumen */
+.pstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:16px}
+.pstats>.stat{background:var(--sf);padding:1rem 1.25rem;display:flex;flex-direction:column;gap:.35rem}
+.stat>span{font-size:.8rem;color:var(--mut)}.stat strong{font-size:1.5rem;font-weight:600;letter-spacing:-.03em;line-height:1.2}.stat small{font-size:.78rem;color:var(--mut)}.stat strong small{font-weight:400}.okc{color:var(--ok)}
+#pn .bar{height:4px;background:var(--line);border-radius:9px;overflow:hidden}#pn .bar i{display:block;height:100%;background:#fff;border-radius:9px;transform-origin:0 50%}
+#pn.on .bar i{animation:pgrow .9s var(--ease) .1s both}@keyframes pgrow{from{transform:scaleX(0)}}
+#pn .pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:16px}#pn .pg>.pc{margin:0}
+.todo{display:flex;align-items:center;gap:.8rem;padding:.6rem 0;border-bottom:1px solid var(--line)}.todo:last-child{border:0;padding-bottom:0}.todo i{width:7px;height:7px;border-radius:50%;background:var(--warn);flex:none}.todo span{flex:1;font-size:.88rem}
+.kv{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px solid var(--line);font-size:.88rem}.kv:last-child{border:0;padding-bottom:0}
+.kv .bar{flex:1;max-width:7rem}.kv>span:first-child{display:flex;align-items:center;min-width:0}
+/* datos */
+.tb{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}.tb .grow{flex:1}.tb input[type=search]{width:15rem;max-width:100%}#pn .tb select{width:auto}
+.lst{border:1px solid var(--line);border-radius:10px;background:var(--sf);overflow:hidden}
+#pn .item{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.85rem 1.1rem;border-bottom:1px solid var(--line);transition:background .2s}#pn .item:last-child{border:0}#pn .item:hover{background:rgba(255,255,255,.025)}#pn .item[hidden]{display:none}
+#pn .item.pin{box-shadow:inset 2px 0 0 #fff}
+.ib{min-width:0}.ib h3{display:flex;align-items:center;flex-wrap:wrap;font-size:.92rem;font-weight:500}.ib p{margin:.25rem 0 0;color:var(--mut);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-wrap}.ib small{display:block;margin-top:.3rem;font-size:.75rem;color:var(--mut2)}
+.pinb{margin-left:.5rem;font-size:.72rem;color:var(--mut)}
+.acts{display:flex;gap:6px;flex:none}#pn .acts button{height:1.75rem;padding:0 .65rem;font-size:.78rem}
+.empty{padding:2.2rem 1rem;text-align:center;color:var(--mut)}
+/* equipo */
+.mrow{display:flex;align-items:center;gap:.8rem;padding:.7rem 1.1rem;border-bottom:1px solid var(--line)}.mrow:last-child{border:0}.mrow .me{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#pn .mrow select{width:auto}
+#pn .ph2{margin:1.4rem 0 .6rem}
+/* avisos y diálogos */
+#pn .sk{height:4.2rem;margin-bottom:12px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(90deg,rgba(255,255,255,.02),rgba(255,255,255,.07),rgba(255,255,255,.02)) 0 0/200% 100%;animation:pnsh 1.4s linear infinite}@keyframes pnsh{to{background-position:-200% 0}}
+#pnToasts{position:fixed;left:50%;bottom:calc(1.2rem + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:6;display:grid;gap:.5rem;width:min(92vw,26rem);pointer-events:none}
+.toast{pointer-events:auto;padding:.65rem 1rem;border:1px solid var(--ln);border-left:2px solid #ff8b8b;border-radius:10px;background:rgba(10,10,10,.9);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);font-size:.86rem;color:#ff8b8b;animation:up .4s var(--ease) both;transition:opacity .35s,transform .35s}
+.toast.ok{border-left-color:#6fdc8c;color:#fff}.toast.out{opacity:0;transform:translateY(6px)}
+#pnDlg{border:1px solid var(--ln);border-radius:14px;background:#050505;color:#fff;padding:1.4rem;width:min(92vw,26rem);box-shadow:0 30px 90px rgba(0,0,0,.7)}
+#pnDlg::backdrop{background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+#pnDlg[open]{animation:up .35s var(--ease)}#pnDlg h3{margin:0;font-size:1.05rem;font-weight:500;letter-spacing:-.02em}
+#pnDlg p{margin:.4rem 0 .9rem;color:var(--mut)}#pnDlg label{display:block;font-size:.8rem;color:var(--mut);margin:.8rem 0 .3rem}
+#pnDlg input,#pnDlg textarea{width:100%;background:#000;border:1px solid #2c2c2c;border-radius:8px;padding:.45rem .7rem;font:inherit;color:#fff;outline:0}#pnDlg textarea{min-height:120px}#pnDlg input:focus,#pnDlg textarea:focus{border-color:#fff}
+#pnDlg button{height:2rem;padding:0 .9rem;border-radius:8px;border:1px solid #fff;background:#fff;color:#000;font:500 .82rem 'Inter',system-ui,sans-serif;cursor:pointer}#pnDlg button.sec{background:transparent;color:#fff;border-color:var(--ln)}#pnDlg button.del{background:transparent;color:#ff8b8b;border-color:rgba(255,139,139,.4)}
+/* móvil: la barra lateral pasa a pestañas horizontales */
+@media(max-width:820px){.pn-shell{grid-template-columns:minmax(0,1fr);gap:0}.pn-side{top:0;z-index:3;padding:.6rem 0;margin:0 calc(-1*max(var(--np),1rem));padding-inline:max(var(--np),1rem);background:#000;border-bottom:1px solid var(--line)}
+#pn .tabs{flex-direction:row;overflow-x:auto;scrollbar-width:none}#pn .tabs::-webkit-scrollbar{display:none}#pn .tabs button{width:auto;flex:none}.tsep{display:none}.pn-main{padding-top:1.4rem}.pn-ph h1{font-size:1.35rem}}
+@media(max-width:620px){.pn-who>span,.pn-tag,.st,.pn-sep{display:none}#pn .item{flex-direction:column;align-items:stretch}.acts{flex-wrap:wrap}#pn .tb input[type=search]{width:100%}}
+@media(prefers-reduced-motion:reduce){#pn *,#pnToasts *{animation:none!important;transition:none!important}}
+.pr .card{padding:clamp(1.5rem,3vw,2.2rem)}.pr-p{display:flex;align-items:baseline;gap:.6rem;margin:1.4rem 0 1.2rem}.pr-p b{font-size:clamp(2.8rem,6vw,3.8rem);font-weight:500;letter-spacing:-.04em;line-height:1}.pr-p span{color:var(--mut)}
+.pr-l{list-style:none;padding:0;margin:0 0 1.8rem;display:grid;gap:.7rem}.pr-l li{display:flex;gap:.7rem;color:var(--mut);font-size:.93rem}.pr-l svg{width:1.05rem;height:1.05rem;flex:none;margin-top:.2rem;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pr-a{margin-top:auto;display:grid;gap:.8rem}.pr-a .btn{width:100%;min-height:3rem;justify-content:center;line-height:1.2;text-align:center}.pr-c{color:var(--mut);font-size:.82rem;text-align:center;max-width:26rem;margin:0 auto}.pr-a .btn svg{width:1.1rem;height:1.1rem;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.pr-s{list-style:none;padding:0;margin:.4rem 0 1.4rem;display:grid;gap:1.1rem;counter-reset:s}.pr-s li{display:grid;grid-template-columns:1.8rem 1fr;column-gap:.8rem;counter-increment:s}.pr-s li::before{content:counter(s);grid-row:span 2;display:grid;place-items:center;width:1.8rem;height:1.8rem;border:1px solid var(--ln);border-radius:50%;font-size:.78rem;color:var(--mut)}.pr-s b{font-weight:500}.pr-s span{color:var(--mut);font-size:.9rem}
+.pr-n{margin-top:auto;font-size:.88rem}.pr-n button{text-decoration:underline;text-underline-offset:3px}
+/* Sitio: detalles sutiles */
+.btn[hidden]{display:none!important}
+.btn.pn-open{gap:.5rem}.pn-dot{width:6px;height:6px;border-radius:50%;background:#6fdc8c;animation:pdot 2.6s ease-out infinite}
+@keyframes pdot{0%{box-shadow:0 0 0 0 rgba(111,220,140,.5)}70%,100%{box-shadow:0 0 0 7px rgba(111,220,140,0)}}
+.grid.r>.card{opacity:0;transform:translateY(12px);transition:opacity .8s var(--ease),transform .8s var(--ease),background .5s var(--ease)}
+.grid.r.on>.card{opacity:1;transform:none}
+.grid.r>.card:nth-child(2){transition-delay:.07s}.grid.r>.card:nth-child(3){transition-delay:.14s}.grid.r>.card:nth-child(4){transition-delay:.21s}
+.grid.r>article.card:hover{background:#070707}.card .ic{transition:opacity .4s,transform .5s var(--ease)}.card:hover .ic{opacity:1;transform:translateY(-2px)}
+@media(prefers-reduced-motion:reduce){.grid.r>.card{opacity:1;transform:none}.pn-dot{animation:none}}
+
+.vp[hidden]{display:none}.vp{position:fixed;left:max(1rem,env(safe-area-inset-left));bottom:max(1rem,env(safe-area-inset-bottom));z-index:75;display:flex;flex-direction:column;align-items:flex-start;gap:.5rem}
+.vp>button{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem .95rem;border:1px solid rgba(255,255,255,.2);border-radius:99px;background:rgba(10,10,10,.8);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);font-size:.78rem;font-weight:500;color:#fff;transition:border-color .3s var(--ease),transform .35s var(--ease)}
+.vp>button:hover{border-color:#fff}.vp>button:active{transform:scale(.97)}.vp>button i{width:6px;height:6px;border-radius:50%;background:#ffb44d}
+.vm{order:-1;display:grid;gap:.2rem;width:min(86vw,19.5rem);padding:.5rem;border:1px solid var(--ln);border-radius:14px;background:rgba(8,8,8,.92);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);transform-origin:0 100%;animation:up .3s var(--ease)}
+.vm[hidden]{display:none}.vm button{display:flex;justify-content:space-between;gap:.6rem;text-align:left;padding:.6rem .7rem;border-radius:9px;font-size:.84rem;color:#fff;transition:background .3s}.vm button:hover{background:#111}
+.vm button em{font-style:normal;font-size:.7rem;letter-spacing:.1em;color:var(--mut)}.vm button[aria-pressed=true] em{color:#ffb44d}
+.vm small{padding:.4rem .7rem .2rem;font-size:.72rem;line-height:1.4;color:var(--mut)}
 </style></head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="ic-cloud" viewBox="0 0 24 24"><path d="M6.25 18.75A4 4 0 0 1 6.25 10.75A5.5 5.5 0 0 1 17.16 9.75A4.5 4.5 0 0 1 17.25 18.75Z"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="ic-envyra" viewBox="0 0 24 24"><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9"/></symbol><symbol id="ic-cloud" viewBox="0 0 24 24"><path d="M6.25 18.75A4 4 0 0 1 6.25 10.75A5.5 5.5 0 0 1 17.16 9.75A4.5 4.5 0 0 1 17.25 18.75Z"/></symbol></svg>
 <nav aria-label="Principal"><div class="w"><a href="index.html" aria-label="ENVYRA inicio"><b><svg class="cl" aria-hidden="true"><use href="#ic-cloud"/></svg>ENVYRΛ <span style="color:var(--mut);font-weight:400">/ CLOUD</span></b></a>
-<div class="lk"><button type="button" class="pm cur" aria-expanded="false" aria-controls="mm" aria-haspopup="true">Productos <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3.5l4 4 4-4"/></svg></button><a href="index.html#proceso">Proceso</a><a href="index.html#empresa">Empresa</a></div>
-<div class="ac"><button type="button" class="btn account-btn" id="idOpen">Iniciar sesión</button><button type="button" class="btn create-account-btn" id="idCreate">Crear cuenta</button><button type="button" class="btn g" data-contact>Contacto</button><button type="button" class="btn w1" data-demo>Solicitar demo</button></div></div><div class="mm" id="mm"><div class="mw"><div class="mg"><div><h4 class="mono">Plataforma</h4><a class="mi" href="index.html#northunit"><span><b>NorthUnit <em>Nuevo</em></b><small>CRM con IA para equipos comerciales</small></span></a><div class="fd"><div class="fr"><button type="button" class="ft" aria-expanded="false" aria-label="Mostrar componentes de ENVYRA INTELLIGENCE"><svg class="fc" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h7l2 2h9v11H3V6z"/></svg><svg class="fo" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19V6h7l2 2h8v3M3 19l2.5-8H22l-2.5 8H3z"/></svg></button><a class="mi" href="ENVYRAINTELLIGENCE.html"><span><b>ENVYRA INTELLIGENCE</b><small>Infraestructura de IA: memoria, herramientas y API</small></span></a></div><div class="fk"><div><a href="ENVYRAINTELLIGENCE.html#capas"><b>Capas</b><small>Models, Memory, Tools e Infrastructure</small></a><a href="ENVYRAINTELLIGENCE.html#componentes"><b>A001</b><small>Asistente en español con memoria de caso</small></a><a href="ENVYRAINTELLIGENCE.html#componentes"><b>Memory Case</b><small>Contexto e instrucciones del caso</small></a><a href="ENVYRAINTELLIGENCE.html#componentes"><b>ENVYRA CLOUD</b><small>API para guardar y recuperar la memoria</small></a><a href="ENVYRAINTELLIGENCE.html#demo"><b>Demo interactiva</b><small>Probá A001 simulado</small></a></div></div></div><a class="mi" href="envyra-cloud.html" aria-current="page"><span><b>ENVYRA CLOUD <em>En desarrollo</em></b><small>Infraestructura para conectar datos y agentes</small></span></a></div><div><h4 class="mono">Experiencias</h4><a class="mi" href="https://envyra23.github.io/MotionLayersEngine-/" target="_blank" rel="noopener"><span><b>MotionLayers Engine <em>Beta</em></b><small>Interacción sin fricción, solo con una cámara</small></span></a></div><div><h4 class="mono">Marca y movimiento</h4><a class="mi" href="https://envyra23.github.io/REACH/" target="_blank" rel="noopener"><span><b>Envyra Reach</b><small>Estrategia, creatividad y tecnología para marcas</small></span></a><a class="mi" href="https://envyra23.github.io/The-Gold-Level/" target="_blank" rel="noopener"><span><b>The Gold Level</b><small>La posición desde la que jugamos</small></span></a></div></div><div class="mf"><span>Todo lo que construye Envyra</span><a href="index.html#lanzado">Ver todos los productos →</a></div></div></div></nav>
+<div class="lk"><button type="button" class="pm cur" aria-expanded="false" aria-controls="mm" aria-haspopup="true">Productos <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3.5l4 4 4-4"/></svg></button><a href="index.html#proceso">Proceso</a><a href="index.html#empresa">Empresa</a><a href="index.html#precios">Precios</a></div>
+<div class="ac"><button type="button" class="btn pn-open" data-open-panel hidden><i class="pn-dot" aria-hidden="true"></i>Panel</button><button type="button" class="btn account-btn" id="idOpen">Iniciar sesión</button><button type="button" class="btn create-account-btn" id="idCreate">Crear cuenta</button><button type="button" class="btn g" data-contact>Contacto</button><button type="button" class="btn w1" data-demo>Solicitar demo</button></div></div><div class="mm" id="mm"><div class="mw"><div class="mg"><div><h4 class="mono">Plataforma</h4><a class="mi" href="index.html#northunit"><span><b>NorthUnit <em>Nuevo</em></b><small>CRM con IA para equipos comerciales</small></span></a><div class="fd"><div class="fr"><button type="button" class="ft" aria-expanded="false" aria-label="Mostrar componentes de ENVYRA INTELLIGENCE"><svg class="fc" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h7l2 2h9v11H3V6z"/></svg><svg class="fo" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19V6h7l2 2h8v3M3 19l2.5-8H22l-2.5 8H3z"/></svg></button><a class="mi" href="ENVYRAINTELLIGENCE.html"><span><b>ENVYRA INTELLIGENCE</b><small>Infraestructura de IA: memoria, herramientas y API</small></span></a></div><div class="fk"><div><a href="ENVYRAINTELLIGENCE.html#capas"><b>Capas</b><small>Models, Memory, Tools e Infrastructure</small></a><a href="ENVYRAINTELLIGENCE.html#componentes"><b>A001</b><small>Asistente en español con memoria de caso</small></a><a href="ENVYRAINTELLIGENCE.html#componentes"><b>Memory Case</b><small>Contexto e instrucciones del caso</small></a><a href="ENVYRAINTELLIGENCE.html#componentes"><b>ENVYRA CLOUD</b><small>API para guardar y recuperar la memoria</small></a><a href="ENVYRAINTELLIGENCE.html#demo"><b>Demo interactiva</b><small>Probá A001 simulado</small></a></div></div></div><a class="mi" href="envyra-cloud.html" aria-current="page"><span><b>ENVYRA CLOUD <em>En desarrollo</em></b><small>Infraestructura para conectar datos y agentes</small></span></a></div><div><h4 class="mono">Experiencias</h4><a class="mi" href="https://envyra23.github.io/MotionLayersEngine-/" target="_blank" rel="noopener"><span><b>MotionLayers Engine <em>Beta</em></b><small>Interacción sin fricción, solo con una cámara</small></span></a></div><div><h4 class="mono">Marca y movimiento</h4><a class="mi" href="https://envyra23.github.io/REACH/" target="_blank" rel="noopener"><span><b>Envyra Reach</b><small>Estrategia, creatividad y tecnología para marcas</small></span></a><a class="mi" href="https://envyra23.github.io/The-Gold-Level/" target="_blank" rel="noopener"><span><b>The Gold Level</b><small>La posición desde la que jugamos</small></span></a></div></div><div class="mf"><span>Todo lo que construye Envyra</span><a href="index.html#lanzado">Ver todos los productos →</a></div></div></div></nav>
 
 <div class="id-layer" id="idLayer" role="dialog" aria-modal="true" aria-labelledby="idTitle" aria-hidden="true">
   <div class="id-in">
-    <div class="id-top"><b>ENVYRΛ <span style="color:var(--mut);font-weight:400">ID</span></b><button type="button" class="id-x" id="idClose" aria-label="Cerrar"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div>
+    <div class="id-top"><b><svg class="cl" aria-hidden="true"><use href="#ic-envyra"/></svg>ENVYRΛ <span style="color:var(--mut);font-weight:400">ID</span></b><button type="button" class="id-x" id="idClose" aria-label="Cerrar"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div>
     <div class="id-main"><div class="id-card">
       <h2 class="id-t" id="idTitle"></h2>
       <p class="id-copy" id="idCopy"></p>
@@ -253,9 +349,9 @@ section[id]{scroll-margin-top:3.8rem}
             <div class="ac-row"><span>Miembro desde</span><b id="idMemberSince">—</b></div>
           </section>
           <section class="ac-sec"><h3 class="mono">Ecosistema ENVYRA</h3>
-            <div class="ac-row"><span><svg class="cl" aria-hidden="true"><use href="#ic-cloud"/></svg>ENVYRA CLOUD</span><i class="ac-badge">Próximo lanzamiento</i></div>
-            <div class="ac-row"><span>Acceso anticipado</span><b id="idCloudState">—</b></div>
-            <div class="ac-act"><button type="button" class="btn ac-btn" id="idCloudReq" hidden>Solicitar acceso →</button></div>
+            <div class="ac-row"><span><svg class="cl" aria-hidden="true"><use href="#ic-cloud"/></svg>ENVYRA CLOUD</span><i class="ac-badge">Disponible</i></div>
+            <div class="ac-row"><span>Acceso al panel</span><b id="idCloudState">—</b></div>
+            <div class="ac-act"><button type="button" class="btn w1 ac-btn" data-open-panel hidden>Abrir panel →</button></div>
             <div class="ac-row"><span>ENVYRA INTELLIGENCE</span><i class="ac-badge">En desarrollo</i></div>
             <div class="ac-row"><span>Acceso</span><b>Próximamente</b></div>
           </section>
@@ -273,6 +369,22 @@ section[id]{scroll-margin-top:3.8rem}
 </div>
 
 
+<div id="pn" role="dialog" aria-modal="true" aria-labelledby="pnTitle" aria-hidden="true" inert>
+<header class="pn-top"><b id="pnTitle"><span class="lg"><svg class="cl" aria-hidden="true"><use href="#ic-cloud"/></svg></span>ENVYRΛ <span>/ CLOUD</span></b>
+<span class="pn-sep" aria-hidden="true">/</span><div class="pn-org"><i class="av" id="orgAv" aria-hidden="true"></i><select id="orgSel" aria-label="Empresa activa"></select></div><span class="st" id="orgInfo"></span><button type="button" class="sec" id="newOrgBtn" aria-label="Crear empresa" title="Crear empresa">+</button>
+<span class="pn-tag" id="pnTag">Panel</span>
+<div class="pn-who"><span id="pnEmail"></span><button type="button" class="sec" id="pnAcc">Mi cuenta</button><button type="button" class="pn-x" id="pnClose" aria-label="Cerrar panel"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div></header>
+<div class="pn-body">
+<div id="pnGate" class="hide" role="alert"><span class="lg big"><svg class="cl" aria-hidden="true"><use href="#ic-cloud"/></svg></span><h2 id="pnGateT"></h2><p class="mut" id="pnGateP"></p><button type="button" class="sec" id="pnGateBtn">Volver al sitio</button></div>
+<main id="app" class="pn-shell">
+<aside class="pn-side"><div class="tabs" role="tablist" aria-orientation="vertical" aria-label="Secciones del panel" id="tabs"></div></aside>
+<section class="pn-main"><div class="pn-ph"><h1 id="pnPage"></h1><p id="pnPageD"></p></div><div id="view" role="tabpanel"></div></section>
+</main></div>
+<div id="pnToasts" aria-live="polite"></div>
+<dialog id="pnDlg" aria-labelledby="pnDlgT"><form id="pnDlgF" method="dialog"><h3 id="pnDlgT"></h3><p id="pnDlgP"></p><div id="pnDlgFields"></div>
+<div style="display:flex;gap:8px;margin-top:1rem;justify-content:flex-end"><button type="button" class="sec" id="pnDlgNo">Cancelar</button><button type="submit" id="pnDlgOk">Aceptar</button></div></form></dialog>
+</div>
+
 <div id="ct" role="dialog" aria-modal="true" aria-labelledby="ct-t">
 <button type="button" id="cc" class="mono">Cerrar ✕</button>
 <form id="cf" action="https://formspree.io/f/mgopwaer" method="POST">
@@ -288,33 +400,11 @@ section[id]{scroll-margin-top:3.8rem}
 <section class="chero" id="inicio">
   <i class="orb o1"></i><i class="orb o2"></i>
   <svg class="cl cl-hero in" aria-hidden="true"><use href="#ic-cloud"/></svg>
-  <span class="pill in"><b>ENVYRA CLOUD</b><span id="pillState">Próximo lanzamiento</span></span>
+  <span class="pill in"><b>ENVYRA CLOUD</b><span>Disponible</span></span>
   <h1 class="in" style="--d:1">Your data.<br><span class="m">Connected intelligence.</span></h1>
-  <div class="cd in" style="--d:2" id="countdown" role="timer" aria-label="Cuenta regresiva para el lanzamiento de ENVYRA CLOUD">
-    <span class="mono cd-k" id="cdKick">Lanzamiento · martes 24 de noviembre</span>
-    <div class="cd-grid" id="cdGrid">
-      <div class="cd-u"><b id="cdD">05</b><span class="mono">Días</span></div>
-      <div class="cd-u"><b id="cdH">00</b><span class="mono">Horas</span></div>
-      <div class="cd-u"><b id="cdM">00</b><span class="mono">Min</span></div>
-      <div class="cd-u"><b id="cdS">00</b><span class="mono">Seg</span></div>
-    </div>
-    <p class="cd-live" id="cdLive" hidden><b>ENVYRA CLOUD ya se está lanzando.</b> Entra en la lista para recibir tu acceso.</p>
-  </div>
-  <div class="gwrap in" style="--d:3"><div class="glass" id="waitlist"><button class="gtrig" id="gTrig" type="button" aria-expanded="false" aria-controls="gBody"><span>Reservar lugar en la lista de espera <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
-  <div class="gbody" id="gBody" inert><button class="gx" id="gClose" type="button" aria-label="Cerrar"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg></button>
-    <h2 id="cardTitle">Solicitar acceso</h2>
-    <p class="desc">ENVYRA CLOUD está por lanzarse: una infraestructura para conectar información, memoria y agentes inteligentes. Reserva tu lugar en la lista de espera; necesitas una cuenta ENVYRA ID para registrar tu solicitud.</p>
-    <div id="authPanel">
-      <div class="gact"><button class="btn w1" id="gLogin" type="button">Iniciar sesión y continuar →</button><button class="btn" id="gSignup" type="button">Crear ENVYRA ID</button></div>
-      <p class="privacy">Usaremos tu registro para administrar la solicitud y enviarte novedades de ENVYRA CLOUD. Estar en la lista no habilita automáticamente el uso del producto.</p>
-    </div>
-    <div id="memberPanel" class="hidden">
-      <p id="memberEmail"></p>
-      <button class="btn w1" id="joinBtn" type="button">Sumarme a la lista →</button>
-      <div id="waitStatus" class="status" role="status" aria-live="polite"></div>
-      <div class="signed"><span>Sesión de ENVYRA ID activa</span><button class="linkbtn" id="gAccount" type="button">Mi cuenta</button></div>
-    </div>
-  </div></div></div>
+  <div class="hero-panel in" style="--d:2"><button type="button" class="btn w1" data-open-panel hidden>Abrir panel <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button></div>
+  <div class="hero-auth in" style="--d:3" id="heroOut" hidden><button type="button" class="btn w1" id="heroLogin">Iniciar sesión</button><button type="button" class="btn" id="heroSignup">Crear ENVYRA ID</button></div>
+  <div class="hero-auth hero-noacc in" style="--d:3" id="heroNo" hidden><p>Tu cuenta todavía no tiene acceso activo a ENVYRA CLOUD. Escríbenos y lo habilitamos.</p><button type="button" class="btn w1" data-contact>Pedir acceso</button></div>
   <div class="soc in" style="--d:4"><a href="index.html" aria-label="ENVYRA"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9"/></svg></a><a href="ENVYRAINTELLIGENCE.html" aria-label="ENVYRA INTELLIGENCE"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></a></div>
   <a class="hl mono in" style="--d:5" href="#empresas">¿Eres una empresa? Hablar con ventas →</a>
 </section>
@@ -340,7 +430,7 @@ section[id]{scroll-margin-top:3.8rem}
 <div class="pv-top"><b><svg class="cl" aria-hidden="true"><use href="#ic-cloud"/></svg>ENVYRA CLOUD</b><span class="pv-st"><i></i>Conectado · 3 recuerdos</span></div>
 <div class="pv-note"><span>Prefiero respuestas cortas y en español.</span><time>Hoy</time></div>
 <div class="pv-note"><span>Mi equipo documenta todo en Notion.</span><time>Ayer</time></div>
-<div class="pv-note"><span>Estoy preparando el lanzamiento del 24.</span><time>Lun</time></div>
+<div class="pv-note"><span>Estoy preparando el lanzamiento.</span><time>Lun</time></div>
 <div class="pv-chat"><div class="pv-u">¿Cómo te conviene que te responda?</div><div class="pv-a"><b>A001</b> · Corto y en español, como me pediste. ¿Te armo también un resumen para Notion?</div></div>
 </div><span class="mono pv-cap">Vista ilustrativa</span></div>
 </div></div></section>
@@ -379,11 +469,34 @@ section[id]{scroll-margin-top:3.8rem}
 </form>
 </div></div></section>
 
+<section id="precios" aria-label="Precios"><div class="w">
+<div class="sh r"><span class="pill"><b>Precios</b><span>Plan de empresa</span></span><h2>Un plan para tu empresa. <span class="m">Sin letra chica.</span></h2><p>ENVYRA CLOUD da a A001 la memoria de tu negocio, con un panel para que tu equipo la mantenga al día.</p></div>
+<div class="grid r pr">
+<article class="card"><span class="ct"><span class="mono">ENVYRA CLOUD Empresa</span></span>
+<div class="pr-p"><b>USD 20</b><span>por mes</span></div>
+<ul class="pr-l"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Panel para cargar y ordenar los datos de tu empresa</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Contexto de A001 con tu información, siempre actualizado</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Equipo con roles de administrador, miembro y lector</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Datos aislados por empresa, que puedes borrar cuando quieras</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Cancelas cuando quieras</li></ul>
+<div class="pr-a"><button type="button" class="btn w1 lg" id="buyBtn" data-contact><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5A8.5 8.5 0 1 1 21 11.5z"/></svg>Contratar por WhatsApp</button><p class="pr-c">Te respondemos por WhatsApp, coordinamos el pago y activamos tu cuenta.</p></div>
+</article>
+<article class="card"><span class="ct"><span class="mono">Cómo contratar</span></span><h3>Contratas por WhatsApp</h3>
+<ol class="pr-s"><li><b>Nos escribes por WhatsApp.</b><span>El botón abre el chat con un mensaje ya armado.</span></li><li><b>Coordinamos el pago.</b><span>Te pasamos las opciones y los datos para pagar.</span></li><li><b>Activamos tu cuenta.</b><span>Habilitamos tu cuenta de ENVYRA ID en el panel y cargas los datos de tu empresa.</span></li></ol>
+<p class="pr-n">¿Dudas antes de contratar? <button type="button" data-contact>Escríbenos</button>.</p></article>
+</div></div></section>
+<script>(function(){
+  /* Tu número de WhatsApp con código de país, solo dígitos (ej.: 5493515551234). Si queda vacío, el botón abre el formulario de contacto. */
+  var WA_NUMBER='';
+  var b=document.getElementById('buyBtn');if(!b||!WA_NUMBER)return;
+  b.removeAttribute('data-contact');
+  b.addEventListener('click',function(){
+    var email='';try{var s=window.ENVYRA_ID&&ENVYRA_ID.session&&ENVYRA_ID.session();email=s&&s.user&&s.user.email||''}catch(e){}
+    var t='Hola! Quiero contratar ENVYRA CLOUD Empresa (USD 20 por mes).'+(email?' Mi cuenta de ENVYRA ID es '+email+'.':'')+' ¿Cómo seguimos?';
+    window.open('https://wa.me/'+WA_NUMBER.replace(/\D/g,'')+'?text='+encodeURIComponent(t),'_blank','noopener,noreferrer');
+  });
+})();</script>
 <section id="faq" aria-label="Preguntas frecuentes"><div class="w">
 <div class="sh r"><span class="mono">Preguntas frecuentes</span><h2>Respuestas <span class="m">directas.</span></h2></div>
 <div class="faq r">
 <details><summary>¿Qué es ENVYRA CLOUD hoy?</summary><p>Es la memoria en la nube de A001, ligada a tu cuenta de ENVYRA ID. Guardas notas o mensajes y A001 los usa como contexto en tus conversaciones.</p></details>
-<details><summary>¿Cómo accedo?</summary><p>Reserva tu lugar en la lista de espera con tu cuenta ENVYRA ID. El acceso se habilita por cuenta: estar en la lista no lo activa automáticamente.</p></details>
+<details><summary>¿Cómo accedo?</summary><p>Inicia sesión con tu cuenta ENVYRA ID. El acceso al panel se habilita por cuenta; si todavía no lo tienes, escríbenos desde Contacto y lo activamos.</p></details>
 <details><summary>¿Qué pasa con mis datos?</summary><p>Se guardan en la base de datos de ENVYRA CLOUD, separados por cuenta, y puedes borrarlos cuando quieras. Para responder, A001 envía el contexto guardado al modelo de IA que genera la respuesta.</p></details>
 <details><summary>¿Cuánta información puedo guardar?</summary><p>Hasta 200 recuerdos por usuario, de hasta 4000 caracteres cada uno. En cada respuesta, A001 lee los más recientes.</p></details>
 <details><summary>¿Hay planes para empresas?</summary><p>Estamos construyendo organizaciones, roles, memoria compartida, auditoría y exportación. Cuéntanos tu caso en el formulario y definimos el acceso anticipado con los primeros equipos.</p></details>
@@ -526,28 +639,16 @@ cf.addEventListener('submit',function(e){e.preventDefault();st.textContent='Envi
     $("idSaveProfile").disabled = !dirty;
   }
   function paintCloud(){
-    const st = $("idCloudState"), btn = $("idCloudReq");
-    if(cloud === "load"){ st.textContent = "Comprobando…"; btn.hidden = true; }
-    else if(cloud === "error"){ st.textContent = "No se pudo comprobar"; btn.textContent = "Reintentar"; btn.hidden = false; }
-    else if(cloud){ st.textContent = cloud.status === "approved" ? "Aprobado ✓" : "Solicitado"; btn.hidden = true; }
-    else { st.textContent = "No solicitado"; btn.textContent = "Solicitar acceso →"; btn.hidden = false; }
+    const st = $("idCloudState");
+    st.textContent = cloud === "load" ? "Comprobando…" : cloud === "error" ? "No se pudo comprobar" : cloud ? "Activo ✓" : "Sin acceso";
   }
   async function loadCloud(user){
     if(!client || !user) return;
     cloud = "load"; paintCloud();
-    const {data, error} = await client.from("cloud_waitlist").select("status, created_at").eq("user_id", user.id).maybeSingle();
+    const {data, error} = await client.rpc("my_cloud_access");
     if(!session?.user || session.user.id !== user.id) return;
-    if(error){ console.error("ENVYRA ID cloud:", error); cloud = "error"; } else cloud = data || false;
+    if(error){ console.error("ENVYRA ID cloud:", error); cloud = "error"; } else cloud = data === true;
     paintCloud();
-  }
-  async function requestCloud(){
-    if(!client || !session?.user) return offline();
-    if(cloud === "error") return loadCloud(session.user);
-    const b = $("idCloudReq"); b.disabled = true; b.textContent = "Enviando…"; status("", "");
-    const {error} = await client.from("cloud_waitlist").insert({user_id:session.user.id, status:"pending"});
-    b.disabled = false;
-    if(error && !/duplicate|unique/i.test(error.message || "")){ console.error("ENVYRA ID cloud:", error); status("No se pudo registrar tu solicitud. Intenta de nuevo en unos minutos.", "error"); paintCloud(); return; }
-    await loadCloud(session.user); status("Solicitud registrada. Te avisaremos cuando haya novedades.", "success");
   }
   async function loadProfile(user){
     if(!client || !user) return;
@@ -570,7 +671,7 @@ cf.addEventListener('submit',function(e){e.preventDefault();st.textContent='Envi
       setMember(data);
       status("", "");
     } catch(err) {
-      status("No pudimos cargar tu perfil. Revisa la conexión y los permisos de profiles en Supabase.", "error");
+      status("No pudimos cargar tu perfil. Revisa tu conexión e inténtalo de nuevo.", "error");
       console.error("ENVYRA ID profile load:", err);
     }
   }
@@ -669,7 +770,7 @@ cf.addEventListener('submit',function(e){e.preventDefault();st.textContent='Envi
       status("Perfil actualizado.", "success");
     } catch(err) {
       console.error("ENVYRA ID profile save:", err);
-      status("No se pudieron guardar los cambios. Revisa las políticas RLS de profiles en Supabase.", "error");
+      status("No se pudieron guardar los cambios. Inténtalo de nuevo en unos minutos.", "error");
     } finally { btn.textContent = label; syncDirty(); }
   });
 
@@ -683,7 +784,6 @@ cf.addEventListener('submit',function(e){e.preventDefault();st.textContent='Envi
 
   $("idProfileForm").addEventListener("input", syncDirty);
   $("idProfileForm").addEventListener("change", syncDirty);
-  $("idCloudReq").addEventListener("click", requestCloud);
   $("idVerifyResend").addEventListener("click", async () => {
     if(!client || !session?.user?.email) return offline();
     const {error} = await client.auth.resend({type:"signup", email:session.user.email, options:{emailRedirectTo:redirect}});
@@ -710,104 +810,7 @@ cf.addEventListener('submit',function(e){e.preventDefault();st.textContent='Envi
 })();
 </script>
 
-<script>
-/* ENVYRA CLOUD — liquid glass + lista de espera (usa la sesión de ENVYRA ID) */
-(function(){
-var $=function(id){return document.getElementById(id)},rm=matchMedia('(prefers-reduced-motion:reduce)').matches,
- ID=window.ENVYRA_ID,client=ID&&ID.client,TABLE="cloud_waitlist",currentUser=null;
-var g=$('waitlist'),tr=$('gTrig'),bd=$('gBody'),w0=0,w1=0,h0=52,h1=0,p=0,v=0,t=0,run=false,last=0,isOpen=false;
-function measure(){var pw=g.parentElement.clientWidth;w0=Math.min(320,pw);w1=Math.min(512,pw);if(bd.style.width!==w1+'px')bd.style.width=w1+'px';h1=bd.scrollHeight}
-function apply(){var q=Math.max(0,p),c=Math.min(1,q);
- g.style.width=(w0+(w1-w0)*Math.min(q,1.07)).toFixed(1)+'px';g.style.height=(h0+(h1-h0)*q).toFixed(1)+'px';
- tr.style.opacity=1-Math.min(1,c*4);bd.style.opacity=Math.min(1,Math.max(0,(c-.3)/.5));bd.style.transform='translateY('+((1-c)*10).toFixed(1)+'px)';
- var sq=Math.max(-.045,Math.min(.045,v*.006));g.style.transform=run?'scale('+(1-sq*.6).toFixed(4)+','+(1+sq).toFixed(4)+')':''}
-function frame(now){var dt=Math.min(.032,(now-last)/1000);last=now;v+=(-190*(p-t)-13*v)*dt;p+=v*dt;
- if(Math.abs(p-t)<.0008&&Math.abs(v)<.01){p=t;v=0;run=false}
- apply();if(run)requestAnimationFrame(frame);else g.classList.add('settled')}
-function kick(){if(rm){p=t;v=0;apply();return}if(!run){run=true;last=performance.now();g.classList.remove('settled');requestAnimationFrame(frame)}}
-function openG(){if(isOpen)return;measure();isOpen=true;t=1;g.classList.add('on');var w=g.parentElement;w.classList.remove('pop');void w.offsetWidth;w.classList.add('pop');bd.inert=false;tr.setAttribute('aria-expanded','true');
- if(currentUser)checkWaitlist(currentUser);kick();
- setTimeout(function(){var f=bd.querySelector('button:not(.hidden):not(.gx)');if(f)f.focus({preventScroll:true});
-  var r=g.getBoundingClientRect();if(r.bottom>innerHeight-24)scrollBy({top:r.bottom-innerHeight+40,behavior:rm?'auto':'smooth'})},520)}
-function closeG(){if(!isOpen)return;isOpen=false;t=0;g.classList.remove('on');bd.inert=true;tr.setAttribute('aria-expanded','false');kick();tr.focus({preventScroll:true})}
-tr.addEventListener('click',openG);$('gClose').addEventListener('click',closeG);
-addEventListener('keydown',function(e){if(e.key==='Escape'&&!document.getElementById('idLayer').classList.contains('on')&&!document.getElementById('ct').classList.contains('on'))closeG()},true);
-g.addEventListener('pointermove',function(e){var r=g.getBoundingClientRect();g.style.setProperty('--mx',(e.clientX-r.left)+'px');g.style.setProperty('--my',(e.clientY-r.top)+'px')});
-new ResizeObserver(function(){if(isOpen&&!run){measure();apply()}}).observe(bd);
-function remeasure(){measure();apply()}remeasure();addEventListener('resize',remeasure);addEventListener('load',remeasure);if(document.fonts)document.fonts.ready.then(remeasure);
-if(/access_token/.test(location.hash))setTimeout(openG,700);
 
-function show(el,msg,kind){el.className='status show'+(kind?' '+kind:'');el.textContent=msg}
-function clear(el){el.className='status';el.textContent=''}
-function explain(err){var m=String(err&&err.message||err||'');
- if(/relation .* does not exist|could not find the table|schema cache/i.test(m))return 'La tabla de la lista de espera todavía no está creada. Ejecuta el archivo cloud-waitlist.sql en el SQL Editor de Supabase y vuelve a intentar.';
- if(/row-level security|permission denied|violates row-level/i.test(m))return 'Supabase bloqueó la operación por permisos. Revisa las políticas RLS del archivo cloud-waitlist.sql.';
- if(/Failed to fetch|fetch|network/i.test(m))return 'No se pudo conectar con ENVYRA ID. Revisa tu conexión e intenta otra vez.';
- return m||'No se pudo completar la operación. Intenta de nuevo.'}
-function renderUser(user){
- if(user&&currentUser&&user.id===currentUser.id)return;
- currentUser=user||null;
- $('authPanel').classList.toggle('hidden',!!user);$('memberPanel').classList.toggle('hidden',!user);
- if(user){$('cardTitle').textContent='Tu acceso a CLOUD';$('memberEmail').textContent=user.email||'Sesión ENVYRA ID activa';checkWaitlist(user)}
- else{$('cardTitle').textContent='Solicitar acceso';clear($('waitStatus'))}
-}
-async function checkWaitlist(user){
- var box=$('waitStatus'),btn=$('joinBtn');if(!client)return;
- btn.disabled=true;btn.textContent='Comprobando estado…';clear(box);
- var r=await client.from(TABLE).select('status, created_at').eq('user_id',user.id).maybeSingle();
- if(!currentUser||currentUser.id!==user.id)return;
- if(r.error){show(box,explain(r.error),'error');btn.classList.remove('hidden');btn.textContent='Volver a comprobar';btn.disabled=false;return}
- var d=r.data;
- if(d){btn.classList.add('hidden');
-  var date=d.created_at?new Date(d.created_at).toLocaleDateString('es-AR',{day:'numeric',month:'long',year:'numeric'}):'';
-  if(d.status==='approved'){box.className='status show success';box.innerHTML='<h3>Tu solicitud fue aprobada.</h3><p>Te informaremos los próximos pasos cuando estén disponibles.</p><span class="state">Acceso aprobado</span>'}
-  else{box.className='status show success';box.innerHTML='<h3>Ya estás en la lista.</h3><p>Tu solicitud quedó registrada correctamente. Te informaremos cuando haya novedades sobre ENVYRA CLOUD y nuevas oportunidades de acceso anticipado.</p>'+(date?'<p style="font-size:11px">Registro: '+date+'</p>':'')+'<span class="state">Registrado</span>'}
- }else{btn.classList.remove('hidden');btn.textContent='Sumarme a la lista →';btn.disabled=false}
-}
-async function join(){
- if(!client||!currentUser)return;var btn=$('joinBtn'),box=$('waitStatus');
- btn.disabled=true;btn.textContent='Registrando solicitud…';clear(box);
- var r=await client.from(TABLE).insert({user_id:currentUser.id,status:'pending'});
- if(r.error){if(/duplicate|unique/i.test(String(r.error.message))){await checkWaitlist(currentUser);ID.refreshCloud();return}
-  show(box,explain(r.error),'error');btn.textContent='Intentar de nuevo →';btn.disabled=false;return}
- await checkWaitlist(currentUser);ID.refreshCloud();
-}
-$('joinBtn').addEventListener('click',join);
-$('gLogin').addEventListener('click',function(){ID&&ID.open('login',{closeOnAuth:true})});
-$('gSignup').addEventListener('click',function(){ID&&ID.open('signup',{closeOnAuth:true})});
-$('gAccount').addEventListener('click',function(){ID&&ID.open('login')});
-if(ID)ID.onChange(function(s){renderUser(s&&s.user||null)});
-})();
-</script>
-
-<script>
-/* Cuenta regresiva de ENVYRA CLOUD. Para cambiar la fecha, edita LAUNCH (formato ISO con zona horaria). */
-(function(){
-  var LAUNCH=new Date('2026-11-24T12:00:00-03:00').getTime(); /* martes 24 nov 2026, 12:00 hora Argentina */
-  var $=function(i){return document.getElementById(i)},box=$('countdown');if(!box||isNaN(LAUNCH))return;
-  var el={d:$('cdD'),h:$('cdH'),m:$('cdM'),s:$('cdS')},timer=null;
-  try{
-    var f=new Intl.DateTimeFormat('es-AR',{weekday:'long',day:'numeric',month:'long',hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'America/Argentina/Buenos_Aires'}).format(new Date(LAUNCH));
-    $('cdKick').textContent='Lanzamiento · '+f.replace(',','')+' (hora Argentina)';
-  }catch(e){}
-  function pad(n){return n<10?'0'+n:String(n)}
-  function done(){
-    box.classList.add('done');$('cdLive').hidden=false;$('cdKick').textContent='Lanzamiento';
-    var p=$('pillState');if(p)p.textContent='Lanzamiento en curso';
-    if(timer){clearInterval(timer);timer=null}
-  }
-  function tick(){
-    var left=Math.max(0,LAUNCH-Date.now());
-    if(left===0){done();return false}
-    var t=Math.floor(left/1000);
-    el.d.textContent=pad(Math.floor(t/86400));el.h.textContent=pad(Math.floor(t%86400/3600));
-    el.m.textContent=pad(Math.floor(t%3600/60));el.s.textContent=pad(t%60);
-    return true;
-  }
-  if(tick())timer=setInterval(tick,1000);
-  document.addEventListener('visibilitychange',function(){if(!document.hidden)tick()});
-})();
-</script>
 <script>
 /* Solicitudes B2B de ENVYRA CLOUD → Formspree (misma bandeja que Contacto) */
 (function(){
@@ -825,6 +828,275 @@ if(ID)ID.onChange(function(s){renderUser(s&&s.user||null)});
       .catch(function(err){say(err&&err.name==='AbortError'?'Tardó demasiado. Inténtalo de nuevo.':'No se pudo enviar. Inténtalo de nuevo o escríbenos desde Contacto.','err')})
       .then(function(){clearTimeout(to);btn.disabled=false});
   });
+})();
+</script>
+<script>
+/* ENVYRA CLOUD — Panel (usa la sesión de ENVYRA ID; el acceso lo valida smart-processor) */
+(function(){
+
+const FN='https://apuwqxaagxljfrnjajcn.supabase.co/functions/v1/smart-processor';
+const KINDS=['empresa','producto','proceso','politica','cliente','faq','otro'],ROLES=['admin','member','viewer'];
+const S={tok:'',user:null,orgs:[],org:null,tab:'resumen',log:[],lastTest:null,ctx:null};
+const SK='<div class="sk"></div><div class="sk"></div><div class="sk"></div>',SILENT=Object.assign(new Error(''),{silent:1});
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const role=()=>S.org&&S.org.role;
+const IC={resumen:'<path d="M3 3h7v7H3zM14 3h7v4h-7zM14 11h7v10h-7zM3 14h7v7H3z"/>',datos:'<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/>',equipo:'<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 19a6 6 0 0 1 12 0M15 14.5a5 5 0 0 1 6 4.5"/>',empresa:'<path d="M4 21V4h10v17M14 9h6v12M8 8h2M8 12h2M8 16h2M3 21h18"/>',contexto:'<rect x="9" y="9" width="6" height="6"/><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/>',pruebas:'<path d="M3 12h4l3-8 4 16 3-8h4"/>'};
+const ico=k=>`<svg class="ni" viewBox="0 0 24 24" aria-hidden="true">${IC[k]||''}</svg>`;
+const KC={empresa:'#8ab4ff',producto:'#6fdc8c',proceso:'#c4a1ff',politica:'#ffb44d',cliente:'#ff9ec7',faq:'#7fdbd5',otro:'#9a9a9a'};
+const tag=k=>`<span class="tag"><i class="kd" style="--c:${KC[k]||KC.otro}"></i>${esc(k)}</span>`;
+const ini=t=>(String(t||'?').trim().charAt(0)||'?').toUpperCase();
+const ago=d=>{const m=Math.round((Date.now()-new Date(d))/60000);return m<1?'recién':m<60?`hace ${m} min`:m<1440?`hace ${Math.round(m/60)} h`:`hace ${Math.round(m/1440)} d`};
+const PAGES={resumen:['Resumen','Estado de tu empresa y de lo que A001 sabe de ella.'],datos:['Datos','La información que A001 usa para responder por tu empresa.'],equipo:['Equipo','Personas con acceso y su rol.'],empresa:['Empresa','El perfil con el que A001 presenta tu negocio.'],contexto:['Contexto A001','El texto exacto que recibe el asistente.'],pruebas:['Diagnóstico','Chequeos automáticos contra el servicio.'],nueva:['Crear empresa','Un espacio nuevo para tus datos y tu equipo.']};
+
+async function token(){const c=window.ENVYRA_ID&&ENVYRA_ID.client;if(!c)return '';const {data}=await c.auth.getSession();return data.session?data.session.access_token:''}
+async function call(action,body={},tok){
+  if(tok===undefined)tok=await token();
+  const t0=performance.now(),h={'Content-Type':'application/json'};if(tok)h.Authorization='Bearer '+tok;
+  let r,j={};
+  try{r=await fetch(FN,{method:'POST',headers:h,body:JSON.stringify({action,...body})});j=await r.json().catch(()=>({}));}
+  catch(e){S.log.unshift(`${action} · sin respuesta (¿función desplegada? ¿CORS?)`);throw new Error('No se pudo conectar con ENVYRA CLOUD. Revisa tu conexión e inténtalo de nuevo.');}
+  S.log.unshift(`${action} · ${r.status} · ${Math.round(performance.now()-t0)} ms${j.error?' · '+j.error:''}`);
+  if(!r.ok){if((r.status===401||r.status===403)&&action!=='me')setTimeout(()=>{booted&&watch()},0);throw Object.assign(new Error((j.error||'Error '+r.status)+(j.detail?' → '+j.detail:'')),{status:r.status})}
+  return j;
+}
+function flash(t,ok){if(!t)return;const el=document.createElement('div');el.className='toast'+(ok?' ok':'');el.setAttribute('role',ok?'status':'alert');el.textContent=t;$('pnToasts').appendChild(el);setTimeout(()=>{el.classList.add('out');setTimeout(()=>el.remove(),350)},ok?3200:5200)}
+async function guard(fn,okMsg){try{await fn();if(okMsg)flash(okMsg,true)}catch(e){if(!e.silent)flash(e.message)}}
+
+
+async function loadMe(keep){
+  const j=await call('me');S.orgs=j.orgs;
+  S.org=S.orgs.find(o=>o.id===(keep||(S.org&&S.org.id)))||S.orgs[0]||null;
+  $('orgSel').innerHTML=S.orgs.map(o=>`<option value="${o.id}" ${S.org&&S.org.id===o.id?'selected':''}>${esc(o.name)}</option>`).join('')||'<option>Sin empresas todavía</option>';
+  $('orgInfo').textContent=S.org?(S.org.status==='active'?'Activa':'Suspendida'):'';$('orgInfo').classList.toggle('off',!!S.org&&S.org.status!=='active');$('orgAv').textContent=ini(S.org&&S.org.name);
+  render();
+}
+$('orgSel').onchange=e=>{S.org=S.orgs.find(o=>o.id===e.target.value);S.ctx=null;render()};
+$('newOrgBtn').onclick=()=>{S.tab='nueva';render()};
+
+const TABS=[['resumen','Resumen'],['datos','Datos'],['equipo','Equipo'],['empresa','Empresa'],['contexto','Contexto A001'],['pruebas','Diagnóstico']];
+function render(){
+  const tl=TABS.filter(([k])=>k!=='pruebas'||role()==='admin');if(S.tab!=='nueva'&&!tl.some(([k])=>k===S.tab))S.tab='resumen';
+  $('tabs').innerHTML=tl.map(([k,l])=>`${k==='contexto'||k==='pruebas'?'<i class="tsep" role="presentation"></i>':''}<button role="tab" id="tb_${k}" aria-selected="${S.tab===k}" aria-controls="view" tabindex="${S.tab===k||(S.tab==='nueva'&&k==='resumen')?0:-1}" data-k="${k}">${ico(k)}<span>${l}</span></button>`).join('');
+  $('tabs').querySelectorAll('button').forEach(b=>b.onclick=()=>{S.tab=b.dataset.k;render()});
+  const pg=PAGES[S.tab]||PAGES.resumen;$('pnPage').textContent=pg[0];$('pnPageD').textContent=pg[1];
+  const v=$('view');v.classList.remove('vw');void v.offsetWidth;v.classList.add('vw');
+  if(S.tab==='nueva')return viewNew(v);
+  if(S.tab==='pruebas')return viewTests(v);
+  if(!S.org){v.innerHTML='<div class="pc"><h2>Todavía no tienes una empresa</h2><p class="mut" style="margin-bottom:.9rem">Crea la primera para empezar a cargar datos.</p><button id="go">Crear empresa</button></div>';$('go').onclick=()=>{S.tab='nueva';render()};return}
+  if(S.org.status!=='active'){v.innerHTML='<div class="pc"><h2>El acceso de esta empresa está suspendido</h2><p class="mut">Los datos se conservan, pero no se pueden ver ni editar hasta que se reactive. Contacta a ENVYRA para reactivarla.</p></div>';return}
+  ({resumen:viewOverview,datos:viewData,equipo:viewTeam,empresa:viewOrg,contexto:viewCtx})[S.tab](v);
+}
+
+/* Crear empresa */
+function viewNew(v){
+  v.innerHTML=`<div class="pc frm">
+  <label for="n1">Nombre</label><input id="n1"><label for="n2">Rubro</label><input id="n2">
+  <label for="n3">Sitio web</label><input id="n3"><label for="n4">Descripción</label><textarea id="n4"></textarea>
+  <label for="n5">Tono de comunicación</label><input id="n5">
+  <div class="row" style="margin-top:12px"><button id="ok">Crear empresa</button><button class="sec" id="no">Cancelar</button></div></div>`;
+  $('no').onclick=()=>{S.tab='datos';render()};
+  $('ok').onclick=()=>guard(async()=>{const j=await call('create_org',{name:$('n1').value,industry:$('n2').value,website:$('n3').value,description:$('n4').value,tone:$('n5').value});S.tab='resumen';await loadMe(j.org.id)},'Empresa creada.');
+}
+
+/* Resumen */
+async function viewOverview(v){
+  v.innerHTML=SK;
+  let j;try{j=await call('overview',{org_id:S.org.id})}catch(e){v.innerHTML=`<div class="msg">${esc(e.message)}</div>`;return}
+  const s=j.stats,L=j.limits,pct=(a,b)=>b?Math.min(100,Math.round(a/b*100)):0,bar=p=>`<div class="bar"><i style="width:${p}%"></i></div>`;
+  const LBL={industry:'el rubro',website:'el sitio web',description:'la descripción',tone:'el tono de comunicación'};
+  const todo=[];
+  if(!s.total)todo.push(['Todavía no has cargado datos. Empieza por agregar el primero.','datos','Agregar datos']);
+  if(s.total>s.ctx_used)todo.push([`${s.total-s.ctx_used} datos no entran en el contexto de A001. Fija los más importantes o acorta los largos.`,'datos','Revisar datos']);
+  if(j.missing.length)todo.push([`Completa ${j.missing.map(k=>LBL[k]).join(', ')} para que A001 conozca mejor tu negocio.`,'empresa','Completar perfil']);
+  const mx=Math.max(1,...Object.values(s.by_kind||{}));
+  v.innerHTML=`<div class="pstats">
+  <div class="stat"><span>Estado</span><strong class="okc">Activa</strong><small>Tu rol: ${esc(j.role)}</small></div>
+  <div class="stat"><span>Datos cargados</span><strong>${s.total} <small>de ${L.max_items}</small></strong>${bar(pct(s.total,L.max_items))}<small>${s.pinned} fijados</small></div>
+  <div class="stat"><span>Contexto de A001</span><strong>${s.ctx_used} <small>de ${s.total} datos</small></strong>${bar(pct(s.ctx_chars,L.ctx_max))}<small>${s.ctx_chars} de ${L.ctx_max} caracteres</small></div>
+  <div class="stat"><span>Equipo</span><strong>${s.members} <small>${s.members===1?'persona':'personas'}</small></strong><small>${s.admins} admin, ${s.editors} members, ${s.viewers} viewers${s.invites?`, ${s.invites} invitaciones`:''}</small></div></div>
+  ${todo.length?`<div class="pc"><h2>Para completar</h2>${todo.map(([t,k,b])=>`<div class="todo"><i></i><span>${esc(t)}</span><button class="sec" data-go="${k}">${b}</button></div>`).join('')}</div>`:''}
+  <div class="pg"><div class="pc"><h2>Datos por tipo</h2>${Object.entries(s.by_kind||{}).map(([k,n])=>`<div class="kv"><span>${tag(k)}</span>${bar(pct(n,mx))}<b>${n}</b></div>`).join('')||'<p class="mut">Sin datos.</p>'}</div>
+  <div class="pc"><h2>Actividad reciente</h2>${j.recent.map(r=>`<div class="kv"><span>${tag(r.kind)}<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(r.title)}</span></span><span class="mut">${ago(r.updated_at)}</span></div>`).join('')||'<p class="mut">Sin cambios todavía.</p>'}</div></div>`;
+  v.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{S.tab=b.dataset.go;render()});
+}
+
+/* Datos */
+async function viewData(v){
+  v.innerHTML=SK;
+  let j;try{j=await call('list',{org_id:S.org.id})}catch(e){v.innerHTML=`<div class="msg">${esc(e.message)}</div>`;return}
+  const canAdd=j.role!=='viewer',me=S.user.id;
+  const can=it=>j.role==='admin'||(j.role==='member'&&it.created_by===me);
+  v.innerHTML=`<div class="tb"><input id="sq" type="search" placeholder="Buscar datos…" aria-label="Buscar datos"><select id="fk" aria-label="Filtrar por tipo"><option value="">Todos los tipos</option>${KINDS.map(k=>`<option>${k}</option>`).join('')}</select><span class="grow"></span><span class="mut" id="cnt">${j.items.length} datos</span>${canAdd?'<button id="addt">Agregar dato</button>':''}</div>
+  ${canAdd?`<div class="pc" id="addp" ${j.items.length?'hidden':''}><h2>Nuevo dato</h2><div class="row"><div class="grow"><input id="at" placeholder="Título" maxlength="120" aria-label="Título"></div>
+  <select id="ak" style="width:auto" aria-label="Tipo">${KINDS.map(k=>`<option>${k}</option>`).join('')}</select>
+  ${j.role==='admin'?'<label style="margin:0;display:flex;align-items:center;gap:.4rem"><input type="checkbox" id="ap"> Fijar</label>':''}</div>
+  <textarea id="ac" placeholder="Contenido (hasta 4000 caracteres). Ctrl/⌘ + Enter para guardar" maxlength="4000" style="margin-top:8px"></textarea>
+  <div style="margin-top:10px"><button id="aok">Guardar dato</button></div></div>`:'<div class="msg">Tu rol es solo lectura.</div>'}
+  <div class="lst">${j.items.map(it=>`<div class="item ${it.pinned?'pin':''}" data-k="${esc(it.kind)}" data-s="${esc((it.title+' '+it.content+' '+it.kind).toLowerCase())}"><div class="ib"><h3>${tag(it.kind)}${esc(it.title)}${it.pinned?'<span class="pinb">Fijado</span>':''}</h3><p>${esc(it.content)}</p>${it.updated_at?`<small>${ago(it.updated_at)}</small>`:''}</div>
+  ${can(it)?`<div class="acts"><button class="sec" data-e="${it.id}">Editar</button>${j.role==='admin'?`<button class="sec" data-p="${it.id}">${it.pinned?'Desfijar':'Fijar'}</button>`:''}<button class="del" data-d="${it.id}">Borrar</button></div>`:''}</div>`).join('')||'<div class="empty">Sin datos. Agrega el primero con el botón de arriba.</div>'}</div>`;
+  wireFilter(v);
+  if(canAdd){$('addt').onclick=()=>{const p=$('addp');p.hidden=!p.hidden;if(!p.hidden)$('at').focus()};
+    $('aok').onclick=()=>guard(async()=>{await call('add',{org_id:S.org.id,title:$('at').value,content:$('ac').value,kind:$('ak').value,pinned:$('ap')?.checked});viewData(v)},'Dato guardado.')}
+  v.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>guard(async()=>{if(!await ask({t:'¿Borrar este dato?',p:'Esta acción no se puede deshacer.',ok:'Borrar',danger:1}))throw SILENT;await call('delete',{org_id:S.org.id,id:b.dataset.d});viewData(v)},'Dato borrado.'));
+  v.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>guard(async()=>{const it=j.items.find(x=>x.id===b.dataset.p);await call('update',{org_id:S.org.id,id:it.id,pinned:!it.pinned});viewData(v)}));
+  v.querySelectorAll('[data-e]').forEach(b=>b.onclick=()=>guard(async()=>{const it=j.items.find(x=>x.id===b.dataset.e);const r=await ask({t:'Editar dato',fields:[['title','Título',it.title],['content','Contenido',it.content,1]],ok:'Guardar'});if(!r)throw SILENT;await call('update',{org_id:S.org.id,id:it.id,title:r.title,content:r.content});viewData(v)},'Dato actualizado.'));
+}
+
+/* Equipo */
+async function viewTeam(v){
+  if(role()!=='admin'){v.innerHTML='<div class="msg">Solo un administrador ve y gestiona el equipo.</div>';return}
+  let j;try{j=await call('members',{org_id:S.org.id})}catch(e){v.innerHTML=`<div class="msg">${esc(e.message)}</div>`;return}
+  const rs=(sel)=>ROLES.map(r=>`<option ${r===sel?'selected':''}>${r}</option>`).join('');
+  v.innerHTML=`<div class="pc"><h2>Invitar por email</h2><div class="row"><div class="grow"><input id="ie" type="email" placeholder="persona@empresa.com" aria-label="Email"></div><select id="ir" style="width:auto" aria-label="Rol">${rs('member')}</select><button id="iok">Invitar</button></div>
+  <p class="mut" style="font-size:.8rem;margin-top:.6rem">La invitación se acepta sola cuando esa persona entra con el email confirmado.</p></div>
+  <h2 class="ph2">Miembros · ${j.members.length}</h2><div class="lst">${j.members.map(m=>`<div class="mrow"><i class="av u">${ini(m.email)}</i><span class="me">${esc(m.email)}${m.user_id===S.user.id?' (tú)':''}</span><select data-r="${m.user_id}" aria-label="Rol de ${esc(m.email)}">${rs(m.role)}</select><button class="del" data-x="${m.user_id}">${m.user_id===S.user.id?'Salir':'Quitar'}</button></div>`).join('')}</div>
+  <h2 class="ph2">Invitaciones pendientes</h2><div class="lst">${j.invites.length?j.invites.map(i=>`<div class="mrow"><i class="av u">${ini(i.email)}</i><span class="me">${esc(i.email)}</span><span class="mut">${esc(i.role)}</span><button class="sec" data-v="${esc(i.email)}">Revocar</button></div>`).join(''):'<div class="empty">No hay invitaciones pendientes.</div>'}</div>`;
+  $('iok').onclick=()=>guard(async()=>{await call('invite',{org_id:S.org.id,email:$('ie').value,role:$('ir').value});viewTeam(v)},'Invitación enviada.');
+  v.querySelectorAll('[data-r]').forEach(s=>s.onchange=()=>guard(async()=>{try{await call('set_role',{org_id:S.org.id,user_id:s.dataset.r,role:s.value})}finally{viewTeam(v)}},'Rol actualizado.'));
+  v.querySelectorAll('[data-x]').forEach(b=>b.onclick=()=>guard(async()=>{if(!await ask({t:b.dataset.x===S.user.id?'¿Salir de esta empresa?':'¿Quitar a esta persona?',p:'El cambio se aplica de inmediato.',ok:'Confirmar',danger:1}))throw SILENT;await call('remove_member',{org_id:S.org.id,user_id:b.dataset.x});if(b.dataset.x===S.user.id){S.org=null;await loadMe()}else viewTeam(v)},'Listo.'));
+  v.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>guard(async()=>{await call('revoke_invite',{org_id:S.org.id,email:b.dataset.v});viewTeam(v)},'Invitación revocada.'));
+}
+
+/* Empresa */
+function viewOrg(v){
+  const o=S.org,ro=role()!=='admin';
+  v.innerHTML=`<div class="pc frm">${ro?'<p class="mut">Solo un administrador puede editar el perfil.</p>':''}
+  ${[['name','Nombre',o.name],['industry','Rubro',o.industry],['website','Sitio web',o.website],['tone','Tono de comunicación',o.tone]].map(([k,l,val])=>`<label for="o_${k}">${l}</label><input id="o_${k}" value="${esc(val)}" ${ro?'disabled':''}>`).join('')}
+  <label for="o_description">Descripción</label><textarea id="o_description" ${ro?'disabled':''}>${esc(o.description)}</textarea>
+  ${ro?'':'<div style="margin-top:12px"><button id="ok">Guardar cambios</button></div>'}</div>`;
+  if(!ro)$('ok').onclick=()=>guard(async()=>{const b={org_id:o.id};['name','industry','website','description','tone'].forEach(k=>b[k]=$('o_'+k).value);await call('update_org',b);await loadMe(o.id)},'Perfil guardado.');
+}
+
+/* Contexto */
+async function viewCtx(v){
+  v.innerHTML=SK;
+  try{S.ctx=await call('context',{org_id:S.org.id})}catch(e){v.innerHTML=`<div class="msg">${esc(e.message)}</div>`;return}
+  v.innerHTML=`<div class="pc"><h2>Esto recibe A001 como contexto</h2><p class="mut" style="margin-bottom:.8rem">${S.ctx.used} de ${S.ctx.total} datos entran en el tope de 8000 caracteres. Primero van los fijados, después los más recientes.</p><pre>${esc(S.ctx.text)}</pre><div style="margin-top:10px"><button class="sec" id="rf">Actualizar</button> <button class="sec" id="cp">Copiar</button></div></div>`;
+  $('rf').onclick=()=>viewCtx(v);
+  $('cp').onclick=async()=>{try{await navigator.clipboard.writeText(S.ctx.text);flash('Contexto copiado.',true)}catch(e){flash('No se pudo copiar.')}};
+}
+
+/* Pruebas */
+async function runTests(){
+  const R=[],id=S.org&&S.org.id,mark='[PRUEBA] '+Date.now();
+  const t=async(name,fn)=>{try{const d=await fn();R.push([true,name,d||''])}catch(e){R.push([false,name,e.message])}render2()};
+  const expect=async(p,st)=>{try{await p;throw new Error('Debía fallar con '+st+' y respondió OK')}catch(e){if(e.status!==st)throw new Error(e.status?`Esperaba ${st}, devolvió ${e.status}`:e.message);return 'Rechazó con '+st}};
+  const render2=()=>{S.lastTest=R.slice();if(S.tab==='pruebas')viewTests($('view'),true)};
+  await t('Sin token → 401',()=>expect(call('me',{},''),401));
+  await t('Token inválido → 401',()=>expect(call('me',{},'basura'),401));
+  await t('Acción desconocida → 400',()=>expect(call('no_existe'),400));
+  await t('Sesión válida de ENVYRA ID: acción me',async()=>{const j=await call('me');return j.orgs.length+' empresas'});
+  await t('org_id inválido → 400',()=>expect(call('list',{org_id:'abc'}),400));
+  await t('org_id válido pero ajeno → 403',()=>expect(call('list',{org_id:'00000000-0000-4000-8000-000000000000'}),403));
+  if(!id){R.push([false,'Pruebas de datos','Elige o crea una empresa primero.']);return render2()}
+  let item;
+  await t('Agregar dato de prueba',async()=>{item=(await call('add',{org_id:id,title:mark,content:'contenido inicial',kind:'faq'})).item;return item.id.slice(0,8)});
+  await t('Listar incluye el dato',async()=>{const j=await call('list',{org_id:id});if(!j.items.some(x=>x.id===item.id))throw new Error('No aparece');return j.items.length+' datos'});
+  await t('Editar el dato',async()=>{const j=await call('update',{org_id:id,id:item.id,content:'contenido editado'});if(j.item.content!=='contenido editado')throw new Error('No cambió')});
+  await t('El contexto de A001 incluye el dato',async()=>{const j=await call('context',{org_id:id});if(!j.text.includes(mark))throw new Error('No está en el texto');return j.text.length+' caracteres'});
+  await t('Dato vacío → 400',()=>expect(call('add',{org_id:id,title:'',content:''}),400));
+  await t('Borrar el dato',async()=>{await call('delete',{org_id:id,id:item.id})});
+  await t('El dato ya no existe',async()=>{const j=await call('list',{org_id:id});if(j.items.some(x=>x.id===item.id))throw new Error('Sigue ahí')});
+  await t('Último administrador no puede salir → 409',async()=>{if(role()!=='admin')return 'Omitida: no sos admin';return expect(call('remove_member',{org_id:id}),409)});
+  render2();
+}
+function viewTests(v){
+  const R=S.lastTest||[],ok=R.filter(r=>r[0]).length;
+  v.innerHTML=`<div class="pc"><h2>Pruebas automáticas</h2><p class="mut" style="margin-bottom:.8rem">Corre 14 chequeos contra la empresa activa. Crea un dato con el prefijo [PRUEBA] y lo borra al final.</p>
+  <div class="row"><button id="run">Correr pruebas</button>${R.length?`<strong>${ok} de ${R.length} pasaron</strong>`:''}</div>
+  <div style="margin-top:8px">${R.map(r=>`<div class="t"><b class="${r[0]?'p':'f'}">${r[0]?'✓':'✗'}</b>${esc(r[1])}<span>${esc(r[2])}</span></div>`).join('')}</div></div>
+  <div class="pc"><h2>Registro de llamadas</h2><pre>${esc(S.log.slice(0,40).join('\n')||'Todavía no hay llamadas.')}</pre></div>`;
+  $('run').onclick=async e=>{e.target.disabled=true;S.lastTest=[];await runTests();viewTests(v)};
+}
+
+/* ── Diálogos, filtros y acceso ── */
+function ask(o){return new Promise(res=>{
+  const d=$('pnDlg'),f=$('pnDlgF'),ok=$('pnDlgOk');let done=false;
+  $('pnDlgT').textContent=o.t;$('pnDlgP').textContent=o.p||'';
+  $('pnDlgFields').innerHTML=(o.fields||[]).map(([k,l,val,area])=>`<label for="df_${k}">${l}</label>${area?`<textarea id="df_${k}" maxlength="4000">${esc(val)}</textarea>`:`<input id="df_${k}" maxlength="120" value="${esc(val)}">`}`).join('');
+  ok.textContent=o.ok||'Aceptar';ok.className=o.danger?'del':'';
+  const end=v=>{if(done)return;done=true;d.close();res(v)};
+  f.onsubmit=e=>{e.preventDefault();if(!o.fields)return end(true);const r={};o.fields.forEach(([k])=>r[k]=$('df_'+k).value);end(r)};
+  $('pnDlgNo').onclick=()=>end(false);d.oncancel=e=>{e.preventDefault();end(false)};
+  d.showModal();(d.querySelector('input,textarea')||ok).focus();
+})}
+function wireFilter(v){
+  const q=$('sq'),k=$('fk'),n=$('cnt');if(!q)return;
+  const f=()=>{let c=0;const s=q.value.trim().toLowerCase();v.querySelectorAll('.item').forEach(i=>{const m=(!s||i.dataset.s.includes(s))&&(!k.value||i.dataset.k===k.value);i.hidden=!m;if(m)c++});n.textContent=c+(c===1?' dato':' datos')};
+  q.oninput=k.onchange=f;
+  const a=$('ac');if(a)a.onkeydown=e=>{if((e.metaKey||e.ctrlKey)&&e.key==='Enter')$('aok').click()};
+}
+$('tabs').onkeydown=e=>{if(!/^Arrow(Right|Left|Up|Down)$/.test(e.key))return;const b=[...$('tabs').querySelectorAll('button')],i=b.findIndex(x=>x.dataset.k===S.tab);if(i<0)return;e.preventDefault();S.tab=b[(i+(/Right|Down/.test(e.key)?1:b.length-1))%b.length].dataset.k;render();$('tb_'+S.tab).focus()};
+
+const L=$('pn'),I=()=>window.ENVYRA_ID;let access=false,last=null,booted=false,tCheck=0;
+const lock=on=>[$('s'),document.querySelector('body>nav')].forEach(e=>{if(e)e.inert=on});
+function gate(t,p,retry){$('app').classList.add('hide');const g=$('pnGate'),b=$('pnGateBtn');g.classList.remove('hide');$('pnGateT').textContent=t;$('pnGateP').textContent=p;
+  b.textContent=retry?'Reintentar':'Volver al sitio';b.onclick=retry?()=>{g.classList.add('hide');boot()}:close}
+async function boot(){if(booted)return;booted=true;$('app').classList.remove('hide');$('pnGate').classList.add('hide');S.tab='resumen';$('view').innerHTML=SK;
+  try{await loadMe()}catch(e){booted=false;
+    if(e.status===401)gate('Tu sesión expiró','Vuelve a iniciar sesión con tu cuenta de ENVYRA ID para continuar.');
+    else if(e.status===403)gate('Tu cuenta aún no tiene acceso','El acceso a ENVYRA CLOUD se habilita por cuenta. Escríbenos desde Contacto y lo activamos.')
+    else gate('No pudimos conectar con ENVYRA CLOUD',e.message,true)}}
+let opening=false;
+async function open(){
+  if(opening)return;opening=true;
+  try{const i=I(),ses=i&&i.session&&i.session();
+    if(ses&&ses.user)await verify(ses);
+    if(!access){if(i&&!(ses&&ses.user))i.open('login');return}
+    last=document.activeElement;lock(true);L.inert=false;L.classList.add('on');L.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+    try{history.replaceState(null,'',location.pathname+location.search+'#panel')}catch(e){}
+    setTimeout(()=>$('pnClose').focus({preventScroll:true}),300);booted=false;boot()}
+  finally{opening=false}}
+function close(){if(!L.classList.contains('on'))return;L.classList.remove('on');L.setAttribute('aria-hidden','true');L.inert=true;lock(false);document.body.style.overflow='';
+  try{if(location.hash==='#panel')history.replaceState(null,'',location.pathname+location.search)}catch(e){}
+  if(last&&last.focus)last.focus({preventScroll:true})}
+/* Acceso: según el permiso de producto de ENVYRA CONTROL (activo / suspendido / pendiente). Se revalida en cada apertura, al volver a la pestaña y cada 15 s con el panel abierto. */
+let seq=0;
+let entErr=false;
+/* Permiso real (lo que activas o suspendes en ENVYRA CONTROL), consultado con la función segura my_cloud_access() de la base. Solo entra con 'active'; todo lo demás bloquea. */
+async function entitlement(u){
+  const c=I()&&I().client;if(!c||!u)return 'blocked';
+  const keep=()=>access&&S.user&&S.user.id===u.id?'active':'blocked';
+  try{const r=await c.rpc('my_cloud_access');
+    if(r.error){const m=String(r.error.message||'');console.warn('ENVYRA CLOUD · my_cloud_access:',r.error.code||'',m);
+      if(!r.error.code&&/fetch|network|failed/i.test(m))return keep(); /* corte de red: conserva lo ya verificado */
+      entErr=true;return 'blocked'}
+    entErr=false;return r.data===true?'active':'blocked'}
+  catch(e){return keep()}}
+function revoke(){
+  S.org=null;S.orgs=[];S.ctx=null;S.log=[];booted=false;$('view').innerHTML='';$('tabs').innerHTML='';
+  if(L.classList.contains('on'))entErr?gate('No se pudo verificar tu acceso','El servicio de permisos no respondió como se esperaba. Inténtalo más tarde o escríbenos desde Contacto.'):gate('Tu acceso no está activo','Tu cuenta no tiene un permiso activo para ENVYRA CLOUD (suspendido, pendiente o sin asignar). Si crees que es un error, escríbenos desde Contacto.')}
+async function verify(s){const u=s&&s.user||null,n=++seq;
+  if(!u||(S.user&&S.user.id!==u.id)){access=false;revoke()}
+  S.user=u;$('pnEmail').textContent=u?u.email||'':'';
+  const st=u?await entitlement(u):'blocked';if(n!==seq)return access;const ok=!!u&&st==='active';
+  const lost=access&&!ok;access=ok;
+  if(lost||!ok)revoke();
+  document.querySelectorAll('[data-open-panel]').forEach(b=>b.hidden=!access);
+  const ho=$('heroOut'),hn=$('heroNo');if(ho)ho.hidden=!!u;if(hn)hn.hidden=!(u&&!access);
+  return access}
+async function sync(s){await verify(s);if(access&&location.hash==='#panel'&&!L.classList.contains('on'))open()}
+/* Con el panel abierto, consulta al servidor: si ya no te reconoce, corta en el momento; si cambió el estado de la empresa, lo refleja */
+async function watch(){
+  if(!L.classList.contains('on')||!access||!booted)return;
+  try{const j=await call('me');if(!L.classList.contains('on'))return;
+    const cur=S.org&&j.orgs.find(o=>o.id===S.org.id),prev=S.org&&S.org.status;
+    S.orgs=j.orgs;if(S.org&&!cur){S.org=j.orgs[0]||null;S.ctx=null;render()}
+    else if(cur&&cur.status!==prev){S.org=cur;S.ctx=null;$('orgInfo').textContent=cur.status==='active'?'Activa':'Suspendida';$('orgInfo').classList.toggle('off',cur.status!=='active');render()}}
+  catch(e){if(e.status===401||e.status===403){access=false;revoke();document.querySelectorAll('[data-open-panel]').forEach(b=>b.hidden=true)}}}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-open-panel]');if(!b)return;e.preventDefault();
+  if(document.getElementById('idLayer').contains(b))document.getElementById('idClose').click();open()});
+$('pnClose').onclick=close;$('pnAcc').onclick=()=>{const i=I();if(i)i.open('login')};
+addEventListener('keydown',e=>{if(e.key!=='Escape'||!L.classList.contains('on')||$('pnDlg').open)return;
+  if(document.getElementById('idLayer').classList.contains('on')||document.getElementById('ct').classList.contains('on'))return;close()},true);
+const recheck=()=>{const i=I(),ses=i&&i.session&&i.session();if(ses&&ses.user&&Date.now()-tCheck>5000){tCheck=Date.now();verify(ses).then(()=>watch())}};
+addEventListener('focus',recheck);document.addEventListener('visibilitychange',()=>{if(!document.hidden)recheck()});
+setInterval(()=>{if(!L.classList.contains('on'))return;const i=I(),ses=i&&i.session&&i.session();if(ses&&ses.user)verify(ses).then(()=>watch())},15000);
+window.ENVYRA_PANEL={open,close};
+{const hl=$('heroLogin'),hs=$('heroSignup');if(hl)hl.onclick=()=>{const i=I();i&&i.open('login',{closeOnAuth:true})};if(hs)hs.onclick=()=>{const i=I();i&&i.open('signup',{closeOnAuth:true})}}
+if(I()&&I().onChange)I().onChange(sync);
+
 })();
 </script>
 </body>
